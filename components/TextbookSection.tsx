@@ -94,7 +94,11 @@ const AnswerRow = memo(function AnswerRow({
           {answer.number}
         </span>
         <span className="flex-1 text-sm text-foreground">
-          {question ? processNewlines(question.text) : `Opgave ${answer.number}`}
+          {question ? (
+            <MarkdownRenderer className="text-sm text-foreground inline [&>p]:inline [&>p]:mb-0">
+              {processNewlines(question.text)}
+            </MarkdownRenderer>
+          ) : `Opgave ${answer.number}`}
         </span>
         <ChevronDown
           className={`w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5 transition-transform duration-200 ${

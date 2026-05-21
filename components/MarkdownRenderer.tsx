@@ -91,8 +91,9 @@ export function MarkdownRenderer({ children, className }: MarkdownRendererProps)
             {children}
           </em>
         ),
-        code: ({ inline, children, ...props }) => {
-          if (inline) {
+        code: ({ children, className, ...props }) => {
+          const isBlock = className?.includes('language-');
+          if (!isBlock) {
             return (
               <code className="text-foreground bg-muted px-1 py-0.5 rounded font-mono text-sm" {...props}>
                 {children}
@@ -100,7 +101,7 @@ export function MarkdownRenderer({ children, className }: MarkdownRendererProps)
             );
           }
           return (
-            <code className="text-foreground font-mono text-sm" {...props}>
+            <code className={cn("text-foreground font-mono text-sm", className)} {...props}>
               {children}
             </code>
           );

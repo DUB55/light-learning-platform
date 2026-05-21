@@ -56,8 +56,11 @@ const InlineQuestionAccordion = memo(function InlineQuestionAccordion({
       >
         <div className="flex items-center gap-3">
           <HelpCircle className="w-4 h-4 text-muted-foreground" />
-          <span className="text-sm font-medium text-foreground">
-            {question.number}: {processNewlines(question.question)}
+          <span className="text-sm font-medium text-foreground flex items-center gap-1">
+            {question.number}:
+            <MarkdownRenderer className="text-sm font-medium text-foreground inline [&>p]:inline [&>p]:mb-0">
+              {processNewlines(question.question)}
+            </MarkdownRenderer>
           </span>
           {question.difficulty && (
             <span
