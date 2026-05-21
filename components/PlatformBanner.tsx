@@ -3,12 +3,19 @@
 import React, { useState, useEffect } from 'react';
 
 // ============================================================
-// CONFIGURABLE LOGO SIZES (change these values to adjust logos)
+// CONFIGURABLE SIZES (change these values to adjust)
 // ============================================================
-const QUIZLET_LOGO_WIDTH = 120;   // px – width of the Quizlet logo image
-const QUIZLET_LOGO_HEIGHT = 48;   // px – height of the Quizlet logo image
-const STUDYGO_LOGO_WIDTH = 160;   // px – width of the StudyGo logo image
-const STUDYGO_LOGO_HEIGHT = 64;   // px – height of the StudyGo logo image
+
+// Button size (both buttons share the same dimensions)
+const BUTTON_WIDTH = 192;          // px – button width  (original Quizlet size)
+const BUTTON_HEIGHT = 48;          // px – button height (original Quizlet size)
+
+// Logo image sizes (independent of button size)
+const QUIZLET_LOGO_WIDTH = 160;    // px – Quizlet logo width
+const QUIZLET_LOGO_HEIGHT = 40;    // px – Quizlet logo height
+const STUDYGO_LOGO_WIDTH = 180;    // px – StudyGo logo width  (bigger logo)
+const STUDYGO_LOGO_HEIGHT = 44;    // px – StudyGo logo height (bigger logo)
+
 // ============================================================
 
 const STORAGE_KEY = 'platformBanner_hidden';
@@ -70,8 +77,10 @@ export default function PlatformBanner() {
             hide('studygo');
             window.open('https://studygo.com/nl/learn/groups/435618/join?key=0c3cdb9', '_blank');
           }}
-          className="fixed bottom-4 right-4 z-50 flex items-center justify-center w-64 h-20 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 right-4 z-50 flex items-center justify-center rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
+            width: BUTTON_WIDTH,
+            height: BUTTON_HEIGHT,
             backgroundColor: '#652FA5',
             border: '2px solid #652FA5',
           }}
@@ -99,8 +108,11 @@ export default function PlatformBanner() {
             hide('quizlet');
             window.open('https://quizlet.com/join/Ea8jPMrnR?i=75vmk8&x=1bqt', '_blank');
           }}
-          className="fixed bottom-4 right-72 z-50 flex items-center justify-center w-64 h-20 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 z-50 flex items-center justify-center rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
+            width: BUTTON_WIDTH,
+            height: BUTTON_HEIGHT,
+            right: BUTTON_WIDTH + 32,
             backgroundColor: '#5758FF',
             border: '2px solid #5758FF',
           }}
