@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { FlashcardSection as FlashcardSectionType } from "@/lib/flashcard-data";
+import type { FlashcardSection as FlashcardSectionType } from "../lib/flashcard-data";
 
 interface FlashcardSectionProps {
   section: FlashcardSectionType;

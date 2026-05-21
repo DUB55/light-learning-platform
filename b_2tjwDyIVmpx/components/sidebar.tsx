@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { flashcardSections } from "@/lib/flashcard-data";
+import { flashcardSections } from "../lib/flashcard-data";
 import { ThemeToggle } from "./theme-toggle";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 export function Sidebar() {
   const [activeSection, setActiveSection] = useState<string>("");
