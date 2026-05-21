@@ -1,8 +1,5 @@
 declare module '@vercel/analytics/next' {
-  import * as React from 'react'
-  type AnalyticsProps = React.ComponentProps<'div'> & {
-    [key: string]: any
-  }
-  export const Analytics: React.ComponentType<AnalyticsProps>
+  const Analytics: any
+  export { Analytics }
   export default Analytics
 }

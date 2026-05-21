@@ -91,7 +91,7 @@ export function MarkdownRenderer({ children, className }: MarkdownRendererProps)
             {children}
           </em>
         ),
-        code: ({ inline, children, ...props }) => {
+        code: ({ inline, children, ...props }: any) => {
           if (inline) {
             return (
               <code className="text-foreground bg-muted px-1 py-0.5 rounded font-mono text-sm" {...props}>
