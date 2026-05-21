@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 // ============================================================
 const QUIZLET_LOGO_WIDTH = 120;   // px – width of the Quizlet logo image
 const QUIZLET_LOGO_HEIGHT = 48;   // px – height of the Quizlet logo image
-const STUDYGO_LOGO_WIDTH = 160;   // px – width of the StudyGo logo image
-const STUDYGO_LOGO_HEIGHT = 64;   // px – height of the StudyGo logo image
+const STUDYGO_LOGO_WIDTH = 270;   // px – width of the StudyGo logo image
+const STUDYGO_LOGO_HEIGHT = 66;   // px – height of the StudyGo logo image
 // ============================================================
 
 const STORAGE_KEY = 'platformBanner_hidden';
