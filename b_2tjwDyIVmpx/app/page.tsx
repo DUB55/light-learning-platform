@@ -1,8 +1,8 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { FlashcardSection } from "@/components/flashcard-section";
-import { Sidebar } from "@/components/sidebar";
-import { flashcardSections } from "@/lib/flashcard-data";
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
+import { FlashcardSection } from "../components/flashcard-section";
+import { Sidebar } from "../components/sidebar";
+import { flashcardSections } from "../lib/flashcard-data";
 
 export default function Home() {
   return (
