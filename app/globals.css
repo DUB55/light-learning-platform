@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 95.1%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 222.2 84% 95.1%;
+    --border: 222.2 84% 4.9% / 0.2;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --border: 217.2 32.6% 17.5%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+  }
+  
+  html {
+    color-scheme: light dark;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Hide scrollbars */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+/* KaTeX inline math styling */
+.katex {
+  font-size: 1em;
+}
+
+/* Ensure inline math doesn't break line height */
+.katex-display {
+  margin: 1em 0;
+}
+
+.katex-inline {
+  display: inline;
+}
+
+/* Fix inline math alignment */
+.katex .base {
+  display: inline-block;
+}
+
+/* KaTeX dark mode styles */
+.dark .katex {
+  color: #F9FAFB;
+}
+
+.dark .katex .mord {
+  color: #F9FAFB;
+}
+
+.dark .katex .mop {
+  color: #F9FAFB;
+}
+
+.dark .katex .mrel {
+  color: #F9FAFB;
+}
+
+.dark .katex .mbin {
+  color: #F9FAFB;
+}
+
+.dark .katex .mspace {
+  color: #F9FAFB;
+}
+
+.dark .katex .mtext {
+  color: #F9FAFB;
+}
+
+.dark .katex .mathdefault {
+  color: #F9FAFB;
+}
+
+.dark .katex .mainit {
+  color: #F9FAFB;
+}

@@ -1,0 +1,186 @@
+{
+  "siteMetadata": {
+    "title": "Physics Unit 1: Mechanics",
+    "description": "Introduction to classical mechanics, covering motion, forces, energy, and momentum."
+  },
+  "showTimestamps": false,
+  "showExportButtons": false,
+  "showAnkiExport": false,
+  "showFlashcardsExport": false,
+  "showTranscriptExport": false,
+  "showCopyTranscript": false,
+  "defaultViewMode": "book",
+  "buttons": [
+    {
+      "url": "https://youtube.com/watch?v=YOUR_VIDEO_ID",
+      "text": "Watch on YouTube",
+      "icon": "youtube",
+      "iconType": "name",
+      "variant": "primary",
+      "enabled": true
+    },
+    {
+      "url": "https://yoursubstack.substack.com/p/YOUR_POST",
+      "text": "Read on Substack",
+      "icon": "substack",
+      "iconType": "name",
+      "variant": "secondary",
+      "enabled": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "mechanics-basics",
+      "title": "Lesson 1: Kinematics and Motion",
+      "paragraphs": [
+        {
+          "id": "para-kinematics-1",
+          "title": "Velocity vs Speed",
+          "content": "**Kinematics** is the branch of mechanics that describes the motion of objects without considering the forces that cause the motion. Two fundamental quantities in kinematics are **speed** and **velocity**.\n\n**Speed** is a scalar quantity — it only has magnitude (how fast something moves). **Velocity** is a vector quantity — it has both magnitude and direction. This distinction is crucial: a car driving in a circle at constant speed has changing velocity because its direction changes.",
+          "questions": [
+            {
+              "id": "u1-q1",
+              "number": "1.1",
+              "question": "What is the difference between velocity and speed?",
+              "answer": "**Speed** is a scalar quantity that measures how fast an object moves — it only has magnitude (e.g., 60 km/h).\n\n**Velocity** is a vector quantity that measures both the speed and direction of motion (e.g., 60 km/h north).\n\nKey differences:\n- Speed = distance / time\n- Velocity = displacement / time\n- An object can have constant speed but changing velocity (e.g., circular motion)\n- Average speed ≥ |average velocity| always",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        },
+        {
+          "id": "para-kinematics-2",
+          "title": "Acceleration",
+          "content": "**Acceleration** is the rate of change of velocity with respect to time. Since velocity is a vector, acceleration occurs whenever velocity changes in magnitude, direction, or both.\n\nAverage acceleration is calculated as:\n\n$$\\bar{a} = \\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t_f - t_i}$$\n\nThe SI unit of acceleration is m/s².",
+          "questions": [
+            {
+              "id": "u1-q2",
+              "number": "1.2",
+              "question": "How do you calculate average acceleration from velocity-time data?",
+              "answer": "Average acceleration is calculated using:\n\n$$\\bar{a} = \\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t_f - t_i}$$\n\n**Steps:**\n1. Identify the initial velocity $v_i$ and final velocity $v_f$\n2. Identify the time interval $\\Delta t = t_f - t_i$\n3. Divide the change in velocity by the time interval\n\n**Example:** A car accelerates from 10 m/s to 30 m/s in 4 seconds.\n$\\bar{a} = \\frac{30 - 10}{4} = 5 \\text{ m/s}^2$\n\nOn a velocity-time graph, acceleration equals the slope of the line.",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        },
+        {
+          "id": "para-kinematics-3",
+          "title": "Equations of Motion",
+          "content": "For objects moving with **constant acceleration**, there are four kinematic equations (SUVAT equations) that relate displacement, velocity, acceleration, and time:\n\n1. $v = u + at$\n2. $s = ut + \\frac{1}{2}at^2$\n3. $v^2 = u^2 + 2as$\n4. $s = \\frac{(u + v)}{2} \\cdot t$\n\nWhere $s$ = displacement, $u$ = initial velocity, $v$ = final velocity, $a$ = acceleration, $t$ = time.",
+          "questions": [
+            {
+              "id": "u1-q3",
+              "number": "1.3",
+              "question": "Explain the equations of motion for constant acceleration.",
+              "answer": "The four kinematic equations for constant acceleration are:\n\n1. **$v = u + at$** — Final velocity equals initial velocity plus acceleration times time\n2. **$s = ut + \\frac{1}{2}at^2$** — Displacement using initial velocity and acceleration\n3. **$v^2 = u^2 + 2as$** — Relates velocity and displacement without time\n4. **$s = \\frac{(u+v)}{2} \\cdot t$** — Displacement using average velocity\n\n**Variables:** $s$ = displacement, $u$ = initial velocity, $v$ = final velocity, $a$ = acceleration, $t$ = time\n\n**Strategy:** Identify the three known quantities and choose the equation that contains those three plus the unknown.",
+              "type": "inline",
+              "difficulty": "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forces-newton",
+      "title": "Lesson 2: Newton's Laws",
+      "paragraphs": [
+        {
+          "id": "para-newton-1",
+          "title": "Newton's Three Laws",
+          "content": "Sir Isaac Newton formulated three fundamental laws of motion that form the foundation of classical mechanics:\n\n- **First Law (Inertia):** An object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by a net external force.\n- **Second Law:** The net force on an object equals its mass times its acceleration: $F_{net} = ma$\n- **Third Law (Action-Reaction):** For every action there is an equal and opposite reaction.",
+          "questions": [
+            {
+              "id": "u1-q4",
+              "number": "2.1",
+              "question": "State Newton's three laws of motion in your own words.",
+              "answer": "**First Law (Law of Inertia):** An object will remain at rest or continue moving at constant velocity unless a net external force acts on it. Objects resist changes to their state of motion.\n\n**Second Law (F = ma):** The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass: $F_{net} = ma$. A larger force produces greater acceleration; a larger mass produces less acceleration for the same force.\n\n**Third Law (Action-Reaction):** When object A exerts a force on object B, object B exerts an equal and opposite force on object A. Forces always come in pairs — they act on different objects.",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        },
+        {
+          "id": "para-newton-2",
+          "title": "Friction",
+          "content": "**Friction** is a contact force that opposes relative motion between surfaces. There are two main types:\n\n- **Static friction** ($f_s$): Acts when surfaces are not sliding; can vary up to a maximum value $f_{s,max} = \\mu_s N$\n- **Kinetic friction** ($f_k$): Acts when surfaces are sliding; $f_k = \\mu_k N$\n\nWhere $\\mu$ is the coefficient of friction and $N$ is the normal force. Generally $\\mu_s > \\mu_k$.",
+          "questions": [
+            {
+              "id": "u1-q5",
+              "number": "2.2",
+              "question": "How does friction affect the motion of objects?",
+              "answer": "Friction is a force that opposes relative motion between surfaces in contact.\n\n**Effects on motion:**\n- Friction decelerates moving objects (kinetic friction)\n- Friction prevents objects from starting to move (static friction)\n- Friction converts kinetic energy into thermal energy\n\n**Types:**\n- **Static friction** ($f_s \\leq \\mu_s N$): Prevents motion; adjusts to match applied force up to its maximum\n- **Kinetic friction** ($f_k = \\mu_k N$): Constant force opposing sliding motion\n\n**Practical effects:** Without friction, cars couldn't accelerate or brake, and we couldn't walk. Friction is both useful (brakes, grip) and a source of energy loss (engine wear).",
+              "type": "inline",
+              "difficulty": "medium"
+            }
+          ]
+        },
+        {
+          "id": "para-newton-3",
+          "title": "Force, Mass, and Acceleration",
+          "content": "Newton's Second Law establishes the quantitative relationship between force, mass, and acceleration:\n\n$$\\vec{F}_{net} = m\\vec{a}$$\n\nThis means:\n- Doubling the net force doubles the acceleration (for constant mass)\n- Doubling the mass halves the acceleration (for constant force)\n- Acceleration is always in the same direction as the net force",
+          "questions": [
+            {
+              "id": "u1-q6",
+              "number": "2.3",
+              "question": "What is the relationship between force, mass, and acceleration?",
+              "answer": "Newton's Second Law states: $\\vec{F}_{net} = m\\vec{a}$\n\n**Relationships:**\n- **Force and acceleration** are directly proportional (double the force → double the acceleration), assuming constant mass\n- **Mass and acceleration** are inversely proportional (double the mass → half the acceleration), assuming constant force\n- The direction of acceleration is always the same as the direction of the net force\n\n**Units:** Force is measured in Newtons (N), where $1\\text{ N} = 1\\text{ kg} \\cdot \\text{m/s}^2$\n\n**Example:** A 5 kg object with a net force of 20 N has acceleration $a = F/m = 20/5 = 4\\text{ m/s}^2$",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy-work",
+      "title": "Lesson 3: Work and Energy",
+      "paragraphs": [
+        {
+          "id": "para-energy-1",
+          "title": "Work in Physics",
+          "content": "In physics, **work** has a precise definition that differs from everyday usage. Work is done on an object when a force causes a displacement of that object.\n\n$$W = F \\cdot d \\cdot \\cos\\theta$$\n\nWhere $F$ is the magnitude of the force, $d$ is the displacement, and $\\theta$ is the angle between the force and displacement vectors. The SI unit of work is the **joule** (J), where $1\\text{ J} = 1\\text{ N} \\cdot \\text{m}$.",
+          "questions": [
+            {
+              "id": "u1-q7",
+              "number": "3.1",
+              "question": "How is work defined in physics?",
+              "answer": "In physics, **work** is defined as the product of force, displacement, and the cosine of the angle between them:\n\n$$W = F \\cdot d \\cdot \\cos\\theta$$\n\n**Key points:**\n- Work is a scalar quantity (no direction)\n- Work is only done when there is displacement in the direction of the force\n- If $\\theta = 90°$, no work is done (e.g., carrying a bag horizontally — gravity does no work)\n- Negative work occurs when force opposes displacement (e.g., friction)\n- Unit: Joule (J) = N·m\n\n**Example:** Pushing a box 3 m with a 10 N force at 0°: $W = 10 × 3 × \\cos(0°) = 30\\text{ J}$",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        },
+        {
+          "id": "para-energy-2",
+          "title": "Conservation of Energy",
+          "content": "The **law of conservation of energy** states that energy cannot be created or destroyed — it can only be transformed from one form to another. The total energy of an isolated system remains constant.\n\nIn mechanics, the total mechanical energy is:\n\n$$E_{total} = KE + PE = \\frac{1}{2}mv^2 + mgh = \\text{constant}$$\n\nThis holds when only conservative forces (like gravity) do work.",
+          "questions": [
+            {
+              "id": "u1-q8",
+              "number": "3.2",
+              "question": "Explain the principle of conservation of energy.",
+              "answer": "The **law of conservation of energy** states that the total energy of an isolated system remains constant — energy cannot be created or destroyed, only transformed.\n\n**In mechanics:**\n$$KE_i + PE_i = KE_f + PE_f$$\n$$\\frac{1}{2}mv_i^2 + mgh_i = \\frac{1}{2}mv_f^2 + mgh_f$$\n\n**This holds when:** Only conservative forces (gravity, springs) do work. When non-conservative forces (friction) act, mechanical energy is not conserved — it converts to thermal energy.\n\n**Example:** A ball dropped from height $h$ has all potential energy at the top and all kinetic energy just before hitting the ground: $mgh = \\frac{1}{2}mv^2$, so $v = \\sqrt{2gh}$",
+              "type": "inline",
+              "difficulty": "medium"
+            }
+          ]
+        },
+        {
+          "id": "para-energy-3",
+          "title": "Kinetic and Potential Energy",
+          "content": "**Kinetic energy (KE)** is the energy an object possesses due to its motion:\n\n$$KE = \\frac{1}{2}mv^2$$\n\n**Gravitational potential energy (PE)** is the energy stored in an object due to its position in a gravitational field:\n\n$$PE = mgh$$\n\nWhere $m$ is mass, $v$ is speed, $g$ is gravitational acceleration (≈ 9.8 m/s²), and $h$ is height above a reference level.",
+          "questions": [
+            {
+              "id": "u1-q9",
+              "number": "3.3",
+              "question": "What is the difference between kinetic and potential energy?",
+              "answer": "**Kinetic Energy (KE):** Energy due to motion\n$$KE = \\frac{1}{2}mv^2$$\n- Depends on mass and speed\n- Always positive (or zero)\n- Increases with the square of speed\n\n**Potential Energy (PE):** Energy stored due to position or configuration\n- **Gravitational:** $PE_g = mgh$ (depends on height)\n- **Elastic:** $PE_e = \\frac{1}{2}kx^2$ (depends on spring compression)\n- Can be negative (if reference level is above the object)\n\n**Key difference:** KE is energy of motion; PE is stored energy that can be converted to KE. As an object falls, PE decreases and KE increases — total mechanical energy stays constant (without friction).",
+              "type": "inline",
+              "difficulty": "easy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

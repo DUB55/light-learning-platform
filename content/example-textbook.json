@@ -1,0 +1,211 @@
+{
+  "siteMetadata": {
+    "title": "Wiskunde – Hoofdstuk 3: Differentiëren",
+    "description": "Lesmateriaal voor Hoofdstuk 3 over differentiëren, met uitleg, opgaven en uitwerkingen."
+  },
+  "contentFormat": "textbook",
+  "defaultViewMode": "book",
+  "showTimestamps": false,
+  "showExportButtons": false,
+  "showAnkiExport": false,
+  "showFlashcardsExport": false,
+  "showTranscriptExport": false,
+  "showCopyTranscript": false,
+  "buttons": [
+    {
+      "url": "https://youtube.com/watch?v=YOUR_VIDEO_ID",
+      "text": "Bekijk op YouTube",
+      "icon": "youtube",
+      "iconType": "name",
+      "variant": "primary",
+      "enabled": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-1",
+      "title": "§3.1 De afgeleide functie",
+      "blocks": [
+        {
+          "id": "blk-1-1",
+          "type": "text",
+          "content": "## De afgeleide als richtingscoëfficiënt\n\nDe **afgeleide** van een functie $f$ in een punt $x = a$ geeft de richtingscoëfficiënt van de raaklijn aan de grafiek van $f$ in dat punt. We schrijven dit als $f'(a)$.\n\nFormeel definiëren we de afgeleide als het limietproces:\n\n$$f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}$$\n\nDeze breuk $\\dfrac{f(a+h)-f(a)}{h}$ heet de **differentiequotiënt**. Het stelt de richtingscoëfficiënt voor van de koorde door de punten $(a,\\, f(a))$ en $(a+h,\\, f(a+h))$. Naarmate $h$ kleiner wordt, nadert de koorde de raaklijn.\n\n### Notaties\n\nEr zijn meerdere gangbare notaties voor de afgeleide:\n\n| Notatie | Uitleg |\n|---|---|\n| $f'(x)$ | Lagrange-notatie (meest gebruikt) |\n| $\\dfrac{dy}{dx}$ | Leibniz-notatie |\n| $\\dot{y}$ | Newton-notatie (vooral in natuurkunde) |\n\n### Differentieerregels\n\nVoor de meest voorkomende functies gelden de volgende regels:\n\n- **Machtsfunctie:** $f(x) = x^n \\Rightarrow f'(x) = nx^{n-1}$\n- **Constante:** $f(x) = c \\Rightarrow f'(x) = 0$\n- **Somregel:** $(f+g)' = f' + g'$\n- **Productregel:** $(fg)' = f'g + fg'$\n- **Kettingregel:** $(f \\circ g)'(x) = f'(g(x)) \\cdot g'(x)$\n\n### Voorbeeld\n\nBepaal $f'(x)$ als $f(x) = 3x^4 - 2x^2 + 5$.\n\n$$f'(x) = 12x^3 - 4x$$\n\nWe passen de machtsfunctieregel term voor term toe en de afgeleide van de constante 5 is 0."
+        },
+        {
+          "id": "blk-1-2",
+          "type": "text",
+          "content": "## Toepassingen van de afgeleide\n\nDe afgeleide heeft talloze toepassingen in de wiskunde en andere vakken:\n\n**1. Extremen bepalen**\n\nEen functie heeft een lokaal maximum of minimum op plaatsen waar $f'(x) = 0$ (stationair punt). Om te bepalen of het een maximum of minimum is, kijk je naar het teken van $f'$ rondom dat punt, of je berekent $f''(x)$:\n- $f''(x) < 0$: lokaal maximum\n- $f''(x) > 0$: lokaal minimum\n\n**2. Stijgen en dalen**\n\n- $f'(x) > 0$ op een interval: $f$ is stijgend op dat interval\n- $f'(x) < 0$ op een interval: $f$ is dalend op dat interval\n\n**3. Buigpunten**\n\nEen buigpunt is een punt waar de grafiek van kromming verandert. Dit treedt op waar $f''(x) = 0$ en het teken van $f''$ verandert.\n\n**4. Snelheid en versnelling**\n\nIn de natuurkunde geldt: als $s(t)$ de positie is als functie van de tijd, dan is $s'(t) = v(t)$ de snelheid en $v'(t) = s''(t) = a(t)$ de versnelling."
+        },
+        {
+          "id": "blk-1-q",
+          "type": "questions",
+          "intro": "Beantwoord de volgende opgaven over §3.1.",
+          "questions": [
+            {
+              "id": "q-1a",
+              "number": "1a",
+              "text": "Bepaal $f'(x)$ als $f(x) = 5x^3 - 4x + 7$."
+            },
+            {
+              "id": "q-1b",
+              "number": "1b",
+              "text": "Bepaal $f'(x)$ als $f(x) = \\dfrac{1}{x^2}$. Schrijf $f(x)$ eerst als machtsfunctie."
+            },
+            {
+              "id": "q-2",
+              "number": "2",
+              "text": "Geef de vergelijking van de raaklijn aan de grafiek van $f(x) = x^2 + 3x$ in het punt $x = 1$."
+            },
+            {
+              "id": "q-3a",
+              "number": "3a",
+              "text": "Bepaal de stationaire punten van $f(x) = x^3 - 6x^2 + 9x + 2$."
+            },
+            {
+              "id": "q-3b",
+              "number": "3b",
+              "text": "Bepaal voor elk stationair punt uit 3a of het een maximum, minimum of buigpunt is."
+            },
+            {
+              "id": "q-4",
+              "number": "4",
+              "text": "Op welke intervallen is $f(x) = -x^3 + 3x$ stijgend? Op welke intervallen is $f$ dalend?"
+            },
+            {
+              "id": "q-5a",
+              "number": "5a",
+              "text": "Differentieer $f(x) = (2x + 1)^4$ met behulp van de kettingregel."
+            },
+            {
+              "id": "q-5b",
+              "number": "5b",
+              "text": "Differentieer $g(x) = x^2 \\cdot \\sin(x)$ met behulp van de productregel."
+            }
+          ]
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "q-1a",
+          "number": "1a",
+          "answer": "$$f'(x) = 15x^2 - 4$$\n\nPas de machtsfunctieregel toe op elk term:\n- $\\frac{d}{dx}(5x^3) = 15x^2$\n- $\\frac{d}{dx}(-4x) = -4$\n- $\\frac{d}{dx}(7) = 0$"
+        },
+        {
+          "questionId": "q-1b",
+          "number": "1b",
+          "answer": "Schrijf $f(x) = x^{-2}$, dan:\n\n$$f'(x) = -2x^{-3} = -\\frac{2}{x^3}$$"
+        },
+        {
+          "questionId": "q-2",
+          "number": "2",
+          "answer": "$f'(x) = 2x + 3$, dus $f'(1) = 5$. De raaklijn heeft richtingscoëfficiënt 5.\n\n$f(1) = 1 + 3 = 4$, dus het raakpunt is $(1, 4)$.\n\nVergelijking raaklijn: $y - 4 = 5(x - 1)$, dus:\n\n$$y = 5x - 1$$"
+        },
+        {
+          "questionId": "q-3a",
+          "number": "3a",
+          "answer": "$f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)$\n\nStationair als $f'(x) = 0$:\n\n$$x = 1 \\quad \\text{of} \\quad x = 3$$"
+        },
+        {
+          "questionId": "q-3b",
+          "number": "3b",
+          "answer": "$f''(x) = 6x - 12$\n\n- $f''(1) = 6 - 12 = -6 < 0$ → **lokaal maximum** in $x = 1$\n- $f''(3) = 18 - 12 = 6 > 0$ → **lokaal minimum** in $x = 3$\n\nFunctiewaarden: $f(1) = 1 - 6 + 9 + 2 = 6$ en $f(3) = 27 - 54 + 27 + 2 = 2$."
+        },
+        {
+          "questionId": "q-4",
+          "number": "4",
+          "answer": "$f'(x) = -3x^2 + 3 = -3(x^2 - 1) = -3(x-1)(x+1)$\n\nTekenanalyse van $f'(x)$:\n\n| Interval | $f'(x)$ | $f$ |\n|---|---|---|\n| $x < -1$ | $-$ | dalend |\n| $-1 < x < 1$ | $+$ | **stijgend** |\n| $x > 1$ | $-$ | dalend |\n\n**Stijgend** op $(-1,\\, 1)$; **dalend** op $(-\\infty,\\,-1)$ en $(1,\\,+\\infty)$."
+        },
+        {
+          "questionId": "q-5a",
+          "number": "5a",
+          "answer": "Stel $u = 2x + 1$, dan $f = u^4$.\n\nKettingregel: $f'(x) = 4u^3 \\cdot u' = 4(2x+1)^3 \\cdot 2$\n\n$$f'(x) = 8(2x+1)^3$$"
+        },
+        {
+          "questionId": "q-5b",
+          "number": "5b",
+          "answer": "Productregel: $(fg)' = f'g + fg'$ met $f = x^2$ en $g = \\sin(x)$.\n\n- $f' = 2x$\n- $g' = \\cos(x)$\n\n$$g'(x) = 2x\\sin(x) + x^2\\cos(x)$$"
+        }
+      ]
+    },
+    {
+      "id": "sec-2",
+      "title": "§3.2 De tweede afgeleide en kromming",
+      "blocks": [
+        {
+          "id": "blk-2-1",
+          "type": "text",
+          "content": "## De tweede afgeleide\n\nDe **tweede afgeleide** $f''(x)$ is de afgeleide van de afgeleide. We differentiëren $f'(x)$ nog een keer:\n\n$$f''(x) = \\frac{d}{dx}\\bigl[f'(x)\\bigr]$$\n\nDe tweede afgeleide geeft informatie over de **kromming** (concaviteit) van de grafiek:\n\n- $f''(x) > 0$: de grafiek is **hol** (concaaf omhoog, zoals een kommetje $\\cup$)\n- $f''(x) < 0$: de grafiek is **bol** (concaaf omlaag, zoals een heuvel $\\cap$)\n\n### Buigpunten\n\nEen **buigpunt** is een punt waar de kromming van teken verandert. Noodzakelijke voorwaarde: $f''(x) = 0$. Maar let op: $f''(a) = 0$ is niet voldoende — het teken van $f''$ moet ook echt veranderen.\n\n### Voorbeeld\n\nBepaal de buigpunten van $f(x) = x^4 - 4x^3$.\n\n$f'(x) = 4x^3 - 12x^2$\n\n$f''(x) = 12x^2 - 24x = 12x(x - 2)$\n\n$f''(x) = 0 \\Rightarrow x = 0$ of $x = 2$\n\nTekenanalyse van $f''$:\n- $x < 0$: $f'' > 0$ (hol)\n- $0 < x < 2$: $f'' < 0$ (bol)\n- $x > 2$: $f'' > 0$ (hol)\n\nHet teken verandert in $x = 0$ en $x = 2$, dus beide zijn buigpunten."
+        },
+        {
+          "id": "blk-2-q",
+          "type": "questions",
+          "intro": "Beantwoord de volgende opgaven over §3.2.",
+          "questions": [
+            {
+              "id": "q-6a",
+              "number": "6a",
+              "text": "Bepaal $f''(x)$ als $f(x) = 2x^5 - 3x^3 + x$."
+            },
+            {
+              "id": "q-6b",
+              "number": "6b",
+              "text": "Op welke intervallen is de grafiek van $f(x) = 2x^5 - 3x^3 + x$ hol en op welke bol?"
+            },
+            {
+              "id": "q-7",
+              "number": "7",
+              "text": "Bepaal de buigpunten van $g(x) = x^3 - 3x^2 + 4$."
+            },
+            {
+              "id": "q-8a",
+              "number": "8a",
+              "text": "Schets het teken van $f'$ en $f''$ voor $f(x) = x^4 - 8x^2$ in een tekentabel."
+            },
+            {
+              "id": "q-8b",
+              "number": "8b",
+              "text": "Bepaal alle lokale extremen en buigpunten van $f(x) = x^4 - 8x^2$."
+            },
+            {
+              "id": "q-8c",
+              "number": "8c",
+              "text": "Schets de grafiek van $f(x) = x^4 - 8x^2$ op basis van je antwoorden bij 8a en 8b."
+            }
+          ]
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "q-6a",
+          "number": "6a",
+          "answer": "$f'(x) = 10x^4 - 9x^2 + 1$\n\n$$f''(x) = 40x^3 - 18x$$"
+        },
+        {
+          "questionId": "q-6b",
+          "number": "6b",
+          "answer": "$f''(x) = 40x^3 - 18x = 2x(20x^2 - 9)$\n\nNulpunten: $x = 0$, $x = \\pm\\sqrt{\\frac{9}{20}} = \\pm\\frac{3}{2\\sqrt{5}} \\approx \\pm 0{,}67$\n\n- **Hol** ($f'' > 0$): $\\left(-\\frac{3}{2\\sqrt{5}},\\, 0\\right)$ en $\\left(\\frac{3}{2\\sqrt{5}},\\, +\\infty\\right)$\n- **Bol** ($f'' < 0$): $\\left(-\\infty,\\, -\\frac{3}{2\\sqrt{5}}\\right)$ en $\\left(0,\\, \\frac{3}{2\\sqrt{5}}\\right)$"
+        },
+        {
+          "questionId": "q-7",
+          "number": "7",
+          "answer": "$g'(x) = 3x^2 - 6x$\n\n$g''(x) = 6x - 6 = 6(x - 1)$\n\n$g''(x) = 0 \\Rightarrow x = 1$\n\nTeken van $g''$: negatief voor $x < 1$, positief voor $x > 1$ → teken verandert.\n\n$g(1) = 1 - 3 + 4 = 2$\n\n**Buigpunt:** $(1,\\, 2)$"
+        },
+        {
+          "questionId": "q-8a",
+          "number": "8a",
+          "answer": "$f'(x) = 4x^3 - 16x = 4x(x^2 - 4) = 4x(x-2)(x+2)$\n\n$f''(x) = 12x^2 - 16$\n\n| $x$ | $<-2$ | $-2$ | $(-2,0)$ | $0$ | $(0,2)$ | $2$ | $>2$ |\n|---|---|---|---|---|---|---|---|\n| $f'$ | $-$ | $0$ | $+$ | $0$ | $-$ | $0$ | $+$ |\n| $f''$ | $+$ | $+$ | $-$ | $-$ | $-$ | $+$ | $+$ |"
+        },
+        {
+          "questionId": "q-8b",
+          "number": "8b",
+          "answer": "**Lokale extremen** (waar $f' = 0$):\n- $x = -2$: $f'$ gaat van $-$ naar $+$ → **lokaal minimum**, $f(-2) = 16 - 32 = -16$\n- $x = 0$: $f'$ gaat van $+$ naar $-$ → **lokaal maximum**, $f(0) = 0$\n- $x = 2$: $f'$ gaat van $-$ naar $+$ → **lokaal minimum**, $f(2) = -16$\n\n**Buigpunten** (waar $f'' = 0$ en teken verandert):\n$f''(x) = 0 \\Rightarrow x^2 = \\frac{4}{3} \\Rightarrow x = \\pm\\frac{2}{\\sqrt{3}} \\approx \\pm 1{,}15$\n\nBuigpunten: $\\left(\\pm\\frac{2}{\\sqrt{3}},\\, f\\!\\left(\\pm\\frac{2}{\\sqrt{3}}\\right)\\right)$"
+        },
+        {
+          "questionId": "q-8c",
+          "number": "8c",
+          "answer": "De grafiek heeft:\n- Een **W-vorm** (twee dalen en één top in het midden)\n- Lokale minima bij $x = \\pm 2$ met $y = -16$\n- Lokaal maximum bij $x = 0$ met $y = 0$\n- Buigpunten bij $x \\approx \\pm 1{,}15$\n- De grafiek is symmetrisch om de $y$-as (even functie)\n\n*(Schets zelf de grafiek op basis van deze informatie.)*"
+        }
+      ]
+    }
+  ]
+}

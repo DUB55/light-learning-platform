@@ -1,0 +1,101 @@
+{
+  "siteMetadata": {
+    "title": "Advanced Mathematics - Complete Guide",
+    "description": "A comprehensive study guide covering calculus, linear algebra, and advanced mathematical concepts."
+  },
+  "showTimestamps": false,
+  "showExportButtons": false,
+  "showAnkiExport": false,
+  "showFlashcardsExport": false,
+  "showTranscriptExport": false,
+  "showCopyTranscript": false,
+  "buttons": [
+    {
+      "url": "https://youtube.com/watch?v=example",
+      "text": "Watch on YouTube",
+      "icon": "youtube",
+      "iconType": "name",
+      "variant": "primary",
+      "enabled": true
+    },
+    {
+      "url": "https://substack.com/p/example",
+      "text": "Read on Substack",
+      "icon": "substack",
+      "iconType": "name",
+      "variant": "secondary",
+      "enabled": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "chapter-1",
+      "timestamp": "00:00:00",
+      "title": "Chapter 1: Foundations of Calculus",
+      "questions": [
+        {
+          "id": "c1-q1",
+          "number": "01",
+          "text": "What is the **fundamental theorem of calculus** and how does it relate *differentiation* and *integration*?",
+          "answer": "The Fundamental Theorem of Calculus states that differentiation and integration are inverse operations. Specifically:\n\n1. **First Part**: If f is continuous on [a,b] and F is defined by F(x) = ∫af(t) dt, then F'(x) = f(x).\n\n2. **Second Part**: If f is continuous on [a,b] and F is any antiderivative of f, then:\n\n∫ab f(x) dx = F(b) - F(a)\n\nThis theorem connects the two main branches of calculus and provides a powerful computational tool."
+        },
+        {
+          "id": "c1-q2",
+          "number": "02",
+          "text": "Explain the concept of **limits** and their importance in calculus.",
+          "answer": "A **limit** describes the behavior of a function as its input approaches a certain value.\n\n### Definition:\nlimx→c f(x) = L means that as x gets arbitrarily close to c, f(x) gets arbitrarily close to L.\n\n### Importance:\n- Foundation for **continuity**\n- Essential for **derivatives** (instantaneous rate of change)\n- Required for **integrals** (area under curves)\n- Enables analysis of **asymptotic behavior**\n\n### Types:\n- **Finite limits**: limx→2 x² = 4\n- **Infinite limits**: limx→0 1/x² = ∞\n- **One-sided limits**: limx→0⁺ ln(x) = -∞"
+        },
+        {
+          "id": "c1-q3",
+          "number": "03",
+          "text": "How do you find the derivative of a composite function using the **chain rule**?",
+          "answer": "The **Chain Rule** is used to differentiate composite functions.\n\n### Formula:\nIf y = f(g(x)), then:\n\ndy/dx = f'(g(x)) · g'(x)\n\n### Steps:\n1. **Identify** the outer function f(u) and inner function g(x)\n2. **Differentiate** the outer function: f'(u)\n3. **Differentiate** the inner function: g'(x)\n4. **Multiply** the results\n5. **Substitute** back u = g(x)\n\n### Example:\nFind d/dx sin(3x²):\n\n1. Outer: f(u) = sin(u), Inner: g(x) = 3x²\n2. f'(u) = cos(u)\n3. g'(x) = 6x\n4. d/dx = cos(3x²) · 6x\n5. d/dx = 6x cos(3x²)"
+        }
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "timestamp": "00:25:00",
+      "title": "Chapter 2: Linear Algebra Fundamentals",
+      "questions": [
+        {
+          "id": "c2-q1",
+          "number": "01",
+          "text": "What is the geometric interpretation of **matrix multiplication**?",
+          "answer": "Matrix multiplication represents **linear transformations** in vector spaces.\n\n### Geometric Meaning:\nWhen you multiply a vector v by a matrix A, you're applying a linear transformation:\n\nAv = w\n\n### Common Transformations:\n- **Rotation**: [[cosθ, -sinθ], [sinθ, cosθ]]\n- **Scaling**: [[sx, 0], [0, sy]]\n- **Shear**: [[1, k], [0, 1]]\n\n### Composition:\nMultiplying matrices AB means applying transformation B first, then A."
+        },
+        {
+          "id": "c2-q2",
+          "number": "02",
+          "text": "How do you determine if a set of vectors is **linearly independent**?",
+          "answer": "A set of vectors is **linearly independent** if no vector can be written as a linear combination of the others.\n\n### Definition:\nVectors v₁, v₂, ..., vₙ are linearly independent if:\n\nc₁v₁ + c₂v₂ + ... + cₙvₙ = 0\n\nimplies c₁ = c₂ = ... = cₙ = 0\n\n### Methods:\n1. **Determinant test**: For square matrix, check if det(A) ≠ 0\n2. **Row reduction**: Reduce to row echelon form\n3. **Rank test**: Rank equals number of vectors"
+        },
+        {
+          "id": "c2-q3",
+          "number": "03",
+          "text": "Explain the concept of **eigenvalues** and **eigenvectors**.",
+          "answer": "**Eigenvalues** and **eigenvectors** are fundamental concepts in linear algebra.\n\n### Definition:\nFor a square matrix A, an eigenvector v and eigenvalue λ satisfy:\n\nAv = λv\n\n### Interpretation:\n- **Eigenvectors**: Vectors that don't change direction when transformed by A\n- **Eigenvalues**: Scale factors by which eigenvectors are stretched/compressed\n\n### Applications:\n- **Principal Component Analysis (PCA)**\n- **Quantum mechanics**\n- **Vibration analysis**\n- **Population dynamics**"
+        }
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "timestamp": "00:50:00",
+      "title": "Chapter 3: Differential Equations",
+      "questions": [
+        {
+          "id": "c3-q1",
+          "number": "01",
+          "text": "What is the difference between **ordinary** and **partial** differential equations?",
+          "answer": "The key difference is the number of independent variables.\n\n### Ordinary Differential Equations (ODEs):\n- Functions of **one** independent variable: y = f(x)\n- Derivatives with respect to **single** variable: dy/dx, d²y/dx²\n- Example: dy/dx + 2y = eˣ\n\n### Partial Differential Equations (PDEs):\n- Functions of **multiple** independent variables: u = f(x,y,t)\n- Partial derivatives: ∂u/∂x, ∂u/∂t\n- Example: ∂u/∂t = k∂²u/∂x² (heat equation)"
+        },
+        {
+          "id": "c3-q2",
+          "number": "02",
+          "text": "How do you solve **first-order linear differential equations**?",
+          "answer": "First-order linear ODEs have the form:\n\ndy/dx + P(x)y = Q(x)\n\n### Solution Method:\n1. **Find integrating factor**:\n   μ(x) = e∫P(x) dx\n\n2. **Multiply equation** by integrating factor:\n   μ(x)dy/dx + μ(x)P(x)y = μ(x)Q(x)\n\n3. **Left side becomes derivative**:\n   d/dx[μ(x)y] = μ(x)Q(x)\n\n4. **Integrate both sides**:\n   μ(x)y = ∫μ(x)Q(x) dx + C\n\n5. **Solve for y**:\n   y = (1/μ(x))(∫μ(x)Q(x) dx + C)"
+        }
+      ]
+    }
+  ]
+}
