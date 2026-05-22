@@ -12,6 +12,7 @@ const STUDYGO_LOGO_HEIGHT = 132;   // px – height of the StudyGo logo image
 // ============================================================
 
 const STORAGE_KEY = 'platformBanner_hidden';
+const ONBOARDING_KEY = 'platformBanner_onboarding_shown';
 
 type HiddenState = {
   quizlet: boolean;
@@ -42,12 +43,26 @@ export default function PlatformBanner() {
     quizlet: false,
     studygo: false,
   });
+  const [showOnboarding, setShowOnboarding] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setHidden(loadHidden());
     setMounted(true);
+    const onboardingShown = localStorage.getItem(ONBOARDING_KEY);
+    if (!onboardingShown) {
+      setShowOnboarding(true);
+    }
   }, []);
+
+  const dismissOnboarding = () => {
+    setShowOnboarding(false);
+    try {
+      localStorage.setItem(ONBOARDING_KEY, 'true');
+    } catch {
+      // ignore
+    }
+  };
 
   const hide = (platform: keyof HiddenState) => {
     const next = { ...hidden, [platform]: true };
@@ -59,6 +74,34 @@ export default function PlatformBanner() {
 
   return (
     <>
+      {showOnboarding && !hidden.studygo && !hidden.quizlet && (
+        <div className="fixed bottom-28 right-4 z-50 w-[320px] rounded-3xl border border-white/20 bg-white/95 p-4 shadow-2xl backdrop-blur-md text-foreground text-sm leading-6 transition-opacity duration-500">
+          <div className="flex items-start gap-3">
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-foreground mb-2">
+                Tip voor toetsweek
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Klik op de <span className="font-semibold text-foreground">Quizlet</span> of <span className="font-semibold text-foreground">StudyGo</span> knop om direct naar de klas/groep te gaan met alle lijsten van termen en definities voor de komende toetsweek.
+              </p>
+            </div>
+            <button
+              onClick={dismissOnboarding}
+              className="text-muted-foreground hover:text-foreground text-lg leading-none"
+              aria-label="Sluit tip"
+            >
+              ×
+            </button>
+          </div>
+          <div className="mt-4 flex justify-center">
+            <div className="relative flex items-center justify-center">
+              <div className="h-10 w-10 rounded-full bg-primary/10 shadow-sm animate-pulse" />
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 border-x-[10px] border-x-transparent border-t-[12px] border-t-primary" />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* StudyGo Button */}
       {!hidden.studygo && (
         <a
