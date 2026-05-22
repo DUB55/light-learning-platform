@@ -54,17 +54,17 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
     setError("");
 
     if (!name.trim()) {
-      setError("Name is required");
+      setError("Naam is verplicht");
       return;
     }
 
     if (!email.trim()) {
-      setError("Email is required");
+      setError("E-mail is verplicht");
       return;
     }
 
     if (!password.trim()) {
-      setError("Password is required");
+      setError("Wachtwoord is verplicht");
       return;
     }
 
@@ -104,9 +104,10 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
     >
       <div className="bg-card border border-border rounded-lg shadow-lg w-full max-w-md">
         <div className="flex items-center justify-between p-6 border-b border-border">
-          <h2 className="text-xl font-semibold text-foreground">Welcome</h2>
+          <h2 className="text-xl font-semibold text-foreground">Welkom</h2>
           <button
             onClick={onClose}
+            title="Sluiten"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <X className="w-5 h-5" />
@@ -116,7 +117,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-              Name
+              Naam
             </label>
             <input
               type="text"
@@ -124,14 +125,14 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-              placeholder="Enter your name"
+              placeholder="Voer uw naam in"
               required
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-              Email
+              E-mail
             </label>
             <input
               type="email"
@@ -139,14 +140,14 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-              placeholder="Enter your email"
+              placeholder="Voer uw e-mail in"
               required
             />
           </div>
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
-              Password
+              Wachtwoord
             </label>
             <input
               type="password"
@@ -154,7 +155,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-              placeholder="Create a password"
+              placeholder="Maak een wachtwoord aan"
               required
             />
           </div>
@@ -168,7 +169,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
               className="w-4 h-4 border border-border rounded focus:ring-2 focus:ring-primary"
             />
             <label htmlFor="remember" className="ml-2 text-sm text-muted-foreground">
-              Remember me
+              Onthoud mij
             </label>
           </div>
 
@@ -180,7 +181,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
             type="submit"
             className="w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
           >
-            Continue
+            Doorgaan
           </button>
 
           <div className="relative">
@@ -188,7 +189,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
               <div className="w-full border-t border-border"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-card text-muted-foreground">or</span>
+              <span className="px-2 bg-card text-muted-foreground">of</span>
             </div>
           </div>
 
@@ -197,7 +198,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
             onClick={handleSkip}
             className="w-full px-4 py-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
           >
-            Skip and continue as guest
+            Sla over en ga door als gast
           </button>
         </form>
       </div>

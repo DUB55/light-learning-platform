@@ -17,9 +17,18 @@ export default function Flashcard({ id, index, question, answer }: FlashcardProp
 
   return (
     <div id={id} className="border-b border-border">
-      <button
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-start gap-4 p-6 text-left"
+        onKeyDown={(event) => {
+          if (event.key === " " || event.key === "Enter") {
+            event.preventDefault();
+            setIsExpanded((value) => !value);
+          }
+        }}
+        aria-expanded={isExpanded}
+        className="w-full flex items-start gap-4 p-6 text-left cursor-pointer"
       >
         <div className="flex-1">
           <div className="font-serif text-lg leading-relaxed text-foreground">
@@ -36,7 +45,7 @@ export default function Flashcard({ id, index, question, answer }: FlashcardProp
         ) : (
           <ChevronRight className="h-5 w-5 text-muted-foreground mt-1 flex-shrink-0" />
         )}
-      </button>
+      </div>
       {isExpanded && (
         <div className="px-6 pb-6">
           <div className="font-serif text-base leading-relaxed text-muted-foreground">

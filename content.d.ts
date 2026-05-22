@@ -64,7 +64,9 @@ declare module "@/content.json" {
     showTranscriptExport?: boolean;
     showCopyTranscript?: boolean;
     // NEW: Default view mode
-    defaultViewMode?: "book" | "study" | "simple";
+    defaultViewMode?: "book" | "study" | "simple" | "advanced";
+    // NEW: Available view modes on this page only
+    availableModes?: ("book" | "study" | "simple" | "advanced")[];
     sections: EnhancedSection[];
   };
   export default content;

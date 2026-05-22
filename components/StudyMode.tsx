@@ -28,9 +28,12 @@ interface StudyModeProps {
   };
 }
 
-// Helper function to convert \n to actual newlines
+// Helper function to convert \n to actual newlines and preserve markdown breaks
 function processNewlines(text: string): string {
-  return text.replace(/\\n/g, '\n');
+  return text
+    .replace(/\\n/g, '\n')
+    .replace(/\r\n/g, '\n')
+    .replace(/\n/g, '  \n');
 }
 
 interface FlashcardProps {

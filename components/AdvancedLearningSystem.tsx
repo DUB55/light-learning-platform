@@ -47,7 +47,10 @@ interface AdvancedLearningSystemProps {
 }
 
 function processNewlines(text: string) {
-  return text.replace(/\\n/g, "\n");
+  return text
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .replace(/\n/g, "  \n");
 }
 
 function setFromSections(sections: SourceSection[]): LearningSet | undefined {
@@ -296,10 +299,22 @@ function StudySession({
 
       {currentCard && mode === "flashcard" && (
         <section className="space-y-4">
-          <button onClick={() => setIsFlipped((value) => !value)} className="min-h-[260px] w-full rounded-md border border-border bg-card p-6 text-left shadow-sm">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => setIsFlipped((value) => !value)}
+            onKeyDown={(event) => {
+              if (event.key === " " || event.key === "Enter") {
+                event.preventDefault();
+                setIsFlipped((value) => !value);
+              }
+            }}
+            aria-pressed={isFlipped}
+            className="min-h-[260px] w-full rounded-md border border-border bg-card p-6 text-left shadow-sm cursor-pointer"
+          >
             <p className="mb-4 text-xs font-medium uppercase text-muted-foreground">{isFlipped ? t("answer", "Answer") : t("question", "Question")}</p>
             <CardContent>{isFlipped ? currentCard.back : currentCard.front}</CardContent>
-          </button>
+          </div>
           {isFlipped ? (
             <div className="grid gap-2 sm:grid-cols-4">
               {(["again", "hard", "good", "easy"] as ResponseQuality[]).map((quality, idx) => (

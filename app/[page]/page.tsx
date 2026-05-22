@@ -55,6 +55,15 @@ interface ContentData {
   showFlashcardsExport?: boolean;
   showTranscriptExport?: boolean;
   showCopyTranscript?: boolean;
+  defaultViewMode?: ViewMode;
+  availableModes?: ViewMode[];
+}
+
+const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "advanced"];
+
+function normalizeAvailableModes(modes: any): ViewMode[] {
+  if (!Array.isArray(modes) || modes.length === 0) return SUPPORTED_MODES;
+  return modes.filter((mode): mode is ViewMode => SUPPORTED_MODES.includes(mode));
 }
 
 async function getPageData(pageName: string): Promise<ContentData | null> {
@@ -71,6 +80,7 @@ export default function Page({ params }: { params: { page: string } }) {
   const [activeSection, setActiveSection] = useState<string>("");
   const [data, setData] = useState<any>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("book");
+  const [availableModes, setAvailableModes] = useState<ViewMode[]>(SUPPORTED_MODES);
   const [isParagraphContent, setIsParagraphContent] = useState<boolean>(false);
   const [isTextbookContent, setIsTextbookContent] = useState<boolean>(false);
   const [visibleSections, setVisibleSections] = useState<number>(1); // Chunked rendering
@@ -99,6 +109,9 @@ export default function Page({ params }: { params: { page: string } }) {
 
   // Save view mode to localStorage
   const handleModeChange = (mode: ViewMode) => {
+    if (!availableModes.includes(mode)) {
+      return;
+    }
     setViewMode(mode);
     localStorage.setItem(`viewMode-${params.page}`, mode);
   };
@@ -106,6 +119,7 @@ export default function Page({ params }: { params: { page: string } }) {
   useEffect(() => {
     const loadData = async () => {
       const cacheKey = `content-${params.page}`;
+      const queryMode = searchParams.get("mode") as ViewMode | null;
       
       // Try to load from cache first for instant display
       try {
@@ -114,6 +128,9 @@ export default function Page({ params }: { params: { page: string } }) {
           const parsedCache = JSON.parse(cachedData);
           setData(parsedCache);
           
+          const pageAvailableModes = normalizeAvailableModes(parsedCache.availableModes);
+          setAvailableModes(pageAvailableModes);
+
           const hasParagraphs = parsedCache.sections?.some((s: any) => s.paragraphs && s.paragraphs.length > 0);
           setIsParagraphContent(hasParagraphs);
           
@@ -121,9 +138,13 @@ export default function Page({ params }: { params: { page: string } }) {
             parsedCache.sections?.some((s: any) => s.blocks && s.blocks.length > 0);
           setIsTextbookContent(hasTextbookBlocks);
           
-          if (parsedCache.defaultViewMode) {
-            setViewMode(parsedCache.defaultViewMode);
-          }
+          const chosenMode = queryMode && pageAvailableModes.includes(queryMode)
+            ? queryMode
+            : parsedCache.defaultViewMode && pageAvailableModes.includes(parsedCache.defaultViewMode)
+            ? parsedCache.defaultViewMode
+            : pageAvailableModes[0] || "book";
+
+          setViewMode(chosenMode);
           
           // Show first section immediately from cache
           setVisibleSections(1);
@@ -155,11 +176,17 @@ export default function Page({ params }: { params: { page: string } }) {
         const hasTextbookBlocks = loadedData.contentFormat === "textbook" ||
           loadedData.sections?.some((s: any) => s.blocks && s.blocks.length > 0);
         setIsTextbookContent(hasTextbookBlocks);
-        
-        // Set default view mode from content or fallback to book
-        if (loadedData.defaultViewMode) {
-          setViewMode(loadedData.defaultViewMode);
-        }
+
+        const pageAvailableModes = normalizeAvailableModes(loadedData.availableModes);
+        setAvailableModes(pageAvailableModes);
+
+        const chosenMode = queryMode && pageAvailableModes.includes(queryMode)
+          ? queryMode
+          : loadedData.defaultViewMode && pageAvailableModes.includes(loadedData.defaultViewMode)
+          ? loadedData.defaultViewMode
+          : pageAvailableModes[0] || "book";
+
+        setViewMode(chosenMode);
         
         // Start with more sections visible for faster initial render
         setVisibleSections(Math.min(3, loadedData.sections?.length || 1));
@@ -171,7 +198,7 @@ export default function Page({ params }: { params: { page: string } }) {
     };
     
     loadData();
-  }, [params.page]);
+  }, [params.page, searchParams]);
 
   // Progressive loading - load more sections as user scrolls
   useEffect(() => {
@@ -299,15 +326,15 @@ export default function Page({ params }: { params: { page: string } }) {
   
   return (
     <>
-      {/* Header section - full width, not overlaying */}
+      <div className="fixed top-3 right-3 z-50 flex items-center gap-2 rounded-full border border-border bg-background/95 px-2 py-2 shadow-lg backdrop-blur-sm">
+        <ThemeToggle />
+        {(isParagraphContent || isTextbookContent) && (
+          <ModeSwitcher currentMode={viewMode} availableModes={availableModes} onModeChange={handleModeChange} />
+        )}
+      </div>
+
       <div className="w-full p-5 py-10">
         <div className="xl:ml-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex flex-wrap items-center justify-end gap-3">
-            {(isParagraphContent || isTextbookContent) && (
-              <ModeSwitcher currentMode={viewMode} onModeChange={handleModeChange} />
-            )}
-            <ThemeToggle />
-          </div>
           <div className="mb-6">
             {showSkeleton ? (
               <div className="space-y-4 animate-pulse">

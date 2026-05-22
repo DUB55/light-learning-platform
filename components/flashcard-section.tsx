@@ -5,6 +5,13 @@ import type { FlashcardSection as FlashcardSectionType } from "@/lib/flashcard-d
 import { MarkdownRenderer } from "./MarkdownRenderer";
 import { useTranslation } from "@/lib/i18n";
 
+function processNewlines(text: string): string {
+  return text
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .replace(/\n/g, "  \n");
+}
+
 interface FlashcardSectionProps {
   section: FlashcardSectionType;
   showTimestamps: boolean;
@@ -100,14 +107,14 @@ export function FlashcardSection({ section, showTimestamps }: FlashcardSectionPr
                 {question.number}
               </span>
               <MarkdownRenderer className="text-[13px] sm:text-[14px] text-foreground leading-[1.55]">
-                {question.text}
+                {processNewlines(question.text)}
               </MarkdownRenderer>
             </button>
             {expandedQuestions.has(question.id) && (
               <div className="px-5 pb-4 pl-[72px]">
                 {question.answer ? (
                   <MarkdownRenderer className="text-[12px] sm:text-[13px] text-muted-foreground">
-                    {question.answer}
+                    {processNewlines(question.answer)}
                   </MarkdownRenderer>
                 ) : (
                   <div className="text-[12px] sm:text-[13px] text-muted-foreground italic">

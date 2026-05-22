@@ -9,10 +9,11 @@ type ViewMode = "book" | "study" | "simple" | "advanced";
 
 interface ModeSwitcherProps {
   currentMode: ViewMode;
+  availableModes?: ViewMode[];
   onModeChange: (mode: ViewMode) => void;
 }
 
-export function ModeSwitcher({ currentMode, onModeChange }: ModeSwitcherProps) {
+export function ModeSwitcher({ currentMode, availableModes, onModeChange }: ModeSwitcherProps) {
   const { t } = useTranslation();
   const { track } = useAnalytics();
   const [mounted, setMounted] = useState(false);
@@ -57,9 +58,13 @@ export function ModeSwitcher({ currentMode, onModeChange }: ModeSwitcherProps) {
     },
   ];
 
+  const visibleModes = availableModes && availableModes.length > 0
+    ? modes.filter((mode) => availableModes.includes(mode.id))
+    : modes;
+
   return (
     <div className="flex items-center gap-1 p-1 bg-secondary/50 rounded-lg border border-border">
-      {modes.map((mode) => (
+      {visibleModes.map((mode) => (
         <button
           key={mode.id}
           onClick={() => handleModeChange(mode.id)}

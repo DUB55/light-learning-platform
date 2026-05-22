@@ -58,7 +58,10 @@ interface TextbookSectionProps {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function processNewlines(text: string): string {
-  return text.replace(/\\n/g, "\n");
+  return text
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n")
+    .replace(/\n/g, "  \n");
 }
 
 /** Collect all questions from all question-blocks in a section */
