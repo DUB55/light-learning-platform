@@ -70,7 +70,7 @@ export default function PlatformBanner() {
             hide('studygo');
             window.open('https://studygo.com/nl/learn/groups/435618/join?key=0c3cdb9', '_blank');
           }}
-          className="fixed bottom-4 right-4 z-50 flex items-center justify-center w-32 h-10 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 right-4 z-50 flex items-center justify-center w-32 h-10 rounded-lg overflow-hidden transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
             backgroundColor: '#652FA5',
             border: '2px solid #652FA5',
