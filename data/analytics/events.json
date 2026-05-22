@@ -3,7 +3,7 @@
     "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
     "eventType": "session_start",
-    "timestamp": 1779395968117,
+    "timestamp": 1779396730480,
     "data": {
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
       "language": "en-US",
@@ -14,7 +14,7 @@
     "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
     "eventType": "page_view",
-    "timestamp": 1779395968117,
+    "timestamp": 1779396730480,
     "data": {
       "path": "/vergelijkingen-ongelijkheden-11b",
       "referrer": "http://localhost:3000/vergelijkingen-ongelijkheden-11b"
@@ -24,16 +24,27 @@
     "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
     "eventType": "session_end",
-    "timestamp": 1779395970727,
+    "timestamp": 1779396732413,
     "data": {
-      "duration": 2610
+      "duration": 1933
+    }
+  },
+  {
+    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
+    "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
+    "eventType": "session_start",
+    "timestamp": 1779396733263,
+    "data": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "screenResolution": "1280x800"
     }
   },
   {
     "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
     "eventType": "page_view",
-    "timestamp": 1779395971329,
+    "timestamp": 1779396733263,
     "data": {
       "path": "/vergelijkingen-ongelijkheden-11b",
       "referrer": "http://localhost:3000/vergelijkingen-ongelijkheden-11b"
@@ -42,11 +53,40 @@
   {
     "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
+    "eventType": "session_start",
+    "timestamp": 1779396733274,
+    "data": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "language": "en-US",
+      "screenResolution": "1280x800"
+    }
+  },
+  {
+    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
+    "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
+    "eventType": "session_end",
+    "timestamp": 1779396870343,
+    "data": {
+      "duration": 137069
+    }
+  },
+  {
+    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
+    "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
     "eventType": "page_view",
-    "timestamp": 1779395971337,
+    "timestamp": 1779396870966,
     "data": {
       "path": "/vergelijkingen-ongelijkheden-11b",
       "referrer": "http://localhost:3000/vergelijkingen-ongelijkheden-11b"
+    }
+  },
+  {
+    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
+    "sessionId": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
+    "eventType": "session_end",
+    "timestamp": 1779398095316,
+    "data": {
+      "duration": 1224350
     }
   }
 ]

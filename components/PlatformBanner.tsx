@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 // ============================================================
 const QUIZLET_LOGO_WIDTH = 120;   // px – width of the Quizlet logo image
 const QUIZLET_LOGO_HEIGHT = 48;   // px – height of the Quizlet logo image
-const STUDYGO_LOGO_WIDTH = 270;   // px – width of the StudyGo logo image
-const STUDYGO_LOGO_HEIGHT = 66;   // px – height of the StudyGo logo image
+const STUDYGO_LOGO_WIDTH = 540;   // px – width of the StudyGo logo image
+const STUDYGO_LOGO_HEIGHT = 132;   // px – height of the StudyGo logo image
 // ============================================================
 
 const STORAGE_KEY = 'platformBanner_hidden';
@@ -70,7 +70,7 @@ export default function PlatformBanner() {
             hide('studygo');
             window.open('https://studygo.com/nl/learn/groups/435618/join?key=0c3cdb9', '_blank');
           }}
-          className="fixed bottom-4 right-4 z-50 flex items-center justify-center w-64 h-20 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 right-4 z-50 flex items-center justify-center w-32 h-10 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
             backgroundColor: '#652FA5',
             border: '2px solid #652FA5',
@@ -99,7 +99,7 @@ export default function PlatformBanner() {
             hide('quizlet');
             window.open('https://quizlet.com/join/Ea8jPMrnR?i=75vmk8&x=1bqt', '_blank');
           }}
-          className="fixed bottom-4 right-72 z-50 flex items-center justify-center w-64 h-20 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 right-40 z-50 flex items-center justify-center w-32 h-10 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
             backgroundColor: '#5758FF',
             border: '2px solid #5758FF',

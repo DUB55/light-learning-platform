@@ -24,6 +24,9 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
 
   useEffect(() => {
     if (isOpen) {
+      // Disable scrolling when modal is open
+      document.body.style.overflow = "hidden";
+      
       // Load saved credentials if remember me was checked
       const savedCredentials = localStorage.getItem("user_credentials");
       if (savedCredentials) {
@@ -35,7 +38,15 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
           setRememberMe(true);
         }
       }
+    } else {
+      // Re-enable scrolling when modal is closed
+      document.body.style.overflow = "unset";
     }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -82,7 +93,15 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div 
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+      onClick={(e) => {
+        // Only close if clicking directly on the backdrop, not the modal
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
       <div className="bg-card border border-border rounded-lg shadow-lg w-full max-w-md">
         <div className="flex items-center justify-between p-6 border-b border-border">
           <h2 className="text-xl font-semibold text-foreground">Welcome</h2>

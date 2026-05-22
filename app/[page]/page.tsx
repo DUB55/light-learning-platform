@@ -11,7 +11,6 @@ import { TextbookSection } from "@/components/TextbookSection";
 import { ModeSwitcher } from "@/components/ModeSwitcher";
 import { BookmarksSidebar } from "@/components/BookmarksSidebar";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ContentSkeleton, SidebarSkeleton } from "@/components/ContentSkeleton";
 import { useTranslation } from "@/lib/i18n";
@@ -304,11 +303,10 @@ export default function Page({ params }: { params: { page: string } }) {
       <div className="w-full p-5 py-10">
         <div className="xl:ml-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 flex flex-wrap items-center justify-end gap-3">
-            <LanguageSwitcher />
-            <ThemeToggle />
             {(isParagraphContent || isTextbookContent) && (
               <ModeSwitcher currentMode={viewMode} onModeChange={handleModeChange} />
             )}
+            <ThemeToggle />
           </div>
           <div className="mb-6">
             {showSkeleton ? (
