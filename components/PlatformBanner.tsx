@@ -99,7 +99,7 @@ export default function PlatformBanner() {
             hide('quizlet');
             window.open('https://quizlet.com/join/Ea8jPMrnR?i=75vmk8&x=1bqt', '_blank');
           }}
-          className="fixed bottom-4 right-40 z-50 flex items-center justify-center w-32 h-10 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-md"
+          className="fixed bottom-4 right-40 z-50 flex items-center justify-center w-32 h-10 rounded-lg overflow-hidden transition-all duration-200 hover:scale-105 hover:shadow-md"
           style={{
             backgroundColor: '#5758FF',
             border: '2px solid #5758FF',
