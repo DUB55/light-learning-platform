@@ -353,6 +353,8 @@ export default function Page({ params }: { params: { page: string } }) {
               )}
             </div>
           </div>
+        </div>
+      </div>
       
       {/* Vertical separator line */}
       <div className="w-full border-t border-border"></div>

@@ -14,6 +14,14 @@ class I18n {
 
   private async loadTranslations(): Promise<void> {
     try {
+      // Only load translations on client side
+      if (typeof window === 'undefined') {
+        // Server-side: use empty translations
+        this.translations.en = {};
+        this.translations.nl = {};
+        return;
+      }
+
       // Load English translations
       const enResponse = await fetch('/locales/en.csv');
       if (!enResponse.ok) {
