@@ -196,7 +196,7 @@ export function AuthModal({ isOpen, onClose, onComplete }: AuthModalProps) {
           <button
             type="button"
             onClick={handleSkip}
-            className="w-full px-4 py-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
+            className="w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
           >
             Sla over en ga door als gast
           </button>
