@@ -3,13 +3,14 @@
     "title": "Wiskunde - Leerjaar 5 VWO",
     "description": "Complete lesmateriaal voor Hoofdstuk 11: Vergelijkingen en ongelijkheden en Hoofdstuk 12: Zicht op toeval. Study met drie modi: Boek (lees met Q&A), Studie (flashcards), of Simpel (doorlopende tekst)."
   },
+  "defaultViewMode": "book",
+  "availableModes": ["book", "study", "simple", "advanced"],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
   "showFlashcardsExport": false,
   "showTranscriptExport": false,
   "showCopyTranscript": false,
-  "defaultViewMode": "book",
   "buttons": [
     {
       "url": "https://studygo.com/nl/learn/chapters/16171/vergelijkheden-en-ongelijkheden",

@@ -3,13 +3,14 @@
     "title": "Physics Unit 2: Thermodynamics",
     "description": "Introduction to thermodynamics, covering heat, temperature, energy transfer, and the laws of thermodynamics."
   },
+  "defaultViewMode": "book",
+  "availableModes": ["book", "study", "simple", "advanced"],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
   "showFlashcardsExport": false,
   "showTranscriptExport": false,
   "showCopyTranscript": false,
-  "defaultViewMode": "book",
   "buttons": [
     {
       "url": "https://youtube.com/watch?v=YOUR_VIDEO_ID",

@@ -3,6 +3,8 @@
     "title": "Advanced Mathematics - Complete Guide",
     "description": "A comprehensive study guide covering calculus, linear algebra, and advanced mathematical concepts."
   },
+  "defaultViewMode": "book",
+  "availableModes": ["book", "study", "simple", "advanced"],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,

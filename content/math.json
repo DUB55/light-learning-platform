@@ -3,6 +3,8 @@
     "title": "Mathematics - Complete Study Guide",
     "description": "Comprehensive mathematics study material covering all units and topics for your test preparation."
   },
+  "defaultViewMode": "book",
+  "availableModes": ["book", "study", "simple", "advanced"],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,

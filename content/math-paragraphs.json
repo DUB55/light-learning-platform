@@ -3,13 +3,14 @@
     "title": "Mathematics - Complete Study Guide",
     "description": "Comprehensive mathematics study material covering all units and topics for your test preparation. Study with three modes: Book (read with inline Q&A), Study (flashcards), or Simple (continuous text view)."
   },
+  "defaultViewMode": "book",
+  "availableModes": ["book", "study", "simple", "advanced"],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
   "showFlashcardsExport": false,
   "showTranscriptExport": false,
   "showCopyTranscript": false,
-  "defaultViewMode": "book",
   "buttons": [
     {
       "url": "https://youtube.com/watch?v=YOUR_MATH_VIDEO_ID",
