@@ -40,14 +40,54 @@
           "intro": "Voorkennis opgaven",
           "questions": [
             {
-              "id": "q-v1",
+              "id": "q-v1-intro",
               "number": "V1",
-              "text": "Bereken zonder rekenmachine: a) $\\sqrt[3]{8}$, b) $\\sqrt[3]{-1}$, c) $\\sqrt[3]{-27}$, d) $\\sqrt[3]{1000}$"
+              "text": "Bereken zonder rekenmachine:"
             },
             {
-              "id": "q-v2",
+              "id": "q-v1a",
+              "number": "V1a",
+              "text": "$\\sqrt[3]{8}$"
+            },
+            {
+              "id": "q-v1b",
+              "number": "V1b",
+              "text": "$\\sqrt[3]{-1}$"
+            },
+            {
+              "id": "q-v1c",
+              "number": "V1c",
+              "text": "$\\sqrt[3]{-27}$"
+            },
+            {
+              "id": "q-v1d",
+              "number": "V1d",
+              "text": "$\\sqrt[3]{1000}$"
+            },
+            {
+              "id": "q-v2-intro",
               "number": "V2",
-              "text": "Geef een benadering in twee decimalen: a) $\\sqrt[3]{18}$, b) $\\sqrt[3]{-100}$, c) $\\sqrt[3]{-8,5}$, d) $\\sqrt[3]{0,8}$"
+              "text": "Geef een benadering in twee decimalen:"
+            },
+            {
+              "id": "q-v2a",
+              "number": "V2a",
+              "text": "$\\sqrt[3]{18}$"
+            },
+            {
+              "id": "q-v2b",
+              "number": "V2b",
+              "text": "$\\sqrt[3]{-100}$"
+            },
+            {
+              "id": "q-v2c",
+              "number": "V2c",
+              "text": "$\\sqrt[3]{-8,5}$"
+            },
+            {
+              "id": "q-v2d",
+              "number": "V2d",
+              "text": "$\\sqrt[3]{0,8}$"
             },
             {
               "id": "q-v3",
@@ -55,14 +95,49 @@
               "text": "Op de getallenlijnen zijn intervallen aangegeven. Koppel ze aan elkaar en vul de intervalnotatie verder in."
             },
             {
-              "id": "q-v4",
+              "id": "q-v4-intro",
               "number": "V4",
-              "text": "Los de ongelijkheden op: a) $5x - 6 > 3x + 9$, b) $-7x + 8 < -7 - 2x$, c) $4x > x - 30$, d) $4 - x < 18 + 2x$"
+              "text": "Los de ongelijkheden op:"
             },
             {
-              "id": "q-v5",
+              "id": "q-v4a",
+              "number": "V4a",
+              "text": "$5x - 6 > 3x + 9$"
+            },
+            {
+              "id": "q-v4b",
+              "number": "V4b",
+              "text": "$-7x + 8 < -7 - 2x$"
+            },
+            {
+              "id": "q-v4c",
+              "number": "V4c",
+              "text": "$4x > x - 30$"
+            },
+            {
+              "id": "q-v4d",
+              "number": "V4d",
+              "text": "$4 - x < 18 + 2x$"
+            },
+            {
+              "id": "q-v5-intro",
               "number": "V5",
-              "text": "Gegeven is de functie $f(x) = 2x^2 + x - \\frac{1}{2}$. a) Leg uit dat de parabool bij de functie $f$ de $y$-as snijdt in het punt $(0, -\\frac{1}{2})$. b) Los de vergelijking $2x^2 + x - \\frac{1}{2} = -\\frac{1}{2}$ op. c) Bereken met de *abc*-formule de coördinaten van de snijpunten van de parabool met de $x$-as."
+              "text": "Gegeven is de functie $f(x) = 2x^2 + x - \\frac{1}{2}$."
+            },
+            {
+              "id": "q-v5a",
+              "number": "V5a",
+              "text": "Leg uit dat de parabool bij de functie $f$ de $y$-as snijdt in het punt $(0, -\\frac{1}{2})$."
+            },
+            {
+              "id": "q-v5b",
+              "number": "V5b",
+              "text": "Los de vergelijking $2x^2 + x - \\frac{1}{2} = -\\frac{1}{2}$ op."
+            },
+            {
+              "id": "q-v5c",
+              "number": "V5c",
+              "text": "Bereken met de *abc*-formule de coördinaten van de snijpunten van de parabool met de $x$-as."
             },
             {
               "id": "q-v6",
@@ -70,42 +145,171 @@
               "text": "Geef voor elk aan welke oplosmethode is gebruikt: Nienke (ontbinden in factoren), Rien (bordje leggen), Daan (kwadraat afsplitsen)"
             },
             {
-              "id": "q-v7",
+              "id": "q-v7-intro",
               "number": "V7",
-              "text": "Los de vergelijkingen op: a) $x^2 - 11x + 24 = 0$, b) $(x - 3)^2 - 2 = 14$, c) $x^2 + 7x = 8$, d) $-x^2 + 6x + 3 = 11$, e) $x^2 + x = 12 + 2x$, f) $3x^2 - 8x - 3 = 0$"
+              "text": "Los de vergelijkingen op:"
             },
             {
-              "id": "q-v8",
+              "id": "q-v7a",
+              "number": "V7a",
+              "text": "$x^2 - 11x + 24 = 0$"
+            },
+            {
+              "id": "q-v7b",
+              "number": "V7b",
+              "text": "$(x - 3)^2 - 2 = 14$"
+            },
+            {
+              "id": "q-v7c",
+              "number": "V7c",
+              "text": "$x^2 + 7x = 8$"
+            },
+            {
+              "id": "q-v7d",
+              "number": "V7d",
+              "text": "$-x^2 + 6x + 3 = 11$"
+            },
+            {
+              "id": "q-v7e",
+              "number": "V7e",
+              "text": "$x^2 + x = 12 + 2x$"
+            },
+            {
+              "id": "q-v7f",
+              "number": "V7f",
+              "text": "$3x^2 - 8x - 3 = 0$"
+            },
+            {
+              "id": "q-v8-intro",
               "number": "V8",
-              "text": "In de figuur zijn de grafieken van de functies $f(x) = -x^2$, $g(x) = x^3$ en $h(x) = x^4$ geschetst. a) Zoek bij iedere functie de juiste grafiek. b) Geef bij elke grafiek aan hoeveel snijpunten deze heeft met de lijn $y = -10$. c) Welke grafiek heeft geen snijpunt met de lijn $y = 10$?"
+              "text": "In de figuur zijn de grafieken van de functies $f(x) = -x^2$, $g(x) = x^3$ en $h(x) = x^4$ geschetst."
+            },
+            {
+              "id": "q-v8a",
+              "number": "V8a",
+              "text": "Zoek bij iedere functie de juiste grafiek."
+            },
+            {
+              "id": "q-v8b",
+              "number": "V8b",
+              "text": "Geef bij elke grafiek aan hoeveel snijpunten deze heeft met de lijn $y = -10$."
+            },
+            {
+              "id": "q-v8c",
+              "number": "V8c",
+              "text": "Welke grafiek heeft geen snijpunt met de lijn $y = 10$?"
             }
           ]
         }
       ],
       "answers": [
         {
-          "questionId": "q-v1",
-          "answer": "a) 2, b) -1, c) -3, d) 10"
+          "questionId": "q-v1-intro",
+          "answer": ""
         },
         {
-          "questionId": "q-v2",
-          "answer": "a) 2,62, b) -4,64, c) -2,04, d) 0,93"
+          "questionId": "q-v1a",
+          "answer": "$2$"
         },
         {
-          "questionId": "q-v4",
-          "answer": "a) $x > 7,5$, b) $x > 3$, c) $x > -10$, d) $x > -14/3$"
+          "questionId": "q-v1b",
+          "answer": "$-1$"
         },
         {
-          "questionId": "q-v5",
-          "answer": "a) $f(0) = -1/2$, b) $x = 0$ of $x = -1$, c) $(-1, 0)$ en $(0, 0)$"
+          "questionId": "q-v1c",
+          "answer": "$-3$"
+        },
+        {
+          "questionId": "q-v1d",
+          "answer": "$10$"
+        },
+        {
+          "questionId": "q-v2a",
+          "answer": "$2,62$"
+        },
+        {
+          "questionId": "q-v2b",
+          "answer": "$-4,64$"
+        },
+        {
+          "questionId": "q-v2c",
+          "answer": "$-2,04$"
+        },
+        {
+          "questionId": "q-v2d",
+          "answer": "$0,93$"
+        },
+        {
+          "questionId": "q-v3",
+          "answer": "Interval notaties correct gekoppeld"
+        },
+        {
+          "questionId": "q-v4a",
+          "answer": "$x > 7,5$"
+        },
+        {
+          "questionId": "q-v4b",
+          "answer": "$x > 3$"
+        },
+        {
+          "questionId": "q-v4c",
+          "answer": "$x > -10$"
+        },
+        {
+          "questionId": "q-v4d",
+          "answer": "$x > -\\frac{14}{3}$"
+        },
+        {
+          "questionId": "q-v5a",
+          "answer": "$f(0) = 2(0)^2 + 0 - \\frac{1}{2} = -\\frac{1}{2}$"
+        },
+        {
+          "questionId": "q-v5b",
+          "answer": "$x = 0$ of $x = -1$"
+        },
+        {
+          "questionId": "q-v5c",
+          "answer": "$(-1, 0)$ en $(0.5, 0)$"
         },
         {
           "questionId": "q-v6",
           "answer": "Nienke: ontbinden in factoren, Rien: bordje leggen, Daan: kwadraat afsplitsen"
         },
         {
-          "questionId": "q-v7",
-          "answer": "a) $x = 3$ of $x = 8$, b) $x = 3 \\pm \\sqrt{16}$, c) $x = 1$ of $x = -8$, d) $x = 3 \\pm \\sqrt{12}$, e) $x = 3$ of $x = -4$, f) $x = 3$ of $x = -1/3$"
+          "questionId": "q-v7a",
+          "answer": "$x = 3$ of $x = 8$"
+        },
+        {
+          "questionId": "q-v7b",
+          "answer": "$x = 3 + 4 = 7$ of $x = 3 - 4 = -1$"
+        },
+        {
+          "questionId": "q-v7c",
+          "answer": "$x = 1$ of $x = -8$"
+        },
+        {
+          "questionId": "q-v7d",
+          "answer": "$x = 3 + \\sqrt{12}$ of $x = 3 - \\sqrt{12}$"
+        },
+        {
+          "questionId": "q-v7e",
+          "answer": "$x = 3$ of $x = -4$"
+        },
+        {
+          "questionId": "q-v7f",
+          "answer": "$x = 3$ of $x = -\\frac{1}{3}$"
+        },
+        {
+          "questionId": "q-v8a",
+          "answer": "$f(x) = -x^2$ is de bergparabool, $g(x) = x^3$ is S-vormig, $h(x) = x^4$ is bergparabool"
+        },
+        {
+          "questionId": "q-v8b",
+          "answer": "$f(x)$: 2 snijpunten, $g(x)$: 1 snijpunt, $h(x)$: 2 snijpunten"
+        },
+        {
+          "questionId": "q-v8c",
+          "answer": "$f(x) = -x^2$ heeft geen snijpunt met $y = 10$"
         }
       ]
     },
