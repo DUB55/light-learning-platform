@@ -34,27 +34,27 @@ export function ModeSwitcher({ currentMode, availableModes, onModeChange }: Mode
   const modes: { id: ViewMode; label: string; icon: React.ReactNode; description: string }[] = [
     {
       id: "book",
-      label: t('book_mode'),
+      label: t('book_mode', 'Boek Modus'),
       icon: <BookOpen className="w-4 h-4" />,
-      description: t('book_mode_description'),
+      description: t('book_mode_description', 'Lezen met vragen en antwoorden'),
     },
     {
       id: "study",
-      label: t('study_mode'),
+      label: t('study_mode', 'Studie Modus'),
       icon: <GraduationCap className="w-4 h-4" />,
-      description: t('study_mode_description'),
+      description: t('study_mode_description', 'Leren, oefentoets en spelletjes'),
     },
     {
       id: "simple",
-      label: t('simple_mode'),
+      label: t('simple_mode', 'Eenvoudige Modus'),
       icon: <FileText className="w-4 h-4" />,
-      description: t('simple_mode_description'),
+      description: t('simple_mode_description', 'Volledige tekstweergave'),
     },
     {
       id: "advanced",
-      label: t('advanced_mode'),
+      label: t('advanced_mode', 'Geavanceerd'),
       icon: <Brain className="w-4 h-4" />,
-      description: t('advanced_mode_description'),
+      description: t('advanced_mode_description', 'Studiemodi en SRS-voortgang'),
     },
   ];
 

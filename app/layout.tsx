@@ -13,8 +13,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Study Guide Platform",
-  description: "Interactive study guides for various subjects and topics.",
+  title: "Studieplatform",
+  description: "Interactieve studiegidsen voor verschillende vakken en onderwerpen.",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PlatformBanner />
-          <div className="pt-16">
+          <div>
             {children}
           </div>
         </ThemeProvider>

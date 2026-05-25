@@ -41,7 +41,7 @@ export function HomePageClient({ contentFiles }: { contentFiles: ContentFile[] }
       <div className="max-w-4xl mx-auto px-5 py-10 md:py-14">
         <header className="mb-12">
           <h1 className="text-4xl font-serif text-foreground font-medium text-center mb-4">
-            {t("home_title", "Study Guide Platform")}
+            {t("home_title", "Studieplatform")}
           </h1>
           <p className="text-muted-foreground text-center text-lg max-w-2xl mx-auto">
             {t("home_subtitle", "Choose a study guide below to get started:")}

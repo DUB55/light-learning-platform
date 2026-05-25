@@ -37,3 +37,5 @@ export function ThemeToggle() {
           <Sun className="w-4 h-4" />
         )}
     </button>
+  );
+}

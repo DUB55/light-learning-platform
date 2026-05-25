@@ -172,7 +172,7 @@ export function Header({ siteMetadata, sections, buttons, showExportButtons = fa
   };
 
   return (
-    <header className="mb-10">
+    <header className="mb-3 w-full">
       {showLanguageSwitcher && (
         <div className="mb-5 flex items-center justify-end gap-3">
           <LanguageSwitcher />
@@ -180,51 +180,49 @@ export function Header({ siteMetadata, sections, buttons, showExportButtons = fa
         </div>
       )}
 
-      <div>
-        <div className="w-full">
-          <div className="mb-6 flex items-start gap-4">
-            <button
-              onClick={() => window.location.href = '/'}
-              className="mt-2 p-2 text-sm text-muted-foreground hover:text-foreground transition-colors border border-border rounded-md hover:bg-secondary/50 flex-shrink-0"
-              title={t('back_to_main')}
-              aria-label={t('back_to_main')}
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </button>
-            <div className="min-w-0 flex-1">
-              <h1 className="text-[36px] md:text-[48px] font-serif text-foreground leading-tight font-medium break-words">
-                {siteMetadata.title}
-              </h1>
-              <p className="max-w-3xl text-[15px] text-muted-foreground mb-6 leading-relaxed">
-                {siteMetadata.description}
-              </p>
-            </div>
+      <div className="w-full">
+        <div className="mb-6 flex items-start gap-4">
+          <button
+            onClick={() => window.location.href = '/'}
+            className="mt-2 p-2 text-sm text-muted-foreground hover:text-foreground transition-colors border border-border rounded-md hover:bg-secondary/50 flex-shrink-0"
+            title={t('back_to_main')}
+            aria-label={t('back_to_main')}
+          >
+            <ArrowLeft className="w-4 h-4" />
+          </button>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-[36px] md:text-[48px] font-serif text-foreground leading-tight font-medium break-words">
+              {siteMetadata.title}
+            </h1>
+            <p className="w-full text-[15px] text-muted-foreground mb-2 leading-relaxed">
+              {siteMetadata.description}
+            </p>
           </div>
-          <div className="flex flex-nowrap gap-2.5 mb-7 overflow-x-auto pb-1">
-            {buttons && buttons.filter(button => button.enabled !== false).map((button, index) => {
-              const isPrimary = button.variant === "primary";
-              return (
-                <a
-                  key={index}
-                  href={button.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-3.5 py-2 text-[13px] rounded-[3px] transition-colors font-medium ${
-                    isPrimary
-                      ? "bg-black dark:bg-[hsl(222.2,84%,95.1%)] text-white dark:text-[hsl(222.2,84%,4.9%)] hover:bg-gray-800 dark:hover:bg-[hsl(222.2,84%,90%)]"
-                      : "border border-gray-300 dark:border-gray-600 bg-background dark:bg-transparent text-gray-900 dark:text-gray-100 hover:bg-[hsl(222.2,84%,90%)] dark:hover:bg-gray-800"
-                  }`}
-                >
-                  <DynamicIcon 
-                    icon={button.icon} 
-                    iconType={button.iconType} 
-                    className="w-4 h-4" 
-                  />
-                  {button.text}
-                </a>
-              );
-            })}
-          </div>
+        </div>
+        <div className="flex flex-nowrap gap-2.5 mb-7 overflow-x-auto pb-1">
+          {buttons && buttons.filter(button => button.enabled !== false).map((button, index) => {
+            const isPrimary = button.variant === "primary";
+            return (
+              <a
+                key={index}
+                href={button.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-3.5 py-2 text-[13px] rounded-[3px] transition-colors font-medium ${
+                  isPrimary
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "border border-border bg-background text-foreground hover:bg-secondary"
+                }`}
+              >
+                <DynamicIcon 
+                  icon={button.icon} 
+                  iconType={button.iconType} 
+                  className="w-4 h-4" 
+                />
+                {button.text}
+              </a>
+            );
+          })}
         </div>
       </div>
 

@@ -75,7 +75,7 @@ export default function PlatformBanner() {
   return (
     <>
       {showOnboarding && !hidden.studygo && !hidden.quizlet && (
-        <div className="fixed bottom-28 right-4 z-50 w-[320px] rounded-3xl border border-white/20 bg-white/95 p-4 shadow-2xl backdrop-blur-md text-foreground text-sm leading-6 transition-opacity duration-500">
+        <div className="fixed bottom-28 right-4 z-50 w-[320px] rounded-2xl border border-border bg-secondary text-foreground shadow-2xl p-4 text-sm leading-6 transition-opacity duration-500">
           <div className="flex items-start gap-3">
             <div className="flex-1">
               <p className="text-sm font-semibold text-foreground mb-2">
@@ -87,7 +87,7 @@ export default function PlatformBanner() {
             </div>
             <button
               onClick={dismissOnboarding}
-              className="text-muted-foreground hover:text-foreground text-lg leading-none"
+              className="text-muted-foreground hover:text-foreground text-lg leading-none flex-shrink-0"
               aria-label="Sluit tip"
             >
               ×

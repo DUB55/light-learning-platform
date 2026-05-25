@@ -1,16 +1,88 @@
 {
-  "78e5fc62-ca7b-42f9-b2bb-267da09048d1": {
-    "id": "78e5fc62-ca7b-42f9-b2bb-267da09048d1",
-    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
-    "startTime": 1779398095316,
-    "endTime": 1779398095316,
-    "duration": 1224350,
+  "8cbe5409-03cd-485b-966c-c676f980016f": {
+    "id": "8cbe5409-03cd-485b-966c-c676f980016f",
+    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
+    "startTime": 1779712014949,
+    "endTime": 1779712991768,
+    "duration": 963918,
     "events": [
       {
-        "eventType": "session_end",
-        "timestamp": 1779398095316,
+        "eventType": "mode_switch",
+        "timestamp": 1779712014949,
         "data": {
-          "duration": 1224350
+          "from": "advanced",
+          "to": "simple"
+        }
+      },
+      {
+        "eventType": "mode_switch",
+        "timestamp": 1779712015389,
+        "data": {
+          "from": "simple",
+          "to": "study"
+        }
+      },
+      {
+        "eventType": "mode_switch",
+        "timestamp": 1779712018267,
+        "data": {
+          "from": "study",
+          "to": "book"
+        }
+      },
+      {
+        "eventType": "mode_switch",
+        "timestamp": 1779712019954,
+        "data": {
+          "from": "book",
+          "to": "study"
+        }
+      },
+      {
+        "eventType": "session_end",
+        "timestamp": 1779712021656,
+        "data": {
+          "duration": 35884
+        }
+      },
+      {
+        "eventType": "session_start",
+        "timestamp": 1779712027848,
+        "data": {
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/3.5.33 Chrome/142.0.7444.265 Electron/39.8.1 Safari/537.36",
+          "language": "en-US",
+          "screenResolution": "1280x800"
+        }
+      },
+      {
+        "eventType": "page_view",
+        "timestamp": 1779712027851,
+        "data": {
+          "path": "/vergelijkingen-ongelijkheden-11b",
+          "referrer": "http://localhost:3000/hoofdstuk-5-gewapende-conflicten"
+        }
+      },
+      {
+        "eventType": "mode_switch",
+        "timestamp": 1779712028770,
+        "data": {
+          "from": "book",
+          "to": "simple"
+        }
+      },
+      {
+        "eventType": "mode_switch",
+        "timestamp": 1779712030286,
+        "data": {
+          "from": "simple",
+          "to": "study"
+        }
+      },
+      {
+        "eventType": "session_end",
+        "timestamp": 1779712991768,
+        "data": {
+          "duration": 963918
         }
       }
     ]

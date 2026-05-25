@@ -57,7 +57,8 @@ interface TextbookSectionProps {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function processNewlines(text: string): string {
+function processNewlines(text: string | undefined | null): string {
+  if (!text) return "";
   return text
     .replace(/\\n/g, "\n")
     .replace(/\r\n/g, "\n")
@@ -77,14 +78,15 @@ function buildAnswerMap(answers: TextbookAnswer[]): Map<string, TextbookAnswer> 
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-/** A single collapsible answer row used in the answers panel */
-const AnswerRow = memo(function AnswerRow({
-  answer,
+/** A single collapsible question+answer row */
+const QuestionRow = memo(function QuestionRow({
   question,
+  answer,
 }: {
-  answer: TextbookAnswer;
-  question?: TextbookQuestion;
+  question: TextbookQuestion;
+  answer?: TextbookAnswer;
 }) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   return (
@@ -93,12 +95,12 @@ const AnswerRow = memo(function AnswerRow({
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-start gap-3 px-4 py-3 text-left hover:bg-secondary/50 transition-colors"
       >
-        <span className="font-mono text-sm text-muted-foreground min-w-[2.5rem] pt-0.5">
-          {answer.number}
+        <span className="font-mono text-sm font-medium text-muted-foreground min-w-[2.5rem] pt-0.5 flex-shrink-0">
+          {question.number}
         </span>
-        <span className="flex-1 text-sm text-foreground">
-          {question ? processNewlines(question.text) : `Opgave ${answer.number}`}
-        </span>
+        <MarkdownRenderer className="text-sm text-foreground leading-relaxed flex-1">
+          {processNewlines(question.text)}
+        </MarkdownRenderer>
         <ChevronDown
           className={`w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5 transition-transform duration-200 ${
             open ? "rotate-180" : ""
@@ -106,48 +108,63 @@ const AnswerRow = memo(function AnswerRow({
         />
       </button>
       {open && (
-        <div className="px-4 py-3 border-t border-border bg-background">
-          <MarkdownRenderer className="text-sm text-muted-foreground leading-relaxed">
-            {processNewlines(answer.answer)}
-          </MarkdownRenderer>
+        <div className="px-4 py-3 border-t border-border bg-secondary/30">
+          {answer ? (
+            <MarkdownRenderer className="text-sm text-foreground leading-relaxed">
+              {processNewlines(answer.answer)}
+            </MarkdownRenderer>
+          ) : (
+            <p className="text-sm text-muted-foreground italic">
+              {t("answer_not_provided_hint", "Geen uitwerking beschikbaar.")}
+            </p>
+          )}
         </div>
       )}
     </div>
   );
 });
 
-/** The answers panel rendered at the bottom of the page */
-const AnswersPanel = memo(function AnswersPanel({
+/** Replaces both the static question list and the old AnswersPanel.
+ *  Shows each question as a collapsible row; clicking reveals the answer. */
+const QuestionsPanel = memo(function QuestionsPanel({
   section,
 }: {
   section: TextbookSectionData;
 }) {
   const { t } = useTranslation();
-  const [allOpen, setAllOpen] = useState(false);
-  const questionMap = useMemo(
-    () => new Map(collectQuestions(section).map((q) => [q.id, q])),
-    [section]
-  );
+  const answerMap = useMemo(() => buildAnswerMap(section.answers ?? []), [section.answers]);
 
-  if (!section.answers || section.answers.length === 0) return null;
+  // Collect all question blocks in order
+  const questionBlocks = section.blocks.filter((b) => b.type === "questions");
+  if (questionBlocks.length === 0) return null;
 
   return (
-    <div
-      id={`${section.id}-answers`}
-      className="mt-12 pt-8 border-t-2 border-border scroll-mt-24"
-    >
-      <div className="mb-6">
+    <div id={`${section.id}-questions`} className="mt-8 scroll-mt-24">
+      <div className="mb-4">
         <h3 className="text-xl font-serif font-medium text-foreground">
-          {t("answers", "Uitwerkingen")}
+          {t("questions", "Vragen")}
         </h3>
       </div>
-      <div className="space-y-2">
-        {section.answers.map((answer) => (
-          <AnswerRow
-            key={answer.questionId}
-            answer={answer}
-            question={questionMap.get(answer.questionId)}
-          />
+      <div className="space-y-6">
+        {questionBlocks.map((block) => (
+          <div key={block.id}>
+            {block.intro && (
+              <div className="mb-3">
+                <MarkdownRenderer className="text-sm text-muted-foreground leading-relaxed italic">
+                  {processNewlines(block.intro)}
+                </MarkdownRenderer>
+              </div>
+            )}
+            <div className="space-y-2">
+              {(block.questions ?? []).map((q) => (
+                <QuestionRow
+                  key={q.id}
+                  question={q}
+                  answer={answerMap.get(q.id)}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -165,58 +182,26 @@ const BookMode = memo(function BookMode({
   bookmarks?: Set<string>;
   onToggleBookmark?: (blockId: string, title: string) => void;
 }) {
-  const { t } = useTranslation();
-
   return (
     <div className="space-y-8">
+      {/* Render only text blocks inline; questions are handled by QuestionsPanel below */}
       {section.blocks.map((block) => {
-        if (block.type === "text") {
-          return (
-            <article
-              key={block.id}
-              id={block.id}
-              className="bg-card border border-border rounded-lg px-6 sm:px-8 pb-6 sm:pb-8 shadow-sm scroll-mt-16"
-              style={{ paddingTop: '0.5rem' }}
-            >
-              <MarkdownRenderer className="text-[17px] leading-[1.75] text-foreground">
-                {processNewlines(block.content ?? "")}
-              </MarkdownRenderer>
-            </article>
-          );
-        }
-
-        if (block.type === "questions") {
-          return (
-            <div
-              key={block.id}
-              id={block.id}
-              className="scroll-mt-16"
-            >
-              {block.intro && (
-                <p className="text-sm text-muted-foreground mb-4 italic">
-                  {processNewlines(block.intro)}
-                </p>
-              )}
-              <ol className="space-y-3">
-                {(block.questions ?? []).map((q) => (
-                  <li key={q.id} className="flex gap-3">
-                    <span className="font-mono text-sm text-muted-foreground min-w-[2.5rem] pt-0.5">
-                      {q.number}
-                    </span>
-                    <MarkdownRenderer className="text-sm text-foreground leading-relaxed flex-1">
-                      {processNewlines(q.text)}
-                    </MarkdownRenderer>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          );
-        }
-
-        return null;
+        if (block.type !== "text") return null;
+        return (
+          <article
+            key={block.id}
+            id={block.id}
+            className="bg-card border border-border rounded-lg px-6 sm:px-8 pb-6 sm:pb-8 shadow-sm scroll-mt-16"
+            style={{ paddingTop: "0.5rem" }}
+          >
+            <MarkdownRenderer className="text-[17px] leading-[1.75] text-foreground">
+              {processNewlines(block.content ?? "")}
+            </MarkdownRenderer>
+          </article>
+        );
       })}
 
-      <AnswersPanel section={section} />
+      <QuestionsPanel section={section} />
     </div>
   );
 });
@@ -224,52 +209,21 @@ const BookMode = memo(function BookMode({
 // ─── SIMPLE MODE ──────────────────────────────────────────────────────────────
 
 const SimpleMode = memo(function SimpleMode({ section }: { section: TextbookSectionData }) {
-  const { t } = useTranslation();
-
   return (
     <article className="max-w-3xl mx-auto space-y-10">
+      {/* Text blocks only */}
       {section.blocks.map((block) => {
-        if (block.type === "text") {
-          return (
-            <div key={block.id} id={block.id} className="scroll-mt-16">
-              <MarkdownRenderer className="text-[17px] leading-[1.75] text-foreground">
-                {processNewlines(block.content ?? "")}
-              </MarkdownRenderer>
-            </div>
-          );
-        }
-
-        if (block.type === "questions") {
-          return (
-            <div key={block.id} id={block.id} className="scroll-mt-16">
-              {block.intro && (
-                <p className="text-sm text-muted-foreground mb-3 italic">
-                  {processNewlines(block.intro)}
-                </p>
-              )}
-              <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-                {t("questions", "Opgaven")}
-              </h4>
-              <ol className="space-y-3">
-                {(block.questions ?? []).map((q) => (
-                  <li key={q.id} className="flex gap-3">
-                    <span className="font-mono text-sm text-muted-foreground min-w-[2.5rem] pt-0.5">
-                      {q.number}
-                    </span>
-                    <MarkdownRenderer className="text-sm text-foreground leading-relaxed flex-1">
-                      {processNewlines(q.text)}
-                    </MarkdownRenderer>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          );
-        }
-
-        return null;
+        if (block.type !== "text") return null;
+        return (
+          <div key={block.id} id={block.id} className="scroll-mt-16">
+            <MarkdownRenderer className="text-[17px] leading-[1.75] text-foreground">
+              {processNewlines(block.content ?? "")}
+            </MarkdownRenderer>
+          </div>
+        );
       })}
 
-      <AnswersPanel section={section} />
+      <QuestionsPanel section={section} />
     </article>
   );
 });
@@ -505,7 +459,7 @@ export const TextbookSection = memo(function TextbookSection({
 
       {viewMode === "simple" && <SimpleMode section={section} />}
 
-      {viewMode === "study" && <StudyMode section={section} />}
+      {/* Study mode: hub is rendered once at page level via LearningPlatform */}
 
       {/* Advanced mode: delegate to AdvancedLearningSystem via parent */}
       {viewMode === "advanced" && (

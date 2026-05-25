@@ -1,3 +1,7 @@
+// Language is always Dutch. English translations are kept for reference only.
+// The user cannot change the language.
+import { NL_FALLBACKS } from "./i18n-nl-fallbacks";
+
 export type Language = 'en' | 'nl';
 
 export interface Translation {
@@ -6,7 +10,10 @@ export interface Translation {
 
 class I18n {
   private translations: Record<Language, Translation> = {} as Record<Language, Translation>;
-  private currentLanguage: Language = 'nl';
+  // Always Dutch — never read from localStorage
+  private readonly currentLanguage: Language = 'nl';
+  private loaded = false;
+  private listeners: Array<() => void> = [];
 
   constructor() {
     this.loadTranslations();
@@ -14,51 +21,45 @@ class I18n {
 
   private async loadTranslations(): Promise<void> {
     try {
-      // Only load translations on client side
       if (typeof window === 'undefined') {
-        // Server-side: use empty translations
         this.translations.en = {};
         this.translations.nl = {};
+        this.loaded = true;
         return;
       }
 
-      // Load English translations
-      const enResponse = await fetch('/locales/en.csv');
-      if (!enResponse.ok) {
-        console.warn('English translations not found, using empty translations');
-        this.translations.en = {};
-      } else {
-        const enText = await enResponse.text();
-        this.translations.en = this.parseCSV(enText);
-      }
+      // Only need Dutch, but load both so existing code referencing 'en' doesn't break
+      const [enResponse, nlResponse] = await Promise.all([
+        fetch('/locales/en.csv'),
+        fetch('/locales/nl.csv'),
+      ]);
 
-      // Load Dutch translations
-      const nlResponse = await fetch('/locales/nl.csv');
-      if (!nlResponse.ok) {
-        console.warn('Dutch translations not found, using empty translations');
-        this.translations.nl = {};
-      } else {
-        const nlText = await nlResponse.text();
-        this.translations.nl = this.parseCSV(nlText);
-      }
+      this.translations.en = enResponse.ok
+        ? this.parseCSV(await enResponse.text())
+        : {};
 
-      // Load saved language preference
-      const savedLanguage = localStorage.getItem('language') as Language;
-      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'nl')) {
-        this.currentLanguage = savedLanguage;
-      }
+      this.translations.nl = nlResponse.ok
+        ? this.parseCSV(await nlResponse.text())
+        : {};
+
+      // Never read saved language — always stay Dutch
+      // Clear any stale 'en' value that might have been saved previously
+      try { localStorage.removeItem('language'); } catch {}
+
     } catch (error) {
       console.error('Failed to load translations:', error);
       this.translations.en = {};
       this.translations.nl = {};
+    } finally {
+      this.loaded = true;
+      this.listeners.forEach((fn) => fn());
+      this.listeners = [];
     }
   }
 
   private parseCSV(csvText: string): Translation {
     const lines = csvText.split('\n');
     const translations: Translation = {};
-    
-    // Skip header line
     for (let i = 1; i < lines.length; i++) {
       const line = lines[i].trim();
       if (line) {
@@ -69,74 +70,60 @@ class I18n {
         }
       }
     }
-    
     return translations;
   }
 
-  public setLanguage(language: Language): void {
-    this.currentLanguage = language;
-    localStorage.setItem('language', language);
-    window.dispatchEvent(new CustomEvent('languageChanged', { detail: language }));
+  public onLoaded(fn: () => void): void {
+    if (this.loaded) {
+      fn();
+    } else {
+      this.listeners.push(fn);
+    }
   }
+
+  // No-op: language switching is disabled. Always Dutch.
+  public setLanguage(_language: Language): void {}
 
   public getCurrentLanguage(): Language {
     return this.currentLanguage;
   }
 
   public t(id: string, fallback?: string): string {
-    const translation = this.translations[this.currentLanguage]?.[id];
-    return translation || fallback || id;
+    const translation = this.translations['nl']?.[id];
+    const nlFallback = NL_FALLBACKS[id];
+    return translation || nlFallback || fallback || id;
   }
 
   public isLoaded(): boolean {
-    return Object.keys(this.translations).length > 0;
+    return this.loaded;
   }
 }
 
-// Create singleton instance
+// Singleton
 export const i18n = new I18n();
 
 // Hook for React components
 export function useTranslation() {
   const [translationsReady, setTranslationsReady] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.getCurrentLanguage());
 
   useEffect(() => {
-    const checkTranslations = () => {
-      if (i18n.isLoaded()) {
-        setTranslationsReady(true);
-        setCurrentLanguage(i18n.getCurrentLanguage());
-      } else {
-        setTimeout(checkTranslations, 100);
-      }
-    };
-
-    checkTranslations();
-
-    const handleLanguageChanged = () => {
-      setCurrentLanguage(i18n.getCurrentLanguage());
-    };
-
-    window.addEventListener('languageChanged', handleLanguageChanged);
-    return () => window.removeEventListener('languageChanged', handleLanguageChanged);
+    i18n.onLoaded(() => {
+      setTranslationsReady(true);
+    });
   }, []);
 
-  const changeLanguage = (language: Language) => {
-    i18n.setLanguage(language);
-    setCurrentLanguage(language);
-  };
+  // t is recreated when translationsReady flips, triggering a re-render
+  // in every component so Dutch strings replace the fallbacks.
+  const t = useCallback(
+    (id: string, fallback?: string) => i18n.t(id, fallback),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [translationsReady]
+  );
 
-  const t = (id: string, fallback?: string) => {
-    return i18n.t(id, fallback);
-  };
+  // changeLanguage kept for API compatibility but does nothing
+  const changeLanguage = (_language: Language) => {};
 
-  return {
-    t,
-    currentLanguage,
-    changeLanguage,
-    translationsReady
-  };
+  return { t, currentLanguage: 'nl' as Language, changeLanguage, translationsReady };
 }
 
-// Import React hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';

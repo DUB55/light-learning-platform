@@ -3,16 +3,32 @@
     "id": "a737a508-b49d-4072-9c2f-b7b711e726c0",
     "name": "Anonymous",
     "firstSeen": 1779373659635,
-    "lastSeen": 1779398095316,
-    "sessionCount": 2,
-    "totalDuration": 4276149
+    "lastSeen": 1779711047584,
+    "sessionCount": 14,
+    "totalDuration": 6014939
   },
   "ba9710ba-93c2-455b-8433-16935ac82404": {
     "id": "ba9710ba-93c2-455b-8433-16935ac82404",
     "name": "Anonymous",
     "firstSeen": 1779373856657,
-    "lastSeen": 1779392566067,
+    "lastSeen": 1779711039567,
+    "sessionCount": 11,
+    "totalDuration": 2405719
+  },
+  "47efc87b-1c32-4bc4-9ee2-0e68375c3467": {
+    "id": "47efc87b-1c32-4bc4-9ee2-0e68375c3467",
+    "name": "Anonymous",
+    "firstSeen": 1779638659834,
+    "lastSeen": 1779638732098,
     "sessionCount": 2,
-    "totalDuration": 846455
+    "totalDuration": 37153
+  },
+  "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2": {
+    "id": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
+    "name": "Anonymous",
+    "firstSeen": 1779711985770,
+    "lastSeen": 1779712991768,
+    "sessionCount": 2,
+    "totalDuration": 999802
   }
 }
