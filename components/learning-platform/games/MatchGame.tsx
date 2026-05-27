@@ -118,13 +118,13 @@ export function MatchGame({ onQuit }: GameShellProps) {
         }
 
         return (
-          <div className="space-y-4">
-            <p className="text-center text-sm text-muted-foreground">
-              {t("study_time", "Tijd")}: {elapsed}s
-            </p>
-            <p className="text-xs text-center text-muted-foreground">
-              {t("study_match_hint", "Klik een begrip en bijpassende definitie")}
-            </p>
+          <div className="space-y-4 rounded-2xl border border-border bg-gradient-to-br from-card to-secondary/40 p-5">
+            <div className="text-center">
+              <p className="text-sm font-medium text-foreground">{t("study_time", "Tijd")}: {elapsed}s</p>
+              <p className="text-xs text-muted-foreground">
+                {t("study_match_hint", "Klik een begrip en bijpassende definitie")}
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <h4 className="text-sm font-medium text-center">

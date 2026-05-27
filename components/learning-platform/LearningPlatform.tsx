@@ -18,16 +18,15 @@ import { useTranslation } from "@/lib/i18n";
 import { SessionSettingsPanel } from "./SessionSettingsPanel";
 import { MasteryProgressBar } from "./MasteryProgressBar";
 import { TermList } from "./TermList";
-import { EnhancedFlashcardMode } from "./modes/EnhancedFlashcardMode";
 import { LearnMode } from "./modes/LearnMode";
 import { TestMode } from "./modes/TestMode";
-import { McqOnlyMode } from "./modes/McqOnlyMode";
-import { WritingOnlyMode } from "./modes/WritingOnlyMode";
 import { RegisteredGameView } from "./GameShell";
 
 interface SourceSection {
   id: string;
-  title: string;
+  title: string | string[];
+  titles?: string[];
+  chapterTitles?: string[];
   paragraphs?: Array<{
     questions?: Array<{
       id: string;
@@ -82,20 +81,7 @@ function HubButton({
 }
 
 function LerenModeView() {
-  const { settings } = useLearningPlatformStore();
-  const activity = settings.lerenActivity ?? "learn";
-  switch (activity) {
-    case "flashcard":
-      return <EnhancedFlashcardMode />;
-    case "learn":
-      return <LearnMode />;
-    case "multiple-choice-only":
-      return <McqOnlyMode />;
-    case "writing-only":
-      return <WritingOnlyMode />;
-    default:
-      return <LearnMode />;
-  }
+  return <LearnMode />;
 }
 
 function StudyModeView({ mode }: { mode: LearningMode }) {
@@ -134,8 +120,7 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
   const startLeren = () => {
     refreshPlayableTerms();
     saveSettingsToStorage();
-    const activity = useLearningPlatformStore.getState().settings.lerenActivity ?? "learn";
-    setActiveMode(activity);
+    setActiveMode("learn");
     setScreen("playing");
   };
 
@@ -248,9 +233,11 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
                   key={game.id}
                   type="button"
                   onClick={() => startGame(game.id)}
-                  className="flex flex-col items-center gap-3 p-6 rounded-xl border border-border bg-card hover:bg-secondary/60 transition-colors"
+                  className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-gradient-to-br from-card to-secondary/40 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-foreground/30 hover:shadow-md"
                 >
-                  <Icon className="h-8 w-8 text-foreground" />
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-background text-foreground shadow-sm group-hover:bg-foreground group-hover:text-background transition-colors">
+                    <Icon className="h-7 w-7" />
+                  </span>
                   <span className="text-sm font-medium text-center">
                     {t(game.labelKey, game.fallback)}
                   </span>
@@ -266,7 +253,7 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
           </p>
           <HubButton
             label={t("study_leren", "Leren")}
-            description={t("study_leren_desc", "Kies modus en start je leersessie")}
+            description={t("study_leren_desc", "Kies hoe je oefent en start meteen")}
             icon={<Brain className="h-6 w-6" />}
             onClick={() => setScreen("leren-setup")}
           />

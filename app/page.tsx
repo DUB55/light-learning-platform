@@ -25,7 +25,9 @@ async function getContentFiles() {
     }
   }
   
-  return contentData;
+  return contentData.sort((a, b) =>
+    a.title.localeCompare(b.title, "nl", { sensitivity: "base" })
+  );
 }
 
 export default async function Home() {

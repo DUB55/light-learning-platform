@@ -1,11 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Aardrijkskunde – Hoofdstuk 5: Gewapende conflicten",
-    "description": "Lesmateriaal voor Hoofdstuk 5 over gewapende conflicten, met leerdoelen, leerstof, begrippen en opdrachten."
+    "title": "Aardrijkskunde - Hoofdstuk 5: Gewapende conflicten",
+    "description": "Aardrijkskunde hoofdstuk 5 over gewapende conflicten, met leerdoelen, leerstof, begrippen en opdrachten."
   },
   "contentFormat": "textbook",
-  "defaultViewMode": "book",
-  "availableModes": ["book", "study", "simple", "advanced"],
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple",
+    "study",
+    "advanced"
+  ],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
@@ -1192,7 +1196,209 @@
           "content": "## Begrippen §5.5 Nederland: oorlog en vrede\n\n- **Internationaal Strafhof** = rechtbank in Den Haag die genocide, misdaden tegen de menselijkheid en oorlogsmisdaden berecht\n- **onafhankelijkheidsstrijd** = gewelddadige manier om zelfstandig te worden\n- **Politionele Acties** = geweld door Nederland in Indonesië tussen 1945 en 1949 tegen Indonesische onafhankelijkheidsstrijders\n- **Veiligheidsraad** = onderdeel van de VN dat over vredesmissies besluit en waarin China, de Verenigde Staten, Rusland, Frankrijk en het Verenigd Koninkrijk vetorecht hebben\n- **vredesoperatie** = inzet van militairen onder de vlag van de Verenigde Naties om de vrede te herstellen in een gebied met een gewapend conflict"
         }
       ],
-      "answers": []
+      "answers": [],
+      "learningSets": [
+        {
+          "id": "set-blk-begrippen-5-1",
+          "title": "Begrippen §5.1 Wapengeweld wereldwijd",
+          "description": "16 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-1-term-1",
+              "term": "autonomie",
+              "definition": "zekere mate van zelfbestuur in een gebied over bepaalde onderwerpen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-2",
+              "term": "binnenlands conflict",
+              "definition": "conflict tussen bevolkingsgroepen binnen de grenzen van een land (ook: intrastatelijk conflict)"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-3",
+              "term": "etniciteit",
+              "definition": "de identiteit van een volk, gebaseerd op cultuur en herkomst"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-4",
+              "term": "geïnternationaliseerd conflict",
+              "definition": "oorspronkelijk binnenlands conflict met buitenlandse inmenging"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-5",
+              "term": "geopolitiek",
+              "definition": "het gebruiken van militaire, politieke of diplomatieke middelen om ruimte, invloed of macht in een gebied te krijgen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-6",
+              "term": "gewapend conflict",
+              "definition": "aanhoudende strijd waarbij in totaal minstens 25 doden per jaar vallen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-7",
+              "term": "internationaal conflict",
+              "definition": "conflict dat zich tussen twee of meer landen afspeelt (ook: interstatelijk conflict)"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-8",
+              "term": "jihadisme",
+              "definition": "gewelddadige strijd voor een islamitische staat zonder grenzen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-9",
+              "term": "natiestaat",
+              "definition": "staat of land waar de bevolking zich bij elkaar voelt horen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-10",
+              "term": "separatisme",
+              "definition": "de wens van een volk om zich van een staat af te scheiden en een eigen territorium te hebben"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-11",
+              "term": "soevereiniteit",
+              "definition": "situatie waarin een staat of gebied zelf de macht uitoefent over het territorium (ook: zelfbeschikking)"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-12",
+              "term": "staat",
+              "definition": "gebied met eromheen een internationaal erkende grens (land) waar eigen wetten en regels gelden"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-13",
+              "term": "territorium",
+              "definition": "woongebied van een volk"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-14",
+              "term": "terrorisme",
+              "definition": "geweld om angst te zaaien met een politiek doel"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-15",
+              "term": "transnationaal conflict",
+              "definition": "oorspronkelijk binnenlands conflict dat zich naar andere landen heeft uitgebreid (ook: regionaal conflict)"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-16",
+              "term": "volk",
+              "definition": "groep mensen die zich bij elkaar voelt horen door taal, geloof of gemeenschappelijke geschiedenis"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-2",
+          "title": "Begrippen §5.2 Oorzaken van conflicten",
+          "description": "5 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-2-term-1",
+              "term": "dictatuur",
+              "definition": "regeringsvorm waarbij de macht in een land ligt bij één persoon of een kleine groep (ook: autoritair regime)"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-2",
+              "term": "fragile state",
+              "definition": "fragiele, kwetsbare staat, waar de overheid vrijwel geen controle heeft"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-3",
+              "term": "jeugdbult",
+              "definition": "groot aandeel van 15- tot 29-jarigen in de bevolking"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-4",
+              "term": "multiplier",
+              "definition": "factor die ervoor zorgt dat een situatie zodanig verergert dat gewapende conflicten meer kans krijgen"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-5",
+              "term": "paradox van overvloed",
+              "definition": "situaties waarbij in een land met veel grondstoffen de kans op gewapende conflicten groter is dan in een land zonder die potentiële rijkdommen (ook: resource curse)"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-3",
+          "title": "Begrippen §5.3 Gevolgen van gewapende conflicten",
+          "description": "4 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-3-term-1",
+              "term": "babyboom",
+              "definition": "opmerkelijk hoog geboortecijfer in bepaald jaar"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-2",
+              "term": "genocide",
+              "definition": "vernietiging van een volk, ras, groep of cultuur (of een poging daartoe)"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-3",
+              "term": "humanitaire ramp",
+              "definition": "wanneer een bevolking langdurig onvoldoende van voedsel, behuizing en medische zorg kan worden voorzien"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-4",
+              "term": "ontheemde",
+              "definition": "vluchteling die in eigen land blijft"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-4",
+          "title": "Begrippen §5.4 Hoe rustig is Europa?",
+          "description": "3 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-4-term-1",
+              "term": "annexatie",
+              "definition": "het bezetten van een gebied in het territorium van een andere staat"
+            },
+            {
+              "id": "set-blk-begrippen-5-4-term-2",
+              "term": "hybride oorlog",
+              "definition": "strijd die zowel met militaire middelen als met informatie- en communicatietechnologie wordt gevoerd"
+            },
+            {
+              "id": "set-blk-begrippen-5-4-term-3",
+              "term": "minderheid",
+              "definition": "bevolkingsgroep in een staat die minder dan 50 procent van de bevolking uitmaakt"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-5",
+          "title": "Begrippen §5.5 Nederland: oorlog en vrede",
+          "description": "5 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-5-term-1",
+              "term": "Internationaal Strafhof",
+              "definition": "rechtbank in Den Haag die genocide, misdaden tegen de menselijkheid en oorlogsmisdaden berecht"
+            },
+            {
+              "id": "set-blk-begrippen-5-5-term-2",
+              "term": "onafhankelijkheidsstrijd",
+              "definition": "gewelddadige manier om zelfstandig te worden"
+            },
+            {
+              "id": "set-blk-begrippen-5-5-term-3",
+              "term": "Politionele Acties",
+              "definition": "geweld door Nederland in Indonesië tussen 1945 en 1949 tegen Indonesische onafhankelijkheidsstrijders"
+            },
+            {
+              "id": "set-blk-begrippen-5-5-term-4",
+              "term": "Veiligheidsraad",
+              "definition": "onderdeel van de VN dat over vredesmissies besluit en waarin China, de Verenigde Staten, Rusland, Frankrijk en het Verenigd Koninkrijk vetorecht hebben"
+            },
+            {
+              "id": "set-blk-begrippen-5-5-term-5",
+              "term": "vredesoperatie",
+              "definition": "inzet van militairen onder de vlag van de Verenigde Naties om de vrede te herstellen in een gebied met een gewapend conflict"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

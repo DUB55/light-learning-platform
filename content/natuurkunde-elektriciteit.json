@@ -1,11 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Hoofdstuk 4 – Elektriciteit",
-    "description": "Lesmateriaal voor Hoofdstuk 4 over elektriciteit, met uitleg over vermogen, weerstand, schakelingen, sensors en energietransport."
+    "title": "Natuurkunde - Hoofdstuk 4: Elektriciteit",
+    "description": "Natuurkunde hoofdstuk 4 over elektriciteit, met uitleg, oefenvragen, bronnen en leerbare begrippen."
   },
   "contentFormat": "textbook",
-  "defaultViewMode": "book",
-  "availableModes": ["book", "study", "simple", "advanced"],
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple",
+    "study",
+    "advanced"
+  ],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,

@@ -23,8 +23,7 @@ export async function GET(
     const data = JSON.parse(raw);
     return NextResponse.json(data, {
       headers: {
-        // Cache for 5 minutes in browser, revalidate in background
-        "Cache-Control": "public, max-age=300, stale-while-revalidate=60",
+        "Cache-Control": "no-store",
       },
     });
   } catch {

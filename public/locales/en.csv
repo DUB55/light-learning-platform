@@ -4,9 +4,9 @@ bookmarks,Bookmarks
 clear_bookmarks,Clear All
 no_bookmarks,No bookmarks yet
 click_to_add,Click on any paragraph to add bookmark
-study_mode,Study Mode
+study_mode,Leren
 book_mode,Book Mode
-simple_mode,Simple Mode
+simple_mode,Uitleg
 loading,Loading...
 export,Export
 copy,Copy
@@ -93,8 +93,8 @@ jump_to,Jump to
 select_language,Select language
 english,English
 dutch,Dutch
-home_title,Study Guide Platform
-home_subtitle,Choose a study guide below to get started:
+home_title,Toetsweekvoorbereiding
+home_subtitle,Choose a subject below to practise for test week.
 advanced_mode,Advanced
 advanced_mode_description,Study modes and SRS progress
 advanced_home_description,Practice with advanced study modes and local progress tracking.

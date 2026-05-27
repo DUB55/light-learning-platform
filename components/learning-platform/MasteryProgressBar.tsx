@@ -19,13 +19,13 @@ export function MasteryProgressBar({ terms }: MasteryProgressBarProps) {
   return (
     <div className="space-y-2">
       <p className="text-xs text-muted-foreground text-center">
-        {t("study_set_label", "Studie set")}
+        {t("study_set_label", "Voortgang")}
       </p>
       <div className="flex h-3 w-full overflow-hidden rounded-full bg-secondary">
         <div
           className="bg-muted-foreground/40 transition-all"
           style={{ width: pct(unstudied) }}
-          title={`${t("mastery_unstudied", "Niet gestudeerd")}: ${unstudied}`}
+          title={`${t("mastery_unstudied", "Niet geleerd")}: ${unstudied}`}
         />
         <div
           className="bg-yellow-500 transition-all"
@@ -41,7 +41,7 @@ export function MasteryProgressBar({ terms }: MasteryProgressBarProps) {
       <div className="flex justify-between text-xs text-muted-foreground flex-wrap gap-2">
         <span className="flex items-center gap-1">
           <span className="inline-block w-2 h-2 rounded-full bg-muted-foreground/40" />
-          {t("mastery_unstudied", "Niet gestudeerd")} ({unstudied})
+          {t("mastery_unstudied", "Niet geleerd")} ({unstudied})
         </span>
         <span className="flex items-center gap-1">
           <span className="inline-block w-2 h-2 rounded-full bg-yellow-500" />

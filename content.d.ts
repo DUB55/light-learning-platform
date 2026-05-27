@@ -38,7 +38,9 @@ declare module "@/content.json" {
 
   interface EnhancedSection {
     id: string;
-    title: string;
+    title: string | string[];
+    titles?: string[];
+    chapterTitles?: string[];
     timestamp?: string;
     // NEW: Paragraph-based content
     paragraphs?: Paragraph[];

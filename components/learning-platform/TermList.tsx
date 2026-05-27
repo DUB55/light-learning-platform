@@ -23,17 +23,25 @@ export function TermList({ terms }: { terms: Term[] }) {
   const toggleStar = useLearningPlatformStore((s) => s.toggleStar);
 
   return (
-    <ul className="divide-y divide-border border border-border rounded-lg overflow-hidden max-h-64 overflow-y-auto">
+    <ul className="space-y-3">
       {terms.map((term) => (
         <li
           key={term.id}
-          className="flex items-start gap-3 px-4 py-3 bg-card hover:bg-secondary/30"
+          className="flex items-start gap-3 rounded-lg border border-border bg-card px-4 py-4 hover:bg-secondary/30"
         >
-          <StatusIcon status={term.masteryStatus} />
-          <div className="flex-1 min-w-0">
-            <MarkdownContent className="text-sm font-medium line-clamp-2">
+          <span className="pt-1">
+            <StatusIcon status={term.masteryStatus} />
+          </span>
+          <div className="flex-1 min-w-0 space-y-2">
+            <MarkdownContent className="text-base font-medium">
               {term.term}
             </MarkdownContent>
+            <MarkdownContent className="text-sm leading-relaxed text-muted-foreground">
+              {term.definition}
+            </MarkdownContent>
+            {term.learningSetTitle && (
+              <p className="text-xs text-muted-foreground">{term.learningSetTitle}</p>
+            )}
           </div>
           <button
             type="button"

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Check, Circle } from "lucide-react";
 import { useLearningPlatformStore } from "@/store/useLearningPlatformStore";
 import { daysUntilExam } from "@/lib/learning-platform/term-filters";
 import type { LerenActivity, QuestionType, StudySettings } from "@/types/learning-platform";
@@ -17,17 +17,22 @@ interface SessionSettingsPanelProps {
 
 const LEREN_ACTIVITIES: { id: LerenActivity; label: string }[] = [
   { id: "flashcard", label: "Flashcards" },
-  { id: "learn", label: "Adaptief leren" },
   { id: "multiple-choice-only", label: "Meerkeuze" },
+  { id: "learn", label: "Adaptief leren" },
   { id: "writing-only", label: "Schrijven" },
 ];
 
 export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSettingsPanelProps) {
   const { t } = useTranslation();
-  const { settings, updateSettings, refreshPlayableTerms } = useLearningPlatformStore();
+  const { studySet, settings, updateSettings, refreshPlayableTerms } = useLearningPlatformStore();
 
-  const daysLeft = daysUntilExam(settings.examDate);
   const isTest = preset === "test";
+  const daysLeft = daysUntilExam(settings.examDate);
+  const selectedSetIds = settings.selectedLearningSetIds ?? [];
+  const allLearningSets = studySet?.learningSets ?? [];
+  const selectedActivities = settings.lerenActivities?.length
+    ? settings.lerenActivities
+    : [settings.lerenActivity ?? "learn"];
 
   const toggleQuestionType = (type: QuestionType) => {
     const set = new Set(settings.enabledQuestionTypes);
@@ -35,6 +40,30 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
     else set.add(type);
     if (set.size === 0) return;
     updateSettings({ enabledQuestionTypes: Array.from(set) });
+  };
+
+  const toggleActivity = (id: LerenActivity) => {
+    const selected = new Set(selectedActivities);
+    if (selected.has(id)) {
+      if (selected.size === 1) return;
+      selected.delete(id);
+    } else {
+      selected.add(id);
+    }
+    const next = Array.from(selected);
+    updateSettings({ lerenActivities: next, lerenActivity: next[0] });
+  };
+
+  const toggleLearningSet = (id: string) => {
+    const selected = new Set(selectedSetIds);
+    if (selected.has(id)) selected.delete(id);
+    else selected.add(id);
+    updateSettings({ selectedLearningSetIds: Array.from(selected) });
+  };
+
+  const setQuestionFormat = (format: StudySettings["questionFormat"], checked: boolean) => {
+    if (!checked) return;
+    updateSettings({ questionFormat: format });
   };
 
   const handleStart = () => {
@@ -59,61 +88,83 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
             ? t("study_settings_test_title", "Instellingen oefentoets")
             : t("study_settings_leren_title", "Instellingen leersessie")}
         </h3>
-        <p className="text-sm text-muted-foreground mt-1">
-          {t("study_settings_subtitle", "Stel je sessie in en klik op Start")}
+        <p className="mt-1 text-sm text-muted-foreground">
+          {t("study_settings_subtitle", "Kies wat je wilt oefenen en druk op Starten")}
         </p>
       </div>
 
-      <div className="rounded-xl border border-border bg-card divide-y divide-border px-4">
-        {!isTest && (
-          <div className="py-4 space-y-2">
-            <p className="text-sm font-medium text-foreground">
-              {t("study_activity_type", "Leermodus")}
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              {LEREN_ACTIVITIES.map((a) => (
-                <button
-                  key={a.id}
-                  type="button"
-                  onClick={() => updateSettings({ lerenActivity: a.id })}
-                  className={`px-3 py-2.5 rounded-lg border text-sm font-medium transition-colors ${
-                    settings.lerenActivity === a.id
-                      ? "border-foreground bg-secondary text-foreground"
-                      : "border-border bg-background text-muted-foreground hover:bg-secondary/50"
-                  }`}
-                >
-                  {a.label}
-                </button>
-              ))}
+      <div className="rounded-xl border border-border bg-card px-4 divide-y divide-border">
+        {allLearningSets.length > 1 && (
+          <div className="py-4">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-medium text-foreground">
+                {t("study_learning_sets", "Kies hoofdstukken")}
+              </p>
+              <button
+                type="button"
+                onClick={() => updateSettings({ selectedLearningSetIds: [] })}
+                className="rounded-md border border-border px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                {t("study_all_sets", "Alles oefenen")}
+              </button>
+            </div>
+            <div className="mt-3 max-h-56 overflow-y-auto rounded-lg border border-border bg-background px-3 divide-y divide-border">
+              {allLearningSets.map((set) => {
+                const checked = selectedSetIds.length === 0 || selectedSetIds.includes(set.id);
+                return (
+                  <button
+                    key={set.id}
+                    type="button"
+                    onClick={() => toggleLearningSet(set.id)}
+                    className={`flex w-full items-center justify-between gap-4 py-3 text-left transition-colors ${
+                      checked ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-medium">{set.title}</span>
+                      <span className="block text-xs text-muted-foreground">
+                        {set.termCount} {t("study_terms_count", "begrippen")}
+                      </span>
+                    </span>
+                    <span
+                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
+                        checked
+                          ? "border-foreground bg-foreground text-background"
+                          : "border-muted-foreground/40 bg-background"
+                      }`}
+                    >
+                      {checked ? <Check className="h-3.5 w-3.5" /> : <Circle className="h-2 w-2 opacity-30" />}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
 
-        <div className="py-4 space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            {t("study_exam_date", "Examendatum")}
-          </label>
-          <input
-            type="date"
-            value={
-              settings.examDate
-                ? new Date(settings.examDate).toISOString().slice(0, 10)
-                : ""
-            }
-            onChange={(e) =>
-              updateSettings({
-                examDate: e.target.value ? new Date(e.target.value) : undefined,
-              })
-            }
-            className="w-full rounded-lg border border-border px-3 py-2.5 bg-background text-foreground text-sm"
-          />
-          {daysLeft !== null && (
-            <p className="text-xs text-muted-foreground">
-              {daysLeft} {t("study_days_left", "dagen resterend")}
-              {daysLeft < 3 && ` — ${t("study_exam_priority", "prioriteit voor niet-beheerste begrippen")}`}
-            </p>
-          )}
-        </div>
+        {isTest && (
+          <div className="py-4 space-y-2">
+            <label className="text-sm font-medium text-foreground">
+              {t("study_exam_date", "Examendatum")}
+            </label>
+            <input
+              type="date"
+              value={settings.examDate ? new Date(settings.examDate).toISOString().slice(0, 10) : ""}
+              onChange={(event) =>
+                updateSettings({
+                  examDate: event.target.value ? new Date(event.target.value) : undefined,
+                })
+              }
+              className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground"
+            />
+            {daysLeft !== null && (
+              <p className="text-xs text-muted-foreground">
+                {daysLeft} {t("study_days_left", "dagen resterend")}
+                {daysLeft < 3 && ` - ${t("study_exam_priority", "prioriteit voor niet-beheerste begrippen")}`}
+              </p>
+            )}
+          </div>
+        )}
 
         <div className="py-4 space-y-2">
           <div className="flex justify-between text-sm">
@@ -121,9 +172,7 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
               {t("study_round_length", "Aantal begrippen per ronde")}
             </span>
             <span className="text-muted-foreground">
-              {settings.roundLength === "all"
-                ? t("study_all_terms", "Alle")
-                : settings.roundLength}
+              {settings.roundLength === "all" ? t("study_all_terms", "Alle") : settings.roundLength}
             </span>
           </div>
           <input
@@ -132,9 +181,9 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
             max={50}
             step={5}
             value={settings.roundLength === "all" ? 50 : settings.roundLength}
-            onChange={(e) => {
-              const v = Number(e.target.value);
-              updateSettings({ roundLength: v >= 50 ? "all" : v });
+            onChange={(event) => {
+              const value = Number(event.target.value);
+              updateSettings({ roundLength: value >= 50 ? "all" : value });
             }}
             className="w-full accent-foreground"
           />
@@ -145,21 +194,23 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
             <p className="text-sm font-medium text-foreground">
               {t("study_question_types", "Vraagtypen")}
             </p>
-            {(
-              [
-                ["multiple-choice", "Meerkeuze"],
-                ["written", "Schrijven"],
-                ["true-false", "Waar / onwaar"],
-              ] as [QuestionType, string][]
-            ).map(([type, label]) => (
-              <Toggle
-                key={type}
-                label={label}
-                checked={settings.enabledQuestionTypes.includes(type)}
-                onChange={() => toggleQuestionType(type)}
-              />
-            ))}
-            <p className="text-sm font-medium text-foreground pt-2">
+            <div className="divide-y divide-border">
+              {(
+                [
+                  ["multiple-choice", "Meerkeuze"],
+                  ["written", "Schrijven"],
+                  ["true-false", "Waar / onwaar"],
+                ] as [QuestionType, string][]
+              ).map(([type, label]) => (
+                <Toggle
+                  key={type}
+                  label={label}
+                  checked={settings.enabledQuestionTypes.includes(type)}
+                  onChange={() => toggleQuestionType(type)}
+                />
+              ))}
+            </div>
+            <p className="pt-2 text-sm font-medium text-foreground">
               {t("study_test_mix", "Verdeling oefentoets (%)")}
             </p>
             {(
@@ -176,48 +227,54 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
                   min={0}
                   max={100}
                   value={settings.testQuestionDistribution?.[key] ?? 0}
-                  onChange={(e) =>
+                  onChange={(event) =>
                     updateSettings({
                       testQuestionDistribution: {
                         ...settings.testQuestionDistribution!,
-                        [key]: Number(e.target.value),
+                        [key]: Number(event.target.value),
                       },
                     })
                   }
-                  className="w-20 rounded-lg border border-border px-2 py-1.5 bg-background"
+                  className="w-20 rounded-lg border border-border bg-background px-2 py-1.5"
                 />
               </div>
             ))}
           </div>
         )}
 
-        <div className="py-4 space-y-1">
-          <p className="text-sm font-medium text-foreground mb-2">
-            {t("study_prompt_format", "Vraagformaat")}
+        {!isTest && (
+          <div className="py-4">
+            <p className="mb-1 text-sm font-medium text-foreground">
+              {t("study_choose_practice", "Kies hoe je wilt oefenen")}
+            </p>
+            <div className="divide-y divide-border">
+              {LEREN_ACTIVITIES.map((activity) => (
+                <Toggle
+                  key={activity.id}
+                  label={activity.label}
+                  checked={selectedActivities.includes(activity.id)}
+                  onChange={() => toggleActivity(activity.id)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="py-4">
+          <p className="mb-1 text-sm font-medium text-foreground">
+            {t("study_answer_direction", "Kies wat je moet antwoorden")}
           </p>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={() => updateSettings({ questionFormat: "term-to-definition" })}
-              className={`flex-1 py-2.5 rounded-lg border text-sm font-medium transition-colors ${
-                settings.questionFormat === "term-to-definition"
-                  ? "border-foreground bg-secondary"
-                  : "border-border hover:bg-secondary/50"
-              }`}
-            >
-              {t("study_answer_definition", "Antwoord = definitie")}
-            </button>
-            <button
-              type="button"
-              onClick={() => updateSettings({ questionFormat: "definition-to-term" })}
-              className={`flex-1 py-2.5 rounded-lg border text-sm font-medium transition-colors ${
-                settings.questionFormat === "definition-to-term"
-                  ? "border-foreground bg-secondary"
-                  : "border-border hover:bg-secondary/50"
-              }`}
-            >
-              {t("study_answer_term", "Antwoord = begrip")}
-            </button>
+          <div className="divide-y divide-border">
+            <Toggle
+              label={t("study_answer_with_term", "Antwoord met term")}
+              checked={settings.questionFormat === "definition-to-term"}
+              onChange={(checked) => setQuestionFormat("definition-to-term", checked)}
+            />
+            <Toggle
+              label={t("study_answer_with_definition", "Antwoord met definitie")}
+              checked={settings.questionFormat === "term-to-definition"}
+              onChange={(checked) => setQuestionFormat("term-to-definition", checked)}
+            />
           </div>
         </div>
 
@@ -225,22 +282,22 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
           <Toggle
             label={t("study_starred_only", "Alleen gemarkeerde begrippen")}
             checked={settings.studyStarredOnly}
-            onChange={(v) => updateSettings({ studyStarredOnly: v })}
+            onChange={(value) => updateSettings({ studyStarredOnly: value })}
           />
           <Toggle
             label={t("study_shuffle", "Begrippen shufflen")}
             checked={settings.shuffleTerms}
-            onChange={(v) => updateSettings({ shuffleTerms: v })}
+            onChange={(value) => updateSettings({ shuffleTerms: value })}
           />
           <Toggle
             label={t("study_smart_grading", "Slimme beoordeling (typfouten tolereren)")}
             checked={settings.smartGrading}
-            onChange={(v) => updateSettings({ smartGrading: v })}
+            onChange={(value) => updateSettings({ smartGrading: value })}
           />
           <Toggle
             label={t("study_retype", "Juiste antwoord overtypen bij fout")}
             checked={settings.retypeAnswers}
-            onChange={(v) => updateSettings({ retypeAnswers: v })}
+            onChange={(value) => updateSettings({ retypeAnswers: value })}
           />
         </div>
       </div>
@@ -248,9 +305,9 @@ export function SessionSettingsPanel({ preset, onBack, onStart }: SessionSetting
       <button
         type="button"
         onClick={handleStart}
-        className="w-full py-3.5 rounded-xl bg-foreground text-background font-medium text-base hover:opacity-90 transition-opacity"
+        className="w-full rounded-xl bg-foreground py-3.5 text-base font-medium text-background transition-opacity hover:opacity-90"
       >
-        {t("study_start_session", "Start sessie")}
+        {t("study_start_session", "Starten")}
       </button>
     </div>
   );

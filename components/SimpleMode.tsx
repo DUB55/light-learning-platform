@@ -4,6 +4,7 @@ import { useMemo, memo } from "react";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 import { Hash } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
+import { getSectionTitle, getSectionTitles } from "@/lib/section-title";
 
 // Helper function to convert \n to actual newlines
 function processNewlines(text: string): string {
@@ -30,16 +31,25 @@ interface Paragraph {
 interface SimpleModeProps {
   section: {
     id: string;
-    title: string;
+    title: string | string[];
+    titles?: string[];
+    chapterTitles?: string[];
     paragraphs?: Paragraph[];
   };
 }
 
-const SectionHeader = memo(function SectionHeader({ title, id }: { title: string; id: string }) {
+const SectionHeader = memo(function SectionHeader({ titles, id }: { titles: string[]; id: string }) {
+  const [mainTitle, ...extraTitles] = titles;
+
   return (
     <div id={id} className="mb-8 scroll-mt-24">
       <h2 className="text-3xl sm:text-4xl font-serif font-medium text-foreground leading-tight mb-4">
-        {title}
+        <span className="block">{mainTitle}</span>
+        {extraTitles.map((title) => (
+          <span key={title} className="mt-1 block text-2xl sm:text-3xl text-muted-foreground">
+            {title}
+          </span>
+        ))}
       </h2>
       <div className="h-px bg-border w-full" />
     </div>
@@ -115,6 +125,7 @@ const ParagraphContent = memo(function ParagraphContent({
 export const SimpleMode = memo(function SimpleMode({ section }: SimpleModeProps) {
   const { t } = useTranslation();
   const paragraphs = useMemo(() => section.paragraphs || [], [section.paragraphs]);
+  const sectionTitles = getSectionTitles(section);
 
   if (paragraphs.length === 0) {
     return (
@@ -126,7 +137,7 @@ export const SimpleMode = memo(function SimpleMode({ section }: SimpleModeProps)
 
   return (
     <article className="max-w-3xl mx-auto">
-      <SectionHeader title={section.title} id={section.id} />
+      <SectionHeader titles={sectionTitles.length ? sectionTitles : [getSectionTitle(section)]} id={section.id} />
 
       <div className="space-y-8">
         {paragraphs.map((paragraph, idx) => (

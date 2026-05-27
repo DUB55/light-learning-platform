@@ -1,0 +1,19 @@
+{
+  "siteMetadata": {
+    "title": "Levensbeschouwing",
+    "description": "Leermateriaal voor Levensbeschouwing"
+  },
+  "contentFormat": "textbook",
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple"
+  ],
+  "showTimestamps": false,
+  "showExportButtons": false,
+  "showAnkiExport": false,
+  "showFlashcardsExport": false,
+  "showTranscriptExport": false,
+  "showCopyTranscript": false,
+  "buttons": [],
+  "sections": []
+}

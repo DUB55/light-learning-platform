@@ -180,10 +180,10 @@ export function BlocksGame({ onQuit }: GameShellProps) {
   return (
     <GameShell gameId="blocks" onQuit={onQuit}>
       {({ setScore, reportScore }) => (
-        <div className="space-y-4 select-none">
+        <div className="space-y-4 select-none rounded-2xl border border-border bg-gradient-to-br from-card to-secondary/40 p-5">
           <div
             ref={gridRef}
-            className="relative mx-auto border border-border rounded-lg p-1 bg-secondary/30 touch-none"
+            className="relative mx-auto border border-border rounded-xl p-2 bg-background shadow-inner touch-none"
             style={{
               width: GRID * CELL,
               height: GRID * CELL,

@@ -14,4 +14,6 @@ export const defaultStudySettings: StudySettings = {
     written: 25,
   },
   lerenActivity: "learn",
+  lerenActivities: ["learn"],
+  selectedLearningSetIds: [],
 };

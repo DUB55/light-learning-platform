@@ -4,7 +4,7 @@ export type MasteryStatus = 'unstudied' | 'learning' | 'mastered';
 
 export type QuestionType = 'multiple-choice' | 'written' | 'true-false' | 'flashcard';
 
-export type LearningMode = 'flashcard' | 'learn' | 'test' | 'multiple-choice-only' | 'writing-only' | 'match' | 'blast' | 'blocks';
+export type LearningMode = 'flashcard' | 'learn' | 'test' | 'multiple-choice-only' | 'writing-only' | 'match' | 'blast' | 'blocks' | 'sprint' | 'type-rush';
 
 /** Learning activity chosen in session settings (Leren flow) */
 export type LerenActivity = 'flashcard' | 'learn' | 'multiple-choice-only' | 'writing-only';
@@ -14,11 +14,20 @@ export interface Term {
   id: string;
   term: string;
   definition: string;
+  learningSetId?: string;
+  learningSetTitle?: string;
   isStarred: boolean;
   masteryStatus: MasteryStatus;
   consecutiveCorrectCount: number;
   lastStudied?: Date;
   createdAt: Date;
+}
+
+export interface LearningSetSummary {
+  id: string;
+  title: string;
+  description?: string;
+  termCount: number;
 }
 
 // Study set containing multiple terms
@@ -27,6 +36,7 @@ export interface StudySet {
   title: string;
   description?: string;
   terms: Term[];
+  learningSets: LearningSetSummary[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -90,6 +100,10 @@ export interface StudySettings {
   };
   /** Which leren mode to run (set in session settings before start) */
   lerenActivity?: LerenActivity;
+  /** Multiple activities enabled for the leren flow. */
+  lerenActivities?: LerenActivity[];
+  /** Selected paragraph/section learning sets. Empty means all sets. */
+  selectedLearningSetIds?: string[];
 }
 
 // Question state for active learning session

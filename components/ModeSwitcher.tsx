@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BookOpen, GraduationCap, FileText, Brain } from "lucide-react";
+import { FileText, GraduationCap } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { useAnalytics } from "@/lib/analytics";
 
-type ViewMode = "book" | "study" | "simple" | "advanced";
+type ViewMode = "book" | "study" | "simple";
 
 interface ModeSwitcherProps {
   currentMode: ViewMode;
@@ -33,34 +33,26 @@ export function ModeSwitcher({ currentMode, availableModes, onModeChange }: Mode
 
   const modes: { id: ViewMode; label: string; icon: React.ReactNode; description: string }[] = [
     {
-      id: "book",
-      label: t('book_mode', 'Boek Modus'),
-      icon: <BookOpen className="w-4 h-4" />,
-      description: t('book_mode_description', 'Lezen met vragen en antwoorden'),
-    },
-    {
-      id: "study",
-      label: t('study_mode', 'Studie Modus'),
-      icon: <GraduationCap className="w-4 h-4" />,
-      description: t('study_mode_description', 'Leren, oefentoets en spelletjes'),
-    },
-    {
       id: "simple",
-      label: t('simple_mode', 'Eenvoudige Modus'),
+      label: t('simple_mode', 'Uitleg'),
       icon: <FileText className="w-4 h-4" />,
       description: t('simple_mode_description', 'Volledige tekstweergave'),
     },
     {
-      id: "advanced",
-      label: t('advanced_mode', 'Geavanceerd'),
-      icon: <Brain className="w-4 h-4" />,
-      description: t('advanced_mode_description', 'Studiemodi en SRS-voortgang'),
+      id: "study",
+      label: t('study_mode', 'Leren'),
+      icon: <GraduationCap className="w-4 h-4" />,
+      description: t('study_mode_description', 'Leren, oefentoets en spelletjes'),
     },
   ];
 
   const visibleModes = availableModes && availableModes.length > 0
     ? modes.filter((mode) => availableModes.includes(mode.id))
     : modes;
+
+  if (visibleModes.length <= 1) {
+    return null;
+  }
 
   return (
     <div className="flex items-center gap-1 p-1 bg-secondary/50 rounded-lg border border-border">

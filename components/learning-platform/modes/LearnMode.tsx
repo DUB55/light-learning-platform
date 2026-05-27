@@ -2,11 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLearningPlatformStore } from "@/store/useLearningPlatformStore";
-import { buildLearnQuestion } from "@/lib/learning-platform/question-generator";
-import type { Question, Term } from "@/types/learning-platform";
+import { buildLearnQuestion, buildMcqQuestion, buildWrittenQuestion, createId } from "@/lib/learning-platform/question-generator";
+import { getPromptAndAnswer } from "@/lib/learning-platform/term-filters";
+import type { LerenActivity, Question, Term, TermResult } from "@/types/learning-platform";
 import { useTranslation } from "@/lib/i18n";
 import { McqQuestion } from "../questions/McqQuestion";
 import { WrittenQuestion } from "../questions/WrittenQuestion";
+import { MarkdownContent } from "../shared/MarkdownContent";
+import { SessionSummary } from "../SessionSummary";
 
 interface SessionTerm extends Term {
   sessionCorrect: number;
@@ -27,6 +30,8 @@ export function LearnMode() {
   const [queue, setQueue] = useState<SessionTerm[]>([]);
   const [current, setCurrent] = useState<Question | null>(null);
   const [complete, setComplete] = useState(false);
+  const [results, setResults] = useState<TermResult[]>([]);
+  const activityIndex = useRef(0);
   const initialized = useRef(false);
 
   useEffect(() => {
@@ -44,6 +49,33 @@ export function LearnMode() {
 
   const allTerms = studySet?.terms ?? playableTerms;
 
+  const activities = settings.lerenActivities?.length
+    ? settings.lerenActivities
+    : [settings.lerenActivity ?? "learn"];
+
+  const buildFlashcardQuestion = (term: Term): Question => {
+    const { prompt, answer } = getPromptAndAnswer(term, settings.questionFormat);
+    return {
+      id: createId("flash"),
+      term,
+      type: "flashcard",
+      prompt,
+      correctAnswer: answer,
+      startTime: new Date(),
+    };
+  };
+
+  const buildQuestionForActivity = (
+    activity: LerenActivity,
+    term: Term,
+    consecutive: number
+  ): Question => {
+    if (activity === "flashcard") return buildFlashcardQuestion(term);
+    if (activity === "multiple-choice-only") return buildMcqQuestion(term, allTerms, settings);
+    if (activity === "writing-only") return buildWrittenQuestion(term, settings);
+    return buildLearnQuestion(term, allTerms, settings, consecutive);
+  };
+
   const pickNext = (terms: SessionTerm[]) => {
     const remaining = terms.filter((t) => t.sessionCorrect < 2);
     if (remaining.length === 0) {
@@ -55,7 +87,9 @@ export function LearnMode() {
     const term = remaining[0];
     const progress = progressMap[term.id];
     const consecutive = progress?.consecutiveCorrectCount ?? 0;
-    setCurrent(buildLearnQuestion(term, allTerms, settings, consecutive));
+    const activity = activities[activityIndex.current % activities.length];
+    activityIndex.current += 1;
+    setCurrent(buildQuestionForActivity(activity, term, consecutive));
   };
 
   useEffect(() => {
@@ -75,6 +109,19 @@ export function LearnMode() {
       wasOverridden: false,
       timeSpent: Date.now() - t0,
     });
+    setResults((prev) => [
+      ...prev,
+      {
+        termId: current.term.id,
+        questionType: type,
+        userAnswer,
+        correctAnswer: current.correctAnswer,
+        isCorrect,
+        wasOverridden: false,
+        timeSpent: Date.now() - t0,
+        timestamp: new Date(),
+      },
+    ]);
 
     setQueue((prev) => {
       const updated = prev.map((t) =>
@@ -85,8 +132,10 @@ export function LearnMode() {
             }
           : t
       );
-      setCurrent(null);
-      setTimeout(() => pickNext(updated), 200);
+      setTimeout(() => {
+        setCurrent(null);
+        pickNext(updated);
+      }, isCorrect ? 1100 : 1700);
       return updated;
     });
   };
@@ -94,12 +143,7 @@ export function LearnMode() {
   if (complete) {
     return (
       <div className="text-center py-12 space-y-4">
-        <h3 className="text-xl font-serif font-medium">
-          {t("study_round_done", "Ronde voltooid!")}
-        </h3>
-        <p className="text-muted-foreground">
-          {t("study_round_done_desc", "Alle begrippen in deze ronde zijn beheerst.")}
-        </p>
+        <SessionSummary terms={studySet?.terms ?? playableTerms} results={results} title={t("study_round_done", "Ronde voltooid!")} />
       </div>
     );
   }
@@ -119,7 +163,35 @@ export function LearnMode() {
       <p className="text-sm text-muted-foreground mb-4 text-center">
         {left} {t("study_terms_remaining", "begrippen te gaan")}
       </p>
-      {current.type === "written" ? (
+      {current.type === "flashcard" ? (
+        <div className="space-y-5">
+          <div className="rounded-2xl border border-border bg-card p-8 min-h-[220px] flex items-center justify-center shadow-sm">
+            <MarkdownContent className="text-xl text-center font-medium">
+              {current.prompt}
+            </MarkdownContent>
+          </div>
+          <div className="rounded-xl border border-border bg-secondary/50 p-5">
+            <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Antwoord</p>
+            <MarkdownContent className="text-base">{current.correctAnswer}</MarkdownContent>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => handleAnswer(false, "still-learning", "flashcard")}
+              className="rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-700 dark:text-red-300"
+            >
+              Nog oefenen
+            </button>
+            <button
+              type="button"
+              onClick={() => handleAnswer(true, "know-it", "flashcard")}
+              className="rounded-xl border border-green-500/40 bg-green-500/10 px-4 py-3 text-sm font-medium text-green-700 dark:text-green-300"
+            >
+              Weet ik
+            </button>
+          </div>
+        </div>
+      ) : current.type === "written" ? (
         <WrittenQuestion
           question={current}
           smartGrading={settings.smartGrading}
@@ -130,6 +202,7 @@ export function LearnMode() {
         />
       ) : (
         <McqQuestion
+          key={current.id}
           question={current}
           onAnswer={(answer, correct) => handleAnswer(correct, answer, "multiple-choice")}
         />

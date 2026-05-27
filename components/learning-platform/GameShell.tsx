@@ -51,9 +51,9 @@ export function GameShell({
   const best = getHighScore(studySetId, scoreId, lowerIsBetter);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 rounded-2xl border border-border bg-card/70 p-4 shadow-sm">
       <Confetti active={confetti} />
-      <div className="flex items-center justify-between gap-2 flex-wrap">
+      <div className="flex items-center justify-between gap-2 flex-wrap rounded-xl border border-border bg-background/70 px-3 py-2">
         <button
           type="button"
           onClick={onQuit}

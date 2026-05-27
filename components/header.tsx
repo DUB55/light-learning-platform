@@ -6,6 +6,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { DynamicIcon } from "./DynamicIcon";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslation } from "@/lib/i18n";
+import { getSectionTitle } from "@/lib/section-title";
 
 function YoutubeIcon({ className }: { className?: string }) {
   return (
@@ -96,6 +97,8 @@ interface HeaderProps {
 export function Header({ siteMetadata, sections, buttons, showExportButtons = false, showAnkiExport = false, showFlashcardsExport = false, showTranscriptExport = false, showCopyTranscript = false, showLanguageSwitcher = false }: HeaderProps) {
   const [copied, setCopied] = useState(false);
   const { t } = useTranslation();
+  const hasExportActions =
+    showExportButtons && (showAnkiExport || showFlashcardsExport || showTranscriptExport || showCopyTranscript);
 
   const handleCopyTranscript = async () => {
     try {
@@ -128,7 +131,7 @@ export function Header({ siteMetadata, sections, buttons, showExportButtons = fa
     
     let flashcardContent = '# Flashcards\n\n';
     sections.forEach(section => {
-      flashcardContent += `## ${section.title}\n\n`;
+      flashcardContent += `## ${getSectionTitle(section)}\n\n`;
       section.questions.forEach((question: any, index: number) => {
         flashcardContent += `### Q${index + 1}: ${question.text}\n\n`;
         flashcardContent += `**${t('answer')}:** ${question.answer || t('not_provided', 'Not provided')}\n\n---\n\n`;
@@ -142,7 +145,7 @@ export function Header({ siteMetadata, sections, buttons, showExportButtons = fa
     let transcript = `# ${siteMetadata.title}\n\n${siteMetadata.description}\n\n`;
     
     sectionsData.forEach(section => {
-      transcript += `## ${section.title}\n\n`;
+      transcript += `## ${getSectionTitle(section)}\n\n`;
       if (section.timestamp) {
         transcript += `*${section.timestamp}*\n\n`;
       }
@@ -226,7 +229,7 @@ export function Header({ siteMetadata, sections, buttons, showExportButtons = fa
         </div>
       </div>
 
-      {(showAnkiExport || showFlashcardsExport || showTranscriptExport || showCopyTranscript) && (
+      {hasExportActions && (
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px]">
           <span className="text-muted-foreground uppercase tracking-widest text-[11px] font-medium">
             {t('export')}

@@ -22,6 +22,11 @@ export function getPromptAndAnswer(
 export function filterPlayableTerms(terms: Term[], settings: StudySettings): Term[] {
   let filtered = [...terms];
 
+  if (settings.selectedLearningSetIds && settings.selectedLearningSetIds.length > 0) {
+    const selected = new Set(settings.selectedLearningSetIds);
+    filtered = filtered.filter((t) => t.learningSetId && selected.has(t.learningSetId));
+  }
+
   if (settings.studyStarredOnly) {
     filtered = filtered.filter((t) => t.isStarred);
   }

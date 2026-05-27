@@ -65,7 +65,14 @@ export const useLearningPlatformStore = create<LearningPlatformState>((set, get)
   init: (studySet) => {
     const stored = loadProgressStore(studySet.id);
     const savedSettings = loadSettings(studySet.id);
-    const settings = savedSettings ?? defaultStudySettings;
+    const setIds = new Set(studySet.learningSets.map((set) => set.id));
+    const loadedSettings = savedSettings ?? defaultStudySettings;
+    const settings = {
+      ...loadedSettings,
+      selectedLearningSetIds: (loadedSettings.selectedLearningSetIds ?? []).filter((id) =>
+        setIds.has(id)
+      ),
+    };
     const merged = mergeTermsWithProgress(studySet.terms, stored.progress);
     const fullSet = { ...studySet, terms: merged };
     const playable = filterPlayableTerms(

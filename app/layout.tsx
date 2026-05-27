@@ -13,8 +13,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Studieplatform",
-  description: "Interactieve studiegidsen voor verschillende vakken en onderwerpen.",
+  title: "Toetsweekvoorbereiding",
+  description: "Oefenmateriaal voor vakken tijdens de toetsweek.",
 };
 
 export default function RootLayout({

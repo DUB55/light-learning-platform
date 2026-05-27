@@ -1,11 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Hoofdstuk 11B – Vergelijkingen en ongelijkheden",
-    "description": "Lesmateriaal voor Hoofdstuk 11B over vergelijkingen en ongelijkheden, met uitleg over gebroken vergelijkingen, exponentiële vergelijkingen, wortelvergelijkingen, machtsvergelijkingen, parabolen en lijnen, intervallen en kwadratische ongelijkheden."
+    "title": "Wiskunde - Hoofdstuk 11B: Vergelijkingen en ongelijkheden",
+    "description": "Wiskunde hoofdstuk 11B over vergelijkingen en ongelijkheden, met uitleg, opdrachten en leerbare begrippen."
   },
   "contentFormat": "textbook",
-  "defaultViewMode": "book",
-  "availableModes": ["book", "study", "simple", "advanced"],
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple",
+    "study",
+    "advanced"
+  ],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,

@@ -1,12 +1,14 @@
 "use client";
 
 import type { ComponentType } from "react";
-import { BookOpen, Gamepad2, Sparkles } from "lucide-react";
+import { BookOpen, Gamepad2, Keyboard, Rocket, Sparkles } from "lucide-react";
 import type { LearningMode } from "@/types/learning-platform";
 import type { GameScoreId } from "./game-scores";
 import { MatchGame } from "@/components/learning-platform/games/MatchGame";
 import { BlastGame } from "@/components/learning-platform/games/BlastGame";
 import { BlocksGame } from "@/components/learning-platform/games/BlocksGame";
+import { QuizSprintGame } from "@/components/learning-platform/games/QuizSprintGame";
+import { TypeRushGame } from "@/components/learning-platform/games/TypeRushGame";
 
 export interface GameShellProps {
   onQuit: () => void;
@@ -56,6 +58,22 @@ export const STUDY_GAMES: StudyGameDefinition[] = [
     fallback: "Blokken",
     icon: BookOpen,
     component: BlocksGame,
+  },
+  {
+    id: "sprint",
+    scoreId: "sprint",
+    labelKey: "study_game_sprint",
+    fallback: "Quiz sprint",
+    icon: Rocket,
+    component: QuizSprintGame,
+  },
+  {
+    id: "type-rush",
+    scoreId: "type-rush",
+    labelKey: "study_game_type_rush",
+    fallback: "Type rush",
+    icon: Keyboard,
+    component: TypeRushGame,
   },
 ];
 

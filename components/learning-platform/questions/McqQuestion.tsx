@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Check, X } from "lucide-react";
 import type { Question } from "@/types/learning-platform";
 import { MarkdownContent } from "../shared/MarkdownContent";
 
@@ -53,13 +54,34 @@ export function McqQuestion({
               type="button"
               disabled={submitted || disabled}
               onClick={() => handleSelect(option)}
-              className={`rounded-lg border px-4 py-3 text-left text-sm transition-colors ${style}`}
+              className={`rounded-lg border px-4 py-3 text-left text-sm transition-all duration-200 ${style}`}
             >
-              <MarkdownContent className="text-sm">{option}</MarkdownContent>
+              <span className="flex items-start gap-2">
+                {submitted && showFeedback && isCorrect && (
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                )}
+                {submitted && showFeedback && isSelected && !isCorrect && (
+                  <X className="mt-0.5 h-4 w-4 shrink-0 text-red-600" />
+                )}
+                <MarkdownContent className="text-sm">{option}</MarkdownContent>
+              </span>
             </button>
           );
         })}
       </div>
+      {submitted && showFeedback && (
+        <div
+          className={`rounded-lg border px-4 py-3 text-sm ${
+            selected === question.correctAnswer
+              ? "border-green-500/40 bg-green-500/10 text-green-700 dark:text-green-300"
+              : "border-red-500/40 bg-red-500/10 text-red-700 dark:text-red-300"
+          }`}
+        >
+          {selected === question.correctAnswer
+            ? "Goed antwoord."
+            : "Nog niet. Kijk even naar het juiste antwoord voordat je doorgaat."}
+        </div>
+      )}
     </div>
   );
 }

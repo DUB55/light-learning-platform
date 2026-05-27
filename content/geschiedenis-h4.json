@@ -1,11 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Aardrijkskunde – Hoofdstuk 4: De wereld na 1945",
-    "description": "Lesmateriaal voor Hoofdstuk 4 over de wereld na 1945, met leerdoelen, leerstof, begrippen en opdrachten."
+    "title": "Geschiedenis - Hoofdstuk 4: De wereld na 1945",
+    "description": "Geschiedenis hoofdstuk 4 over de wereld na 1945, met leerdoelen, leerstof, begrippen en opdrachten."
   },
   "contentFormat": "textbook",
-  "defaultViewMode": "book",
-  "availableModes": ["book", "study", "simple", "advanced"],
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple",
+    "study",
+    "advanced"
+  ],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
@@ -1064,7 +1068,239 @@
           "content": "## Tijdvak volgorde\n\n1. Proclamatie van Indonesië (17 augustus 1945)\n2. Duitse bezetting van Nederland (1940-1945)\n3. Japanse bezetting van Indonesië (1942-1945)\n4. Proclamatie van Israël (1948)\n5. Start van de EGKS (1952)\n6. Berlijnse Muur (1961-1989)\n7. Staatssgreep van Park in Zuid-Korea (1961)\n8. Koude Oorlog (1945-1989)\n9. Milleniumdoelen (2000)"
         }
       ],
-      "answers": []
+      "answers": [],
+      "learningSets": [
+        {
+          "id": "set-blk-begrippen-4-1",
+          "title": "Begrippen §4.1 Einde van de wereldrijken",
+          "description": "6 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-1-term-1",
+              "term": "politionele actie",
+              "definition": "Nederlandse naam voor twee militaire operaties tijdens de Indonesische onafhankelijkheidsoorlog"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-2",
+              "term": "proclamatie",
+              "definition": "bekendmaking, het uitroepen"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-3",
+              "term": "soevereiniteitsoverdracht",
+              "definition": "het officieel geven van de hoogste macht aan een andere"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-4",
+              "term": "supermacht",
+              "definition": "zeer machtige staat"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-5",
+              "term": "tijd van televisie en computer",
+              "definition": "tiende tijdvak (1950-heden)"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-6",
+              "term": "zionisme",
+              "definition": "streven naar een joodse staat"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-2",
+          "title": "Begrippen §4.2 De Koude Oorlog",
+          "description": "9 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-2-term-1",
+              "term": "atoomoorlog (kernoorlog)",
+              "definition": "oorlog met atoombommen"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-2",
+              "term": "blokvorming",
+              "definition": "ontstaan van vijandige groepen landen"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-3",
+              "term": "containment",
+              "definition": "Amerikaanse politiek in de Koude Oorlog om het communisme in te dammen"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-4",
+              "term": "Koude Oorlog",
+              "definition": "vijandigheid tussen het Oostblok en het Westen (1945-1989)"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-5",
+              "term": "Marshallhulp",
+              "definition": "Amerikaanse hulp voor de Europese economie"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-6",
+              "term": "NAVO",
+              "definition": "militair bondgenootschap van de VS, Canada en West- en Zuid-Europese landen"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-7",
+              "term": "ontspanning",
+              "definition": "verminderde spanning in de Koude Oorlog"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-8",
+              "term": "Oostblok",
+              "definition": "communistische landen onder leiding van de Sovjet-Unie"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-9",
+              "term": "Warschaupact",
+              "definition": "militair bondgenootschap van het Oostblok"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-3",
+          "title": "Begrippen §4.3 De VS vanaf de Tweede Wereldoorlog",
+          "description": "6 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-3-term-1",
+              "term": "amerikanisering",
+              "definition": "verspreiding van de Amerikaanse cultuur"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-2",
+              "term": "babyboom",
+              "definition": "geboortegolf"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-3",
+              "term": "commerciële zenders",
+              "definition": "radio en televisie die worden betaald met geld van adverteerders"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-4",
+              "term": "diversiteit",
+              "definition": "verscheidenheid, verschil"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-5",
+              "term": "legitimiteit",
+              "definition": "wettigheid, overeenstemming met wetten"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-6",
+              "term": "segregatie (rassenscheiding)",
+              "definition": "scheiding van bevolkingsgroepen"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-4",
+          "title": "Begrippen §4.4 Samenwerking en democratie",
+          "description": "10 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-4-term-1",
+              "term": "bondskanselier",
+              "definition": "regeringsleider van de Bondsrepubliek Duitsland"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-2",
+              "term": "EEG",
+              "definition": "Europese Economische Gemeenschap (vanaf 1958)"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-3",
+              "term": "EGKS",
+              "definition": "Europese Gemeenschap voor Kolen en Staal (vanaf 1952)"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-4",
+              "term": "Europese Commissie",
+              "definition": "dagelijks bestuur van de EEG en later de EU"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-5",
+              "term": "Europese Unie (EU)",
+              "definition": "organisatie van Europese staten (vanaf 1993)"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-6",
+              "term": "Europees Hof voor de Rechten van de Mens",
+              "definition": "Europese rechtbank in Straatsburg"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-7",
+              "term": "gemeenschappelijke markt (interne markt)",
+              "definition": "gebied van meer landen met vrije handel zonder importtarieven"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-8",
+              "term": "Hof van Justitie",
+              "definition": "hoogste Europese rechtbank"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-9",
+              "term": "integratie (integreren)",
+              "definition": "opgaan in een geheel"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-10",
+              "term": "Raad van Europa",
+              "definition": "organisatie van Europese landen ter bevordering van democratie en mensenrechten (vanaf 1949)"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-5",
+          "title": "Begrippen §4.5 Welvaart en armoede",
+          "description": "8 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-5-term-1",
+              "term": "bevolkingsexplosie",
+              "definition": "zeer snelle bevolkingsgroei"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-2",
+              "term": "commune",
+              "definition": "leefgemeenschap"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-3",
+              "term": "corruptie",
+              "definition": "omkoping"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-4",
+              "term": "derde wereld",
+              "definition": "gezamenlijke ontwikkelingslanden in de tijd van de Koude Oorlog"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-5",
+              "term": "duurzaam",
+              "definition": "langdurig"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-6",
+              "term": "militaire coup",
+              "definition": "staatsgreep door militairen"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-7",
+              "term": "ontwikkelingslanden",
+              "definition": "arme landen in Afrika, Azië en Zuid-Amerika"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-8",
+              "term": "zelfverrijking",
+              "definition": "als bestuurders veel overheidsgeld aan zich laten betalen"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

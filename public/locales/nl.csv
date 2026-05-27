@@ -4,9 +4,9 @@ bookmarks,Bladwijzers
 clear_bookmarks,Wis alles
 no_bookmarks,Nog geen bladwijzers
 click_to_add,Klik op een paragraaf om bladwijzer toe te voegen
-study_mode,Studie Modus
+study_mode,Leren
 book_mode,Boek Modus
-simple_mode,Eenvoudige Modus
+simple_mode,Uitleg
 loading,Laden...
 export,Exporteren
 copy,Kopiëren
@@ -93,8 +93,8 @@ jump_to,Spring naar
 select_language,Selecteer taal
 english,Engels
 dutch,Nederlands
-home_title,Studieplatform
-home_subtitle,Kies hieronder een studiegids om te beginnen:
+home_title,Toetsweekvoorbereiding
+home_subtitle,Kies hieronder een vak om te oefenen voor de toetsweek.
 advanced_mode,Geavanceerd
 advanced_mode_description,Studiemodi en SRS-voortgang
 advanced_home_description,Oefen met geavanceerde studiemodi en lokale voortgang.

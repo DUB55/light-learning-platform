@@ -1,172 +1,42 @@
 [
   {
-    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
-    "sessionId": "a264fe84-33c4-4271-bbe5-b1c917fd987b",
+    "userId": "ba9710ba-93c2-455b-8433-16935ac82404",
+    "sessionId": "664c207b-41b4-4de9-a8b2-43ee70f52bf4",
     "eventType": "page_view",
-    "timestamp": 1779711044526,
+    "timestamp": 1779923280244,
     "data": {
-      "path": "/elektriciteit",
-      "referrer": "http://localhost:3000/elektriciteit"
+      "path": "/aardrijkskunde-h5",
+      "referrer": "http://localhost:3000/levensbeschouwing"
     }
   },
   {
-    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
-    "sessionId": "a264fe84-33c4-4271-bbe5-b1c917fd987b",
-    "eventType": "mode_switch",
-    "timestamp": 1779711045462,
+    "userId": "ba9710ba-93c2-455b-8433-16935ac82404",
+    "sessionId": "664c207b-41b4-4de9-a8b2-43ee70f52bf4",
+    "eventType": "session_end",
+    "timestamp": 1779923334380,
     "data": {
-      "from": "book",
-      "to": "study"
+      "duration": 54136
     }
   },
   {
-    "userId": "a737a508-b49d-4072-9c2f-b7b711e726c0",
-    "sessionId": "a264fe84-33c4-4271-bbe5-b1c917fd987b",
-    "eventType": "mode_switch",
-    "timestamp": 1779711047584,
-    "data": {
-      "from": "study",
-      "to": "book"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
+    "userId": "ba9710ba-93c2-455b-8433-16935ac82404",
+    "sessionId": "664c207b-41b4-4de9-a8b2-43ee70f52bf4",
     "eventType": "session_start",
-    "timestamp": 1779711985770,
+    "timestamp": 1779923338331,
     "data": {
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/3.5.33 Chrome/142.0.7444.265 Electron/39.8.1 Safari/537.36",
-      "language": "en-US",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+      "language": "en",
       "screenResolution": "1280x800"
     }
   },
   {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779711992906,
-    "data": {
-      "from": "book",
-      "to": "simple"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712012521,
-    "data": {
-      "from": "simple",
-      "to": "advanced"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
+    "userId": "ba9710ba-93c2-455b-8433-16935ac82404",
+    "sessionId": "664c207b-41b4-4de9-a8b2-43ee70f52bf4",
     "eventType": "page_view",
-    "timestamp": 1779712012544,
+    "timestamp": 1779923338333,
     "data": {
-      "path": "/hoofdstuk-5-gewapende-conflicten",
-      "referrer": ""
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712014949,
-    "data": {
-      "from": "advanced",
-      "to": "simple"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712015389,
-    "data": {
-      "from": "simple",
-      "to": "study"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712018267,
-    "data": {
-      "from": "study",
-      "to": "book"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712019954,
-    "data": {
-      "from": "book",
-      "to": "study"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "session_end",
-    "timestamp": 1779712021656,
-    "data": {
-      "duration": 35884
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "session_start",
-    "timestamp": 1779712027848,
-    "data": {
-      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cursor/3.5.33 Chrome/142.0.7444.265 Electron/39.8.1 Safari/537.36",
-      "language": "en-US",
-      "screenResolution": "1280x800"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "page_view",
-    "timestamp": 1779712027851,
-    "data": {
-      "path": "/vergelijkingen-ongelijkheden-11b",
-      "referrer": "http://localhost:3000/hoofdstuk-5-gewapende-conflicten"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712028770,
-    "data": {
-      "from": "book",
-      "to": "simple"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "mode_switch",
-    "timestamp": 1779712030286,
-    "data": {
-      "from": "simple",
-      "to": "study"
-    }
-  },
-  {
-    "userId": "fe8a4db2-82b3-4c55-ba77-d7f2553be6b2",
-    "sessionId": "8cbe5409-03cd-485b-966c-c676f980016f",
-    "eventType": "session_end",
-    "timestamp": 1779712991768,
-    "data": {
-      "duration": 963918
+      "path": "/biologie-hoofdstuk-4-5",
+      "referrer": "http://localhost:3000/aardrijkskunde-h5"
     }
   }
 ]

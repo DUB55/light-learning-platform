@@ -1,4 +1,4 @@
-export type GameScoreId = "match" | "blast" | "blocks";
+export type GameScoreId = "match" | "blast" | "blocks" | "sprint" | "type-rush";
 
 const KEY = "learning-platform-highscores-v1";
 

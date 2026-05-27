@@ -162,7 +162,7 @@ export function BlastGame({ onQuit }: GameShellProps) {
         }
 
         return (
-          <div className="space-y-4">
+          <div className="space-y-4 rounded-2xl border border-border bg-gradient-to-br from-card to-secondary/40 p-5">
             <div className="flex justify-end text-sm text-muted-foreground">
               <span>
                 {t("study_lives", "Levens")}: {lives}
@@ -170,7 +170,7 @@ export function BlastGame({ onQuit }: GameShellProps) {
             </div>
             <canvas
               ref={canvasRef}
-              className="w-full h-72 rounded-xl border border-border bg-secondary/40 dark:bg-card"
+              className="w-full h-72 rounded-xl border border-border bg-background shadow-inner"
             />
             <p className="text-xs text-center text-muted-foreground">
               {t(

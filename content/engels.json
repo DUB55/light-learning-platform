@@ -1,0 +1,19 @@
+{
+  "siteMetadata": {
+    "title": "Engels",
+    "description": "Leermateriaal voor Engels"
+  },
+  "contentFormat": "textbook",
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple"
+  ],
+  "showTimestamps": false,
+  "showExportButtons": false,
+  "showAnkiExport": false,
+  "showFlashcardsExport": false,
+  "showTranscriptExport": false,
+  "showCopyTranscript": false,
+  "buttons": [],
+  "sections": []
+}

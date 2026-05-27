@@ -1,11 +1,15 @@
 {
   "siteMetadata": {
-    "title": "Biologie – Hoofdstuk 4 & 5: Voortplanting, seksualiteit, erfelijkheid en evolutie",
-    "description": "Lesmateriaal voor Hoofdstuk 4 over voortplanting en seksualiteit en Hoofdstuk 5 over erfelijkheid en evolutie, met leerdoelen, leerstof en begrippen."
+    "title": "Biologie - Hoofdstuk 4 & 5: Voortplanting, seksualiteit, erfelijkheid en evolutie",
+    "description": "Biologie hoofdstuk 4 en 5 over voortplanting, seksualiteit, erfelijkheid en evolutie, met leerdoelen, leerstof en begrippen."
   },
   "contentFormat": "textbook",
-  "defaultViewMode": "book",
-  "availableModes": ["book", "study", "simple", "advanced"],
+  "defaultViewMode": "simple",
+  "availableModes": [
+    "simple",
+    "study",
+    "advanced"
+  ],
   "showTimestamps": false,
   "showExportButtons": false,
   "showAnkiExport": false,
@@ -375,7 +379,595 @@
           "content": "## Begrippen §5.3 Genen en allelen\n\n- basen = A, T, C en G waar DNA uit is opgebouwd\n- basenpaar = paar van de basen A-T of C-G\n- eiwitten = stof die voor een groot deel de kleur, vorm en werking van je lichaam regelt\n- allel (genvariant) = informatie in een gen\n- allelenpaar = twee allelen van een gen\n- homozygoot = het allelenpaar voor een eigenschap bestaat uit twee gelijke allelen\n- heterozygoot = het allelenpaar voor een eigenschap bestaat uit twee ongelijke allelen\n- mutatie = plotselinge verandering van het genotype door een beschadiging in het chromosoom\n- gemuteerd = één of meer allelen zijn veranderd\n- mutant = organisme waarbij een mutatie zichtbaar is in het fenotype\n- albino = mutant waarbij het lichaam niet in staat is pigment te vormen\n- mutagene invloeden = chemische stoffen en stralingen die mutaties kunnen veroorzaken"
         }
       ],
-      "answers": []
+      "answers": [],
+      "learningSets": [
+        {
+          "id": "set-blk-begrippen-4-1",
+          "title": "Begrippen §4.1 Geslachtsorganen",
+          "description": "27 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-1-term-1",
+              "term": "geslacht (sekse)",
+              "definition": "lichamelijke geslachtskenmerken, bijvoorbeeld penis of vulva"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-2",
+              "term": "geslachtskenmerk",
+              "definition": "lichamelijk kenmerk waaraan je een geslacht herkent"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-3",
+              "term": "primair geslachtskenmerk",
+              "definition": "geslachtskenmerk dat al bij de geboorte aanwezig is"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-4",
+              "term": "penis",
+              "definition": "voortplantingsorgaan van de man dat bestaat uit zwellichamen, urinebuis, eikel en voorhuid"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-5",
+              "term": "balzak",
+              "definition": "huidplooi waar een teelbal en bijbal in ligt"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-6",
+              "term": "vulva",
+              "definition": "verzamelnaam voor de uitwendige geslachtsorganen van de vrouw"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-7",
+              "term": "intersekse",
+              "definition": "geslacht van een persoon met zowel mannelijke als vrouwelijke geslachtskenmerken"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-8",
+              "term": "voortplantingsstelsel",
+              "definition": "alle organen die een rol spelen bij de voortplanting"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-9",
+              "term": "geslachtsorganen",
+              "definition": "organen die ervoor zorgen dat mensen zich kunnen voortplanten"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-10",
+              "term": "clitoris",
+              "definition": "orgaan dat gevoelig is voor prikkels die een fijn gevoel geven"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-11",
+              "term": "clitoriseikel",
+              "definition": "gevoelig 'knopje' van de clitoris"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-12",
+              "term": "clitorishoed",
+              "definition": "huidplooi om de clitoriseikel"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-13",
+              "term": "binnenste vulvalippen",
+              "definition": "dunne, gladde huidplooien die onder de clitoris samenkomen"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-14",
+              "term": "buitenste vulvalippen",
+              "definition": "behaarde huidplooien om de binnenste vulvalippen"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-15",
+              "term": "eikel",
+              "definition": "top van de penis die erg gevoelig is"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-16",
+              "term": "voorhuid",
+              "definition": "dunne huidplooi die de eikel bedekt"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-17",
+              "term": "baarmoeder",
+              "definition": "orgaan waar een bevruchte eicel zich ontwikkelt tot een kind"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-18",
+              "term": "eileider",
+              "definition": "buis die een eicel vervoert naar de baarmoeder"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-19",
+              "term": "eierstok",
+              "definition": "orgaan waar eicellen zich ontwikkelen"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-20",
+              "term": "eicel",
+              "definition": "vrouwelijke geslachtscel"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-21",
+              "term": "vagina",
+              "definition": "opening die de vulva verbindt met de baarmoeder"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-22",
+              "term": "maagdenvlies",
+              "definition": "randje weefsel aan het begin van de vagina"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-23",
+              "term": "zwellichaam",
+              "definition": "orgaan dat zich vult met bloed bij seksuele opwinding"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-24",
+              "term": "teelbal",
+              "definition": "orgaan dat zaadcellen maakt"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-25",
+              "term": "bijbal",
+              "definition": "orgaan waar zaadcellen worden opgeslagen"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-26",
+              "term": "zaadleider",
+              "definition": "buis die zaadcellen vervoert"
+            },
+            {
+              "id": "set-blk-begrippen-4-1-term-27",
+              "term": "urinebuis",
+              "definition": "vervoert urine naar buiten het lichaam"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-2",
+          "title": "Begrippen §4.2 Puberteit",
+          "description": "8 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-2-term-1",
+              "term": "hormoon",
+              "definition": "stof die de werking van organen regelt"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-2",
+              "term": "geslachtshormoon",
+              "definition": "hormoon dat door de geslachtsorganen wordt aangemaakt"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-3",
+              "term": "testosteron",
+              "definition": "mannelijk geslachtshormoon"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-4",
+              "term": "oestrogenen",
+              "definition": "vrouwelijke geslachtshormonen"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-5",
+              "term": "puberteit",
+              "definition": "periode waarin je je ontwikkelt tot volwassene"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-6",
+              "term": "lichamelijke verandering in de puberteit",
+              "definition": "hormonen zorgen ervoor dat je lichaam (je uiterlijk) en de werking van je organen verandert"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-7",
+              "term": "secundair geslachtskenmerk",
+              "definition": "geslachtskenmerk dat in de puberteit ontstaat"
+            },
+            {
+              "id": "set-blk-begrippen-4-2-term-8",
+              "term": "geestelijke verandering",
+              "definition": "verandering in de puberteit in je gedachten, gevoelens, zelfstandigheid en sociale leven"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-3",
+          "title": "Begrippen §4.3 Vruchtbaar worden",
+          "description": "11 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-3-term-1",
+              "term": "zaadcel (spermacel)",
+              "definition": "mannelijke geslachtscel"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-2",
+              "term": "zaadblaasje",
+              "definition": "orgaan dat vocht en voedingsstoffen toevoegt aan de zaadcellen"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-3",
+              "term": "prostaat",
+              "definition": "orgaan dat vocht toevoegt aan de zaadcellen"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-4",
+              "term": "sperma",
+              "definition": "zaadcellen en vocht uit de zaadblaasjes en de prostaat"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-5",
+              "term": "eicel",
+              "definition": "vrouwelijke geslachtscel"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-6",
+              "term": "ovulatie (eisprong)",
+              "definition": "het vrijkomen van een rijpe eicel uit een eierstok"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-7",
+              "term": "menstruatie",
+              "definition": "afstoten van een deel van het baarmoederslijmvlies en bloed via de vagina"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-8",
+              "term": "endometriose",
+              "definition": "weefsel buiten de baarmoeder dat lijkt op baarmoederslijmvlies en reageert op geslachtshormonen uit de eierstokken; kan zorgen voor (extra) pijn tijdens de menstruatie of constante buikpijn"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-9",
+              "term": "menstruatiecyclus",
+              "definition": "cyclus van het terugkerend opbouwen en afstoten van het baarmoederslijmvlies"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-10",
+              "term": "overgang",
+              "definition": "periode bij een vrouw (tussen de 40 en 60 jaar) waarbij steeds minder hormonen worden aangemaakt"
+            },
+            {
+              "id": "set-blk-begrippen-4-3-term-11",
+              "term": "menopauze",
+              "definition": "periode na de overgang: er rijpen geen eicellen meer waardoor een vrouw niet meer zwanger kan worden"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-4",
+          "title": "Begrippen §4.4 Zwanger worden",
+          "description": "16 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-4-term-1",
+              "term": "erectie",
+              "definition": "het stijf worden van de penis"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-2",
+              "term": "geslachtsgemeenschap",
+              "definition": "het inbrengen van een penis in een vagina"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-3",
+              "term": "zaadlozing",
+              "definition": "het met schokken uit de penis komen van sperma"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-4",
+              "term": "bevruchting",
+              "definition": "versmelten van de kern van een zaadcel met de kern van een eicel"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-5",
+              "term": "reservevoedsel",
+              "definition": "voedsel dat nodig is voor de eerste ontwikkeling als de eicel wordt bevrucht"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-6",
+              "term": "zweepstaart",
+              "definition": "staart waarmee een zaadcel zich voortbeweegt"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-7",
+              "term": "innesteling",
+              "definition": "het zich vastzetten van een klompje cellen in het baarmoederslijmvlies"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-8",
+              "term": "embryo",
+              "definition": "kindje in de eerste weken van ontwikkeling in de baarmoeder"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-9",
+              "term": "foetus",
+              "definition": "kindje in de baarmoeder vanaf de achtste week na de bevruchting tot aan de geboorte"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-10",
+              "term": "placenta",
+              "definition": "deel van de baarmoederwand waar bloed in bloedvaten van de embryo vlak langs het bloed van de moeder stroomt"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-11",
+              "term": "navelstreng",
+              "definition": "streng die een foetus met de placenta verbindt"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-12",
+              "term": "vruchtvlies",
+              "definition": "vlies om een foetus"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-13",
+              "term": "vruchtwater",
+              "definition": "vloeistof die een embryo beschermt tegen stoten, uitdroging en wisseling van temperatuur"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-14",
+              "term": "echo",
+              "definition": "beeld van een foetus in de baarmoeder dat met geluidsgolven wordt gemaakt"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-15",
+              "term": "prenataal onderzoek",
+              "definition": "onderzoek tijdens de zwangerschap om te bepalen of de moeder een grotere kans heeft op een kind met een aangeboren afwijking of erfelijke ziekte"
+            },
+            {
+              "id": "set-blk-begrippen-4-4-term-16",
+              "term": "NIPT",
+              "definition": "niet-invasieve prenatale test waarbij het DNA van de placenta wordt onderzocht"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-4-5",
+          "title": "Begrippen §4.5 Seksualiteit",
+          "description": "17 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-4-5-term-1",
+              "term": "gender",
+              "definition": "een optelsom van je geslacht, je identiteit (wie je bent, hoe je je voelt), je geaardheid en je genderexpressie (hoe je je uit naar de buitenwereld door bijvoorbeeld kleding en gedrag)"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-2",
+              "term": "genderdysforie",
+              "definition": "genderidentiteit komt niet of niet helemaal overeen met het geslacht"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-3",
+              "term": "cisgender",
+              "definition": "genderidentiteit komt overeen met het geslacht"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-4",
+              "term": "transgender",
+              "definition": "geboortegeslacht komt niet overeen met de genderidentiteit"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-5",
+              "term": "non-binair",
+              "definition": "zich niet compleet herkennen in de eigenschappen en gedragingen die passen bij één bepaald geslacht"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-6",
+              "term": "geaardheid",
+              "definition": "tot welk geslacht iemand zich seksueel aangetrokken voelt"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-7",
+              "term": "heteroseksueel",
+              "definition": "je seksueel aangetrokken voelen tot personen van het andere geslacht"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-8",
+              "term": "homoseksueel",
+              "definition": "je seksueel aangetrokken voelen tot personen van hetzelfde geslacht"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-9",
+              "term": "lesbisch",
+              "definition": "als vrouw je seksueel aangetrokken voelen tot vrouwen"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-10",
+              "term": "biseksueel",
+              "definition": "je seksueel aangetrokken voelen tot zowel mannen als vrouwen"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-11",
+              "term": "aseksueel",
+              "definition": "je niet seksueel aangetrokken voelen tot anderen"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-12",
+              "term": "panseksueel",
+              "definition": "je seksueel aangetrokken voelen tot mensen; het geslacht of gender maakt niets uit"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-13",
+              "term": "seksualiteit",
+              "definition": "alle gedachten, gevoelens en handelingen die te maken hebben met lust en opwinding"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-14",
+              "term": "orgasme (klaarkomen)",
+              "definition": "lekker gevoel door prikkeling van de eikel of de clitoris of penis"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-15",
+              "term": "zelfbevrediging",
+              "definition": "bij jezelf zorgen voor een orgasme"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-16",
+              "term": "masturbatie",
+              "definition": "bij jezelf zorgen voor een orgasme"
+            },
+            {
+              "id": "set-blk-begrippen-4-5-term-17",
+              "term": "sexting",
+              "definition": "online versturen van seksueel getinte berichtjes, foto's of filmpjes van jezelf"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-1",
+          "title": "Begrippen §5.1 Genotype en fenotype",
+          "description": "9 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-1-term-1",
+              "term": "lichaamscellen",
+              "definition": "cellen waaruit je lichaam is opgebouwd"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-2",
+              "term": "chromosomen",
+              "definition": "lange dunne draden in de celkern"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-3",
+              "term": "DNA",
+              "definition": "stof die informatie bevat voor erfelijke eigenschappen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-4",
+              "term": "celdeling",
+              "definition": "vorming van nieuwe cellen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-5",
+              "term": "dochtercel",
+              "definition": "cel die ontstaat uit een moedercel tijdens celdeling"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-6",
+              "term": "gen",
+              "definition": "stukjes DNA die samen de informatie bevatten voor een erfelijke eigenschap"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-7",
+              "term": "genotype",
+              "definition": "informatie voor de erfelijke eigenschappen van een organisme"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-8",
+              "term": "genexpressie",
+              "definition": "het tot uiting komen van een gen"
+            },
+            {
+              "id": "set-blk-begrippen-5-1-term-9",
+              "term": "fenotype",
+              "definition": "eigenschappen van een organisme, waaronder het uiterlijk"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-2",
+          "title": "Begrippen §5.2 Chromosomen",
+          "description": "6 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-2-term-1",
+              "term": "paren",
+              "definition": "twee chromosomen die bestaan uit dezelfde genen vormen een paar"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-2",
+              "term": "geslachtschromosomen",
+              "definition": "23e chromosomenpaar dat het geslacht bepaalt"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-3",
+              "term": "varianten van een gen",
+              "definition": "de informatie van een gen kan verschillen, een gen kan bijvoorbeeld informatie bevatten voor bruine ogen of voor blauwe ogen"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-4",
+              "term": "geslachtscellen",
+              "definition": "cellen waarbij de chromosomen enkelvoudig voorkomen"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-5",
+              "term": "meiose",
+              "definition": "celdeling waarbij de chromosomen verdeeld worden over de dochtercellen (geslachtscellen)"
+            },
+            {
+              "id": "set-blk-begrippen-5-2-term-6",
+              "term": "variatie in genotypen",
+              "definition": "verschillende combinaties van chromosomen die nakomelingen van hun ouders kunnen krijgen"
+            }
+          ]
+        },
+        {
+          "id": "set-blk-begrippen-5-3",
+          "title": "Begrippen §5.3 Genen en allelen",
+          "description": "12 begrippen",
+          "terms": [
+            {
+              "id": "set-blk-begrippen-5-3-term-1",
+              "term": "basen",
+              "definition": "A, T, C en G waar DNA uit is opgebouwd"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-2",
+              "term": "basenpaar",
+              "definition": "paar van de basen A-T of C-G"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-3",
+              "term": "eiwitten",
+              "definition": "stof die voor een groot deel de kleur, vorm en werking van je lichaam regelt"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-4",
+              "term": "allel (genvariant)",
+              "definition": "informatie in een gen"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-5",
+              "term": "allelenpaar",
+              "definition": "twee allelen van een gen"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-6",
+              "term": "homozygoot",
+              "definition": "het allelenpaar voor een eigenschap bestaat uit twee gelijke allelen"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-7",
+              "term": "heterozygoot",
+              "definition": "het allelenpaar voor een eigenschap bestaat uit twee ongelijke allelen"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-8",
+              "term": "mutatie",
+              "definition": "plotselinge verandering van het genotype door een beschadiging in het chromosoom"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-9",
+              "term": "gemuteerd",
+              "definition": "één of meer allelen zijn veranderd"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-10",
+              "term": "mutant",
+              "definition": "organisme waarbij een mutatie zichtbaar is in het fenotype"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-11",
+              "term": "albino",
+              "definition": "mutant waarbij het lichaam niet in staat is pigment te vormen"
+            },
+            {
+              "id": "set-blk-begrippen-5-3-term-12",
+              "term": "mutagene invloeden",
+              "definition": "chemische stoffen en stralingen die mutaties kunnen veroorzaken"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

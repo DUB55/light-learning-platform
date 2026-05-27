@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useLearningPlatformStore } from "@/store/useLearningPlatformStore";
 import { buildMcqQuestion } from "@/lib/learning-platform/question-generator";
-import type { Question } from "@/types/learning-platform";
+import type { Question, TermResult } from "@/types/learning-platform";
 import { McqQuestion } from "../questions/McqQuestion";
+import { SessionSummary } from "../SessionSummary";
 
 export function McqOnlyMode() {
   const { playableTerms, studySet, settings, recordAnswer, beginSession, endSession } =
@@ -12,6 +13,8 @@ export function McqOnlyMode() {
   const [index, setIndex] = useState(0);
   const [question, setQuestion] = useState<Question | null>(null);
   const [stats, setStats] = useState({ correct: 0, total: 0 });
+  const [complete, setComplete] = useState(false);
+  const [results, setResults] = useState<TermResult[]>([]);
 
   const allTerms = studySet?.terms ?? playableTerms;
 
@@ -35,16 +38,38 @@ export function McqOnlyMode() {
       wasOverridden: false,
       timeSpent: 0,
     });
+    setResults((prev) => [
+      ...prev,
+      {
+        termId: question.term.id,
+        questionType: "multiple-choice",
+        userAnswer: answer,
+        correctAnswer: question.correctAnswer,
+        isCorrect: correct,
+        wasOverridden: false,
+        timeSpent: 0,
+        timestamp: new Date(),
+      },
+    ]);
     setStats((s) => ({
       correct: s.correct + (correct ? 1 : 0),
       total: s.total + 1,
     }));
     if (index + 1 >= playableTerms.length) {
       endSession(Math.round(((stats.correct + (correct ? 1 : 0)) / playableTerms.length) * 100));
+      setTimeout(() => setComplete(true), correct ? 1100 : 1700);
     } else {
-      setTimeout(() => setIndex((i) => i + 1), correct ? 400 : 1200);
+      setTimeout(() => setIndex((i) => i + 1), correct ? 1100 : 1700);
     }
   };
+
+  if (complete) {
+    return (
+      <div className="max-w-3xl mx-auto">
+        <SessionSummary terms={studySet?.terms ?? playableTerms} results={results} />
+      </div>
+    );
+  }
 
   if (!question) return null;
 
