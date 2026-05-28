@@ -29,7 +29,8 @@
         {
           "id": "h1-1-1-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1.1\n\n**1.** Leg bij elk onderdeel uit of dit natuurkundig (NA), biologisch (BI) en/of scheikundig (SK) is:",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1.1\n\n**1.** Leg bij elk onderdeel uit of dit natuurkundig (NA), biologisch (BI) en/of scheikundig (SK) is:",
           "questions": [
             {
               "id": "h1-1-1-q1a",
@@ -153,7 +154,8 @@
         {
           "id": "h1-1-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1.2\n\n**1.** Je klasgenoten hebben ook eigenschappen. Kleur haar is er daar bijvoorbeeld één van. Noem de eigenschappen die je nodig hebt om al je klasgenoten te kunnen beschrijven. Probeer dit te doen met zo weinig mogelijk eigenschappen.\n\n**2.** Kijk naar tabel 1.2.1",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1.2\n\n**1.** Je klasgenoten hebben ook eigenschappen. Kleur haar is er daar bijvoorbeeld één van. Noem de eigenschappen die je nodig hebt om al je klasgenoten te kunnen beschrijven. Probeer dit te doen met zo weinig mogelijk eigenschappen.\n\n**2.** Kijk naar tabel 1.2.1",
           "questions": [
             {
               "id": "h1-1-2-q2a",
@@ -190,6 +192,7 @@
         {
           "id": "h1-1-2-questions2",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "**3.** Met bovenstaande indicatoren is het mogelijk om aan te geven tussen welke waarde de pH van de oplossing van een bepaalde stof zich bevindt.",
           "questions": [
             {
@@ -222,6 +225,7 @@
         {
           "id": "h1-1-2-questions3",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "**4.** (VX) In China worden mandarijntjes \"gepeld\" door ze eerst in een zeer basische oplossing te leggen. De schilletje lossen hierdoor op. Vervolgens worden de verkregen partjes in een zeer zure oplossing gelegd om weer \"geneutraliseerd\" te worden.",
           "questions": [
             {
@@ -329,7 +333,8 @@
         {
           "id": "h1-1-5-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1.5",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1.5",
           "questions": [
             {
               "id": "h1-1-5-q1a",
@@ -520,7 +525,8 @@
         {
           "id": "h2-2-1-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1",
           "questions": [
             {
               "id": "h2-2-1-q1",
@@ -711,7 +717,8 @@
         {
           "id": "h2-2-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 2",
           "questions": [
             {
               "id": "h2-2-2-q1a",
@@ -821,7 +828,8 @@
         {
           "id": "h2-2-3-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 3",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 3",
           "questions": [
             {
               "id": "h2-2-3-q1",
@@ -913,7 +921,7 @@
         {
           "id": "h2-2-4-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 4",
+          "intro": "### Opdrachten paragraaf 4",
           "questions": [
             {
               "id": "h2-2-4-q1",
@@ -1080,7 +1088,8 @@
         {
           "id": "h3-3-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 2",
           "questions": [
             {
               "id": "h3-3-2-q1",
@@ -1150,7 +1159,7 @@
         {
           "id": "h3-3-3-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 3",
+          "intro": "### Opdrachten paragraaf 3",
           "questions": [
             {
               "id": "h3-3-3-q1",
@@ -1296,7 +1305,8 @@
         {
           "id": "h3-3-4-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 4",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 4",
           "questions": [
             {
               "id": "h3-3-4-q1",
@@ -1442,7 +1452,8 @@
         {
           "id": "h3-3-5-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 5",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 5",
           "questions": [
             {
               "id": "h3-3-5-q1",
@@ -1499,7 +1510,8 @@
         {
           "id": "h3-3-6-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 6",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 6",
           "questions": [
             {
               "id": "h3-3-6-q1",
@@ -1682,7 +1694,7 @@
         {
           "id": "h4-4-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2\n\n**1.** Maak van de volgende reactievergelijkingen er minstens 30 kloppend.",
+          "intro": "### Opdrachten paragraaf 2\n\n**1.** Maak van de volgende reactievergelijkingen er minstens 30 kloppend.",
           "questions": [
             {
               "id": "h4-4-2-q1",
@@ -1972,7 +1984,8 @@
         {
           "id": "h4-4-3-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 3",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 3",
           "questions": [
             {
               "id": "h4-4-3-q1a",
@@ -2091,7 +2104,8 @@
         {
           "id": "h4-4-5-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 5\n\nGeef de reactievergelijking van:",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 5\n\nGeef de reactievergelijking van:",
           "questions": [
             {
               "id": "h4-4-5-q1",
@@ -2309,7 +2323,8 @@
         {
           "id": "h5-5-1-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1",
           "questions": [
             {
               "id": "h5-5-1-q1a",
@@ -2447,7 +2462,7 @@
         {
           "id": "h5-5-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2\n\n**1.** Geef de kloppende reactievergelijking van de volgende reacties:",
+          "intro": "### Opdrachten paragraaf 2\n\n**1.** Geef de kloppende reactievergelijking van de volgende reacties:",
           "questions": [
             {
               "id": "h5-5-2-q1a",
@@ -2566,7 +2581,8 @@
         {
           "id": "h5-5-3-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 3",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 3",
           "questions": [
             {
               "id": "h5-5-3-q1a",
@@ -2748,7 +2764,8 @@
         {
           "id": "h5-5-4-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 4",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 4",
           "questions": [
             {
               "id": "h5-5-4-q1",
@@ -3038,7 +3055,8 @@
         {
           "id": "h6-6-1-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1",
           "questions": [
             {
               "id": "h6-6-1-q1a",
@@ -3095,7 +3113,7 @@
         {
           "id": "h6-6-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2",
+          "intro": "### Opdrachten paragraaf 2",
           "questions": [
             {
               "id": "h6-6-2-q1",
@@ -3161,7 +3179,8 @@
         {
           "id": "h6-6-3-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 3",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 3",
           "questions": [
             {
               "id": "h6-6-3-q1a",
@@ -3316,7 +3335,8 @@
         {
           "id": "h6-6-4-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 4\n\n**1.** Maak een scheidingsschema van het scheiden van een mengsel van:",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 4\n\n**1.** Maak een scheidingsschema van het scheiden van een mengsel van:",
           "questions": [
             {
               "id": "h6-6-4-q1a",
@@ -3365,7 +3385,8 @@
         {
           "id": "h7-7-1-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 1",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 1",
           "questions": [
             {
               "id": "h7-7-1-q1a",
@@ -3448,7 +3469,8 @@
         {
           "id": "h7-7-2-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 2",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 2",
           "questions": [
             {
               "id": "h7-7-2-q1a",
@@ -3594,7 +3616,8 @@
         {
           "id": "h7-7-4-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 4",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 4",
           "questions": [
             {
               "id": "h7-7-4-q1a",
@@ -3793,7 +3816,8 @@
         {
           "id": "h7-7-5-questions",
           "type": "questions",
-          "intro": "### Vragen paragraaf 5",
+          "title": "Opdrachten",
+          "intro": "### Opdrachten paragraaf 5",
           "questions": [
             {
               "id": "h7-7-5-q1",

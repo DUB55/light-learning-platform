@@ -15,6 +15,9 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Toetsweekvoorbereiding",
   description: "Oefenmateriaal voor vakken tijdens de toetsweek.",
+  icons: {
+    icon: "/assets/favicon.png",
+  },
 };
 
 export default function RootLayout({

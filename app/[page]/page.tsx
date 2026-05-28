@@ -551,7 +551,7 @@ export default function Page({ params }: { params: { page: string } }) {
                               <span className="inline">{getSectionTitle(section)}</span>
                             </button>
                             {expandedSections.has(section.id) && section.blocks?.map((block: any) => {
-                              const title = block.content?.match(/^#+\s+(.+)$/m)?.[1] || block.id;
+                              const title = block.title || block.content?.match(/^#+\s+(.+)$/m)?.[1] || (block.type === 'questions' ? 'Opdrachten' : block.id);
                               return (
                                 <button
                                   key={block.id}

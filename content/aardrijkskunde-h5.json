@@ -54,6 +54,7 @@
         {
           "id": "blk-5-1-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opdrachten over §5.1.",
           "questions": [
             {
@@ -273,6 +274,7 @@
         {
           "id": "blk-5-2-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opdrachten over §5.2.",
           "questions": [
             {
@@ -432,6 +434,7 @@
         {
           "id": "blk-5-3-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opdrachten over §5.3.",
           "questions": [
             {

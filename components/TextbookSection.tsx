@@ -28,6 +28,8 @@ export interface TextbookAnswer {
 export interface TextbookBlock {
   id: string;
   type: "text" | "questions" | "image";
+  /** Optional title for the block */
+  title?: string;
   /** Only for type "text": the long reading content (Markdown / LaTeX) */
   content?: string;
   /** For type "text": optional image to display next to header */
@@ -260,11 +262,14 @@ const QuestionsPanel = memo(function QuestionsPanel({
   const questionBlocks = section.blocks?.filter((b) => b.type === "questions") || [];
   if (questionBlocks.length === 0) return null;
 
+  // Use the first block's title if available, otherwise use translation
+  const questionsTitle = questionBlocks[0]?.title || t("questions", "Opdrachten");
+
   return (
-    <div id={`${section.id}-questions`} className="mt-8 scroll-mt-24">
+    <div id={questionBlocks[0]?.id || `${section.id}-questions`} className="mt-8 scroll-mt-24">
       <div className="mb-4">
         <h3 className="text-xl font-serif font-medium text-foreground">
-          {t("questions", "Vragen")}
+          {questionsTitle}
         </h3>
       </div>
       <div className="space-y-6">

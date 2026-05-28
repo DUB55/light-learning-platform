@@ -31,11 +31,12 @@
     },
     {
       "id": "sec-4-1-q",
-      "title": "§4.1 Vragen",
+      "title": "§4.1 Opdrachten",
       "blocks": [
         {
           "id": "blk-4-1-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opgaven over §4.1.",
           "questions": [
             {
@@ -327,11 +328,12 @@
     },
     {
       "id": "sec-4-2-q",
-      "title": "§4.2 Vragen",
+      "title": "§4.2 Opdrachten",
       "blocks": [
         {
           "id": "blk-4-2-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opgaven over §4.2.",
           "questions": [
             {
@@ -613,11 +615,12 @@
     },
     {
       "id": "sec-4-3-q",
-      "title": "§4.3 Vragen",
+      "title": "§4.3 Opdrachten",
       "blocks": [
         {
           "id": "blk-4-3-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opgaven over §4.3.",
           "questions": [
             {
@@ -980,11 +983,12 @@
     },
     {
       "id": "sec-4-4-q",
-      "title": "§4.4 Vragen",
+      "title": "§4.4 Opdrachten",
       "blocks": [
         {
           "id": "blk-4-4-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opgaven over §4.4.",
           "questions": [
             {
@@ -1117,11 +1121,12 @@
     },
     {
       "id": "sec-4-5-q",
-      "title": "§4.5 Vragen",
+      "title": "§4.5 Opdrachten",
       "blocks": [
         {
           "id": "blk-4-5-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Beantwoord de volgende opgaven over §4.5.",
           "questions": [
             {
@@ -1418,6 +1423,7 @@
         {
           "id": "blk-toets-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Maak deze toetsopgaven.",
           "questions": [
             {

@@ -41,6 +41,7 @@
         {
           "id": "blk-voorkennis-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Voorkennis opgaven",
           "questions": [
             {
@@ -339,6 +340,7 @@
         {
           "id": "blk-11b-1-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over gebroken vergelijkingen",
           "questions": [
             {
@@ -441,6 +443,7 @@
         {
           "id": "blk-11b-2-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over exponentiële en wortelvergelijkingen",
           "questions": [
             {
@@ -539,6 +542,7 @@
         {
           "id": "blk-11b-3-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over parabool en lijn",
           "questions": [
             {
@@ -632,6 +636,7 @@
         {
           "id": "blk-11b-4-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over intervallen",
           "questions": [
             {
@@ -723,6 +728,7 @@
         {
           "id": "blk-11b-5-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over kwadratische ongelijkheden",
           "questions": [
             {
@@ -825,6 +831,7 @@
         {
           "id": "blk-11b-6-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Opgaven over machtsvergelijkingen en -ongelijkheden",
           "questions": [
             {
@@ -908,6 +915,7 @@
         {
           "id": "blk-11b-7-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Gemengde opdrachten",
           "questions": [
             {
@@ -1007,6 +1015,7 @@
         {
           "id": "blk-test-q",
           "type": "questions",
+          "title": "Opdrachten",
           "intro": "Test opgaven",
           "questions": [
             {
