@@ -46,7 +46,8 @@ export function HomePageClient({ contentFiles }: { contentFiles: ContentFile[] }
     const userData = localStorage.getItem('user_data');
     if (!userData) {
       // Show auth modal on first visit if no user data
-      setShowAuthModal(true);
+      // DISABLED: Auth modal will never be shown
+      // setShowAuthModal(true);
     }
   }, []);
 
