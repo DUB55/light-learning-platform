@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FileText, GraduationCap } from "lucide-react";
+import { FileText, GraduationCap, BookOpen } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { useAnalytics } from "@/lib/analytics";
 
-type ViewMode = "book" | "study" | "simple";
+type ViewMode = "book" | "study" | "simple" | "samenvatting";
 
 interface ModeSwitcherProps {
   currentMode: ViewMode;
@@ -43,6 +43,12 @@ export function ModeSwitcher({ currentMode, availableModes, onModeChange }: Mode
       label: t('study_mode', 'Leren'),
       icon: <GraduationCap className="w-4 h-4" />,
       description: t('study_mode_description', 'Leren, oefentoets en spelletjes'),
+    },
+    {
+      id: "samenvatting",
+      label: t('summary_mode', 'Samenvatting'),
+      icon: <BookOpen className="w-4 h-4" />,
+      description: t('summary_mode_description', 'Samenvatting van de stof'),
     },
   ];
 

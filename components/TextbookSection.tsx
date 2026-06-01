@@ -73,7 +73,7 @@ export interface ContentResource {
   description?: string;
 }
 
-export type ViewMode = "book" | "study" | "simple" | "advanced";
+export type ViewMode = "book" | "study" | "simple" | "advanced" | "samenvatting";
 
 interface TextbookSectionProps {
   section: TextbookSectionData;

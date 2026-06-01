@@ -12,6 +12,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ContentSkeleton, SidebarSkeleton } from "@/components/ContentSkeleton";
 import { Toetsweekplanning } from "@/components/Toetsweekplanning";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { SummaryMode } from "@/components/SummaryMode";
 import { useTranslation } from "@/lib/i18n";
 import { useBookmarks } from "@/hooks/useBookmarks";
 import { getSectionTitle } from "@/lib/section-title";
@@ -19,7 +20,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { ChevronRight } from "lucide-react";
 
-export type ViewMode = "book" | "study" | "simple";
+export type ViewMode = "book" | "study" | "simple" | "samenvatting";
 
 interface Question {
   id: string;
@@ -62,10 +63,11 @@ interface ContentData {
   contentFormat?: string;
   customComponent?: string;
   toetsen?: any[];
+  summary?: string;
 }
 
-const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple"];
-const VISIBLE_MODES: ViewMode[] = ["simple", "study"];
+const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting"];
+const VISIBLE_MODES: ViewMode[] = ["simple", "study", "samenvatting"];
 // How many sections to reveal per progressive step
 const CHUNK_SIZE = 3;
 
@@ -590,6 +592,8 @@ export default function Page({ params }: { params: { page: string } }) {
                 data.customComponent === "Toetsweekplanning" && data.toetsen ? (
                   <Toetsweekplanning toetsen={data.toetsen} />
                 ) : null
+              ) : viewMode === "samenvatting" ? (
+                <SummaryMode summary={data.summary} />
               ) : isTextbookContent ? (
                 <>
                   {data.sections.slice(0, visibleSections).map((section: any, index: number) => {
