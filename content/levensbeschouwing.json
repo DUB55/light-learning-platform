@@ -8,6 +8,7 @@
   "defaultViewMode": "study",
   "availableModes": [
     "simple",
+    "uitleg",
     "study",
     "samenvatting",
     "quiz"
