@@ -13,6 +13,7 @@ import { ContentSkeleton, SidebarSkeleton } from "@/components/ContentSkeleton";
 import { Toetsweekplanning } from "@/components/Toetsweekplanning";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SummaryMode } from "@/components/SummaryMode";
+import { QuizMode } from "@/components/QuizMode";
 import { useTranslation } from "@/lib/i18n";
 import { useBookmarks } from "@/hooks/useBookmarks";
 import { getSectionTitle } from "@/lib/section-title";
@@ -20,7 +21,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { ChevronRight } from "lucide-react";
 
-export type ViewMode = "book" | "study" | "simple" | "samenvatting";
+export type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz";
 
 interface Question {
   id: string;
@@ -64,10 +65,21 @@ interface ContentData {
   customComponent?: string;
   toetsen?: any[];
   summary?: string;
+  quiz?: {
+    title: string;
+    questions: Array<{
+      id: number;
+      question: string;
+      hint?: string;
+      options: string[];
+      answer: string;
+      rationale?: string;
+    }>;
+  };
 }
 
-const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting"];
-const VISIBLE_MODES: ViewMode[] = ["simple", "study", "samenvatting"];
+const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting", "quiz"];
+const VISIBLE_MODES: ViewMode[] = ["simple", "study", "samenvatting", "quiz"];
 // How many sections to reveal per progressive step
 const CHUNK_SIZE = 3;
 
@@ -592,6 +604,8 @@ export default function Page({ params }: { params: { page: string } }) {
                 data.customComponent === "Toetsweekplanning" && data.toetsen ? (
                   <Toetsweekplanning toetsen={data.toetsen} />
                 ) : null
+              ) : viewMode === "quiz" ? (
+                <QuizMode quiz={data.quiz} />
               ) : viewMode === "samenvatting" ? (
                 <SummaryMode summary={data.summary} />
               ) : isTextbookContent ? (

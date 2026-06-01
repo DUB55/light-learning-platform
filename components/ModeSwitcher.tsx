@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FileText, GraduationCap, BookOpen } from "lucide-react";
+import { FileText, GraduationCap, BookOpen, Brain } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { useAnalytics } from "@/lib/analytics";
 
-type ViewMode = "book" | "study" | "simple" | "samenvatting";
+type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz";
 
 interface ModeSwitcherProps {
   currentMode: ViewMode;
@@ -49,6 +49,12 @@ export function ModeSwitcher({ currentMode, availableModes, onModeChange }: Mode
       label: t('summary_mode', 'Samenvatting'),
       icon: <BookOpen className="w-4 h-4" />,
       description: t('summary_mode_description', 'Samenvatting van de stof'),
+    },
+    {
+      id: "quiz",
+      label: t('quiz_mode', 'Quiz'),
+      icon: <Brain className="w-4 h-4" />,
+      description: t('quiz_mode_description', 'Test je kennis'),
     },
   ];
 
