@@ -9,7 +9,11 @@
   "availableModes": [
     "simple",
     "study",
-    "samenvatting"
+    "samenvatting",
+    "alles-leren-2-dagen",
+    "complete-oefentoets",
+    "alle-leerdoelen-opdrachten",
+    "vragenlijst"
   ],
   "showTimestamps": false,
   "showExportButtons": false,
@@ -17,7 +21,16 @@
   "showFlashcardsExport": false,
   "showTranscriptExport": false,
   "showCopyTranscript": false,
-  "buttons": [],
+  "buttons": [
+    {
+      "url": "https://dub5.zapto.org/GS-H4",
+      "text": "Leerdoelen Uitgewerkt",
+      "icon": "external-link",
+      "iconType": "name",
+      "variant": "secondary",
+      "enabled": true
+    }
+  ],
   "sections": [
     {
       "id": "sec-4-1",
@@ -1302,6 +1315,28 @@
           ]
         }
       ]
+    }
+  ],
+  "modeContent": [
+    {
+      "id": "alles-leren-2-dagen",
+      "title": "Alles leren in 2 dagen",
+      "content": "Hier kun je een stappenplan toevoegen om alles in 2 dagen te leren. Voeg hier je leerstrategie en planning toe."
+    },
+    {
+      "id": "complete-oefentoets",
+      "title": "Complete Oefentoets",
+      "content": "Hier kun je de complete oefentoets toevoegen met alle vragen en antwoorden."
+    },
+    {
+      "id": "alle-leerdoelen-opdrachten",
+      "title": "Alle Leerdoelen Opdrachten",
+      "content": "Hier kun je alle opdrachten per leerdoel toevoegen. Organiseer ze per paragraaf en leerdoel."
+    },
+    {
+      "id": "vragenlijst",
+      "title": "Vragenlijst",
+      "content": "Hier kun je een lijst met belangrijke vragen toevoegen die je kunt gebruiken om jezelf te toetsen."
     }
   ]
 }
