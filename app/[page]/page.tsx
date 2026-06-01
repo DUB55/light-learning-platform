@@ -76,6 +76,16 @@ interface ContentData {
       rationale?: string;
     }>;
   };
+  enableImageLearning?: boolean;
+  learningSet?: {
+    title: string;
+    terms: Array<{
+      id: string;
+      term: string;
+      definition: string;
+      image?: string;
+    }>;
+  };
 }
 
 const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting", "quiz"];
@@ -618,6 +628,8 @@ export default function Page({ params }: { params: { page: string } }) {
                           key="study-learning-platform"
                           pageId={params.page}
                           sections={data.sections}
+                          enableImageLearning={data.enableImageLearning}
+                          learningSet={data.learningSet}
                         />
                       ) : null;
                     }

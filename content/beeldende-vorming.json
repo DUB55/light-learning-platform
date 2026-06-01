@@ -6,7 +6,8 @@
   "contentFormat": "textbook",
   "defaultViewMode": "simple",
   "availableModes": [
-    "simple"
+    "simple",
+    "study"
   ],
   "showTimestamps": false,
   "showExportButtons": false,
@@ -15,6 +16,264 @@
   "showTranscriptExport": false,
   "showCopyTranscript": false,
   "buttons": [],
+  "enableImageLearning": true,
+  "learningSet": {
+    "title": "Beeldende Vorming Begrippen",
+    "terms": [
+      {
+        "id": "term-collage",
+        "term": "Collage",
+        "definition": "Een collage is een tweedimensionaal kunstwerk waarbij de kunstenaar de voorstelling grotendeels door middel van 'knippen en plakken' heeft samengesteld.",
+        "image": "/assets/collage.png"
+      },
+      {
+        "id": "term-voorstelling",
+        "term": "Voorstelling",
+        "definition": "De voorstelling is dat wat er op het kunstwerk te zien is en wat het voorstelt.",
+        "image": "/assets/voorstelling.png"
+      },
+      {
+        "id": "term-waarneming",
+        "term": "Naar de waarneming",
+        "definition": "Werken naar de waarneming betekent dat je tekent, schildert of boetseert wat je ziet.",
+        "image": "/assets/naar-de-waarneming.png"
+      },
+      {
+        "id": "term-fantasie",
+        "term": "Naar de fantasie",
+        "definition": "Werken naar de fantasie betekent dat je tekent, schildert of boetseert wat je zelf verzint.",
+        "image": "/assets/naar-de-fantasie.png"
+      },
+      {
+        "id": "term-stilleven",
+        "term": "Stilleven",
+        "definition": "Een stilleven is een voorstelling van levenloze voorwerpen.",
+        "image": "/assets/stilleven-l.png"
+      },
+      {
+        "id": "term-sfeer",
+        "term": "Sfeer",
+        "definition": "Sfeer is de stemming in een voorstelling.",
+        "image": "/assets/sfeer.png"
+      },
+      {
+        "id": "term-compositie",
+        "term": "Compositie",
+        "definition": "Compositie is de manier waarop vormen en figuren op een plat vlak of in de ruimte zijn geordend.",
+        "image": "/assets/compositie.png"
+      },
+      {
+        "id": "term-uitsnede",
+        "term": "Uitsnede",
+        "definition": "Bij een uitsnede zie je een klein stuk van een grotere voorstelling.",
+        "image": "/assets/uitsnede.png"
+      },
+      {
+        "id": "term-primaire-kleuren",
+        "term": "Primaire kleuren",
+        "definition": "De primaire kleuren zijn rood, geel en blauw.",
+        "image": "/assets/primaire-kleuren.png"
+      },
+      {
+        "id": "term-secundaire-kleuren",
+        "term": "Secundaire kleuren",
+        "definition": "De secundaire kleuren zijn groen, oranje en paars.",
+        "image": "/assets/secundaire-kleuren.png"
+      },
+      {
+        "id": "term-tertiaire-kleuren",
+        "term": "Tertiaire kleuren",
+        "definition": "Tertiaire kleuren ontstaan als je een primaire kleur en een secundaire kleur mengt of als je twee primaire kleuren in ongelijke hoeveelheden mengt.",
+        "image": "/assets/tertiaire-kleuren.png"
+      },
+      {
+        "id": "term-2d-vorm",
+        "term": "Tweedimensionale vorm",
+        "definition": "Een tweedimensionale vorm is een platte vorm, met een lengte en een breedte.",
+        "image": "/assets/tweedimensionale-vorm.png"
+      },
+      {
+        "id": "term-3d-vorm",
+        "term": "Driedimensionale vorm",
+        "definition": "Een driedimensionale vorm is een ruimtelijke vorm, met een lengte, een breedte en een diepte.",
+        "image": "/assets/driedimensionale-vorm.png"
+      },
+      {
+        "id": "term-geometrische-vorm",
+        "term": "Geometrische vorm",
+        "definition": "Geometrische vormen zijn meetkundige (wiskundige) vormen.",
+        "image": "/assets/geometrische-vorm.png"
+      },
+      {
+        "id": "term-organische-vorm",
+        "term": "Organische vorm",
+        "definition": "Organische vormen zijn vloeiend, golvend en sierlijk.",
+        "image": "/assets/organische-vorm.png"
+      },
+      {
+        "id": "term-textuur",
+        "term": "Textuur",
+        "definition": "Het voelbare oppervlak van een ruimtelijke vorm noem je textuur.",
+        "image": "/assets/textuur.png"
+      },
+      {
+        "id": "term-stofuitdrukking",
+        "term": "Stofuitdrukking",
+        "definition": "Stofuitdrukking is de manier waarop je in een tekening of schilderij materialen (stoffen) weergeeft.",
+        "image": "/assets/stofuitdrukking.png"
+      },
+      {
+        "id": "term-figuratieve-vorm",
+        "term": "Figuratieve vorm",
+        "definition": "Vormen in kunstwerken zijn figuratief als ze de zichtbare werkelijkheid verbeelden, zoals mensen, dieren, planten of gebouwen.",
+        "image": "/assets/figuratieve-vorm.png"
+      },
+      {
+        "id": "term-gestileerde-vorm",
+        "term": "Gestileerde vorm",
+        "definition": "Gestileerde vormen zijn vereenvoudigde vormen, waarbij details zijn weggelaten.",
+        "image": "/assets/gestileerde-vorm.png"
+      },
+      {
+        "id": "term-licht-donker-kleur",
+        "term": "Licht-donkercontrast (kleur)",
+        "definition": "Een licht-donkercontrast ontstaat als je lichte en donkere kleuren bij elkaar zet.",
+        "image": "/assets/licht-donkercontrast(kleur).png"
+      },
+      {
+        "id": "term-eigen-schaduw",
+        "term": "Eigen schaduw",
+        "definition": "Eigen schaduw is de schaduw die op de niet belichte kant van een voorwerp of figuur valt.",
+        "image": "/assets/eigen-schaduw.png"
+      },
+      {
+        "id": "term-slagschaduw",
+        "term": "Slagschaduw",
+        "definition": "Slagschaduw is de schaduw van een voorwerp of figuur die op de grond, op een muur of op een ander voorwerp valt.",
+        "image": "/assets/slagschaduw.png"
+      },
+      {
+        "id": "term-licht-donker-licht",
+        "term": "Licht-donkercontrast (licht)",
+        "definition": "Een licht-donker contrast is een tegenstelling tussen lichte en donkere delen in de voorstelling.",
+        "image": "/assets/licht-donker-contrast(licht).png"
+      },
+      {
+        "id": "term-ruimtesuggestie",
+        "term": "Ruimtesuggestie",
+        "definition": "Ruimtesuggestie is het gebruik van technieken om de indruk van ruimte te geven op een plat vlak, zoals een tekening of een schilderij.",
+        "image": "/assets/ruimtesuggestie.png"
+      },
+      {
+        "id": "term-afsnijding",
+        "term": "Afsnijding",
+        "definition": "Afsnijding houdt in dat delen van de voorstelling niet helemaal zichtbaar zijn omdat ze worden afgesneden door de rand van het beeldvlak.",
+        "image": "/assets/afsnijding.png"
+      },
+      {
+        "id": "term-overlapping",
+        "term": "Overlapping",
+        "definition": "Bij overlapping staan voorwerpen of figuren in de voorstelling gedeeltelijk voor of achter elkaar.",
+        "image": "/assets/overlapping.png"
+      },
+      {
+        "id": "term-verkleining",
+        "term": "Verkleining",
+        "definition": "Als je voorwerpen of figuren die verder weg staan kleiner tekent dan voorwerpen of figuren die dichterbij staan, ontstaat er meer diepte in je tekening of schilderij.",
+        "image": "/assets/verkleining.png"
+      },
+      {
+        "id": "term-planperspectief",
+        "term": "Planperspectief",
+        "definition": "Planperspectief is de indeling van je voorstelling in verschillende horizontale lagen, die 'plans' worden genoemd.",
+        "image": "/assets/planperspectief.png"
+      },
+      {
+        "id": "term-atmosferisch-perspectief",
+        "term": "Atmosferisch perspectief",
+        "definition": "Bij atmosferisch perspectief wordt wat ver weg is, vager afgebeeld.",
+        "image": "/assets/atmosferisch-perspectief.png"
+      },
+      {
+        "id": "term-centraalperspectief",
+        "term": "Centraalperspectief",
+        "definition": "Centraalperspectief is een vorm van lijnperspectief met éen vluchtpunt op de horizon.",
+        "image": "/assets/centraalperspectief.png"
+      },
+      {
+        "id": "term-contour",
+        "term": "Contour",
+        "definition": "Contour is een ander woord voor omtreklijn.",
+        "image": "/assets/contour.png"
+      },
+      {
+        "id": "term-assemblage",
+        "term": "Assemblage",
+        "definition": "Assembleren betekent samenvoegen.",
+        "image": "/assets/assemblage.png"
+      },
+      {
+        "id": "term-architectuur",
+        "term": "Architectuur",
+        "definition": "Architectuur is de kunst van het ontwerpen van gebouwen.",
+        "image": "/assets/architectuur.png"
+      },
+      {
+        "id": "term-portret",
+        "term": "Portret",
+        "definition": "Een portret is een voorstelling van een persoon.",
+        "image": "/assets/portret-l.png"
+      },
+      {
+        "id": "term-landschap",
+        "term": "Landschap",
+        "definition": "Een tekening of schilderij met de landelijke omgeving als onderwerp, noem je een landschap.",
+        "image": "/assets/landschap.png"
+      },
+      {
+        "id": "term-kleurcontrast",
+        "term": "Kleurcontrast",
+        "definition": "Een kleurcontrast is een tegenstelling tussen kleuren.",
+        "image": "/assets/kleurcontrast.png"
+      },
+      {
+        "id": "term-complementair-kleurcontrast",
+        "term": "Complementair kleurcontrast",
+        "definition": "Een complementair kleurcontrast ontstaat als je twee kleuren die tegenover elkaar staan in de kleurencirkel bij elkaar zet.",
+        "image": "/assets/complementair-kleurcontrast.png"
+      },
+      {
+        "id": "term-warm-koudcontrast",
+        "term": "Warm-koudcontrast",
+        "definition": "Een warm-koudcontrast ontstaat als je warme en koude kleuren bij elkaar zet.",
+        "image": "/assets/warm-koudcontrast.png"
+      },
+      {
+        "id": "term-lijnperspectief",
+        "term": "Lijnperspectief",
+        "definition": "Lijnperspectief is een meetkundige manier om in het platte vlak van een tekening of schilderij diepte te verbeelden.",
+        "image": "/assets/lijnperspectief.png"
+      },
+      {
+        "id": "term-horizon",
+        "term": "Horizon",
+        "definition": "De horizon is de denkbeeldige scheidingslijn tussen aarde/water en lucht.",
+        "image": "/assets/horizon.png"
+      },
+      {
+        "id": "term-kikvorsperspectief",
+        "term": "Kikvorsperspectief",
+        "definition": "Kikvorsperspectief betekent dat je voor een tekening of een foto een heel laag standpunt kiest met een heel lage horizon.",
+        "image": "/assets/kikvorsperspectief.png"
+      },
+      {
+        "id": "term-vogelvluchtperspectief",
+        "term": "Vogelvluchtperspectief",
+        "definition": "Vogelvluchtperspectief betekent dat je voor een tekening of foto een heel hoog standpunt kiest met een heel hoge horizon.",
+        "image": "/assets/vogelvluchtperspectief.png"
+      }
+    ]
+  },
   "sections": [
     {
       "id": "sec-jaar-1-2",

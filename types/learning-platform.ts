@@ -4,7 +4,7 @@ export type MasteryStatus = 'unstudied' | 'learning' | 'mastered';
 
 export type QuestionType = 'multiple-choice' | 'written' | 'true-false' | 'flashcard';
 
-export type LearningMode = 'flashcard' | 'learn' | 'test' | 'multiple-choice-only' | 'writing-only' | 'match' | 'blast' | 'blocks' | 'sprint' | 'type-rush';
+export type LearningMode = 'flashcard' | 'learn' | 'learn-image' | 'test' | 'multiple-choice-only' | 'writing-only' | 'match' | 'blast' | 'blocks' | 'sprint' | 'type-rush';
 
 /** Learning activity chosen in session settings (Leren flow) */
 export type LerenActivity = 'flashcard' | 'learn' | 'multiple-choice-only' | 'writing-only';
@@ -21,6 +21,7 @@ export interface Term {
   consecutiveCorrectCount: number;
   lastStudied?: Date;
   createdAt: Date;
+  image?: string;
 }
 
 export interface LearningSetSummary {

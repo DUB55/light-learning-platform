@@ -9,6 +9,7 @@ import {
   Gamepad2,
   List,
   Star,
+  Image as ImageIcon,
 } from "lucide-react";
 import { buildStudySetFromSections } from "@/lib/learning-platform/study-set";
 import { STUDY_GAMES, getGameById } from "@/lib/learning-platform/game-registry";
@@ -45,6 +46,16 @@ interface SourceSection {
 interface LearningPlatformProps {
   pageId: string;
   sections: SourceSection[];
+  enableImageLearning?: boolean;
+  learningSet?: {
+    title: string;
+    terms: Array<{
+      id: string;
+      term: string;
+      definition: string;
+      image?: string;
+    }>;
+  };
 }
 
 type HubScreen = "home" | "leren-setup" | "test-setup" | "games" | "terms" | "playing";
@@ -84,15 +95,20 @@ function LerenModeView() {
   return <LearnMode />;
 }
 
+function LerenMetAfbeeldingenView() {
+  return <LearnMode useImages={true} />;
+}
+
 function StudyModeView({ mode }: { mode: LearningMode }) {
   if (getGameById(mode)) {
     return null;
   }
   if (mode === "test") return <TestMode />;
+  if (mode === "learn-image") return <LerenMetAfbeeldingenView />;
   return <LerenModeView />;
 }
 
-export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
+export function LearningPlatform({ pageId, sections, enableImageLearning, learningSet: providedLearningSet }: LearningPlatformProps) {
   const { t } = useTranslation();
   const {
     init,
@@ -106,12 +122,39 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
   const [screen, setScreen] = useState<HubScreen>("home");
 
   useEffect(() => {
-    const set = buildStudySetFromSections(sections, pageId);
+    let set;
+    if (providedLearningSet) {
+      // Convert provided learningSet to StudySet format
+      const now = new Date();
+      const terms = providedLearningSet.terms.map((item, index) => ({
+        id: item.id || `term-${index}`,
+        term: item.term,
+        definition: item.definition,
+        learningSetId: `set-${pageId}`,
+        learningSetTitle: providedLearningSet.title,
+        isStarred: false,
+        masteryStatus: "unstudied" as const,
+        consecutiveCorrectCount: 0,
+        createdAt: now,
+        image: item.image,
+      }));
+      set = {
+        id: `set-${pageId}`,
+        title: providedLearningSet.title,
+        description: `${terms.length} begrippen`,
+        terms,
+        learningSets: [],
+        createdAt: now,
+        updatedAt: now,
+      };
+    } else {
+      set = buildStudySetFromSections(sections, pageId);
+    }
     if (set) init(set);
     setScreen("home");
     setActiveMode(null);
     return () => setActiveMode(null);
-  }, [pageId, sections, init, setActiveMode]);
+  }, [pageId, sections, providedLearningSet, init, setActiveMode]);
 
   useEffect(() => {
     if (initialized) refreshPlayableTerms();
@@ -142,6 +185,13 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
     if (mode === "test") setScreen("home");
     else if (mode && getGameById(mode)) setScreen("games");
     else setScreen("home");
+  };
+
+  const startLerenMetAfbeeldingen = () => {
+    refreshPlayableTerms();
+    saveSettingsToStorage();
+    setActiveMode("learn-image");
+    setScreen("playing");
   };
 
   if (!studySet) {
@@ -257,6 +307,14 @@ export function LearningPlatform({ pageId, sections }: LearningPlatformProps) {
             icon={<Brain className="h-6 w-6" />}
             onClick={() => setScreen("leren-setup")}
           />
+          {enableImageLearning && (
+            <HubButton
+              label={t("study_leren_images", "Leren (met afbeeldingen)")}
+              description={t("study_leren_images_desc", "Oefen met afbeeldingen en kies het juiste begrip")}
+              icon={<ImageIcon className="h-6 w-6" />}
+              onClick={startLerenMetAfbeeldingen}
+            />
+          )}
           <HubButton
             label={t("study_oefentoets", "Oefentoets")}
             description={t("study_oefentoets_desc", "Stel je toets in en ontvang een score")}

@@ -15,7 +15,11 @@ interface SessionTerm extends Term {
   sessionCorrect: number;
 }
 
-export function LearnMode() {
+interface LearnModeProps {
+  useImages?: boolean;
+}
+
+export function LearnMode({ useImages = false }: LearnModeProps = {}) {
   const { t } = useTranslation();
   const {
     playableTerms,
@@ -34,18 +38,23 @@ export function LearnMode() {
   const activityIndex = useRef(0);
   const initialized = useRef(false);
 
+  // Filter terms that have images when useImages is true
+  const filteredPlayableTerms = useImages
+    ? playableTerms.filter((term) => term.image)
+    : playableTerms;
+
   useEffect(() => {
-    if (playableTerms.length === 0) return;
+    if (filteredPlayableTerms.length === 0) return;
     if (initialized.current) return;
     initialized.current = true;
-    const sessionQueue: SessionTerm[] = playableTerms.map((term) => ({
+    const sessionQueue: SessionTerm[] = filteredPlayableTerms.map((term) => ({
       ...term,
       sessionCorrect: 0,
     }));
     setQueue(sessionQueue);
     setComplete(false);
     beginSession("learn", sessionQueue.length);
-  }, [playableTerms, beginSession]);
+  }, [filteredPlayableTerms, beginSession]);
 
   const allTerms = studySet?.terms ?? playableTerms;
 
@@ -54,6 +63,17 @@ export function LearnMode() {
     : [settings.lerenActivity ?? "learn"];
 
   const buildFlashcardQuestion = (term: Term): Question => {
+    if (useImages && term.image) {
+      // When using images, show the image and ask for the term
+      return {
+        id: createId("flash"),
+        term,
+        type: "flashcard",
+        prompt: `Welk begrip hoort bij deze afbeelding?`,
+        correctAnswer: term.term,
+        startTime: new Date(),
+      };
+    }
     const { prompt, answer } = getPromptAndAnswer(term, settings.questionFormat);
     return {
       id: createId("flash"),
@@ -71,9 +91,40 @@ export function LearnMode() {
     consecutive: number
   ): Question => {
     if (activity === "flashcard") return buildFlashcardQuestion(term);
-    if (activity === "multiple-choice-only") return buildMcqQuestion(term, allTerms, settings);
-    if (activity === "writing-only") return buildWrittenQuestion(term, settings);
-    return buildLearnQuestion(term, allTerms, settings, consecutive);
+    if (activity === "multiple-choice-only") {
+      const q = buildMcqQuestion(term, allTerms, settings);
+      // Override prompt to show image when using images
+      if (useImages && term.image) {
+        return {
+          ...q,
+          prompt: `Welk begrip hoort bij deze afbeelding?`,
+          correctAnswer: term.term,
+        };
+      }
+      return q;
+    }
+    if (activity === "writing-only") {
+      const q = buildWrittenQuestion(term, settings);
+      // Override prompt to show image when using images
+      if (useImages && term.image) {
+        return {
+          ...q,
+          prompt: `Welk begrip hoort bij deze afbeelding?`,
+          correctAnswer: term.term,
+        };
+      }
+      return q;
+    }
+    const q = buildLearnQuestion(term, allTerms, settings, consecutive);
+    // Override prompt to show image when using images
+    if (useImages && term.image) {
+      return {
+        ...q,
+        prompt: `Welk begrip hoort bij deze afbeelding?`,
+        correctAnswer: term.term,
+      };
+    }
+    return q;
   };
 
   const pickNext = (terms: SessionTerm[]) => {
@@ -165,6 +216,15 @@ export function LearnMode() {
       </p>
       {current.type === "flashcard" ? (
         <div className="space-y-5">
+          {useImages && current.term.image && (
+            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+              <img
+                src={current.term.image}
+                alt="Afbeelding"
+                className="max-w-full max-h-80 object-contain"
+              />
+            </div>
+          )}
           <div className="rounded-2xl border border-border bg-card p-8 min-h-[220px] flex items-center justify-center shadow-sm">
             <MarkdownContent className="text-xl text-center font-medium">
               {current.prompt}
@@ -192,20 +252,42 @@ export function LearnMode() {
           </div>
         </div>
       ) : current.type === "written" ? (
-        <WrittenQuestion
-          question={current}
-          smartGrading={settings.smartGrading}
-          retypeAnswers={settings.retypeAnswers}
-          onComplete={(answer, correct, overridden) =>
-            handleAnswer(correct || overridden, answer, "written")
-          }
-        />
+        <div className="space-y-5">
+          {useImages && current.term.image && (
+            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+              <img
+                src={current.term.image}
+                alt="Afbeelding"
+                className="max-w-full max-h-80 object-contain"
+              />
+            </div>
+          )}
+          <WrittenQuestion
+            question={current}
+            smartGrading={settings.smartGrading}
+            retypeAnswers={settings.retypeAnswers}
+            onComplete={(answer, correct, overridden) =>
+              handleAnswer(correct || overridden, answer, "written")
+            }
+          />
+        </div>
       ) : (
-        <McqQuestion
-          key={current.id}
-          question={current}
-          onAnswer={(answer, correct) => handleAnswer(correct, answer, "multiple-choice")}
-        />
+        <div className="space-y-5">
+          {useImages && current.term.image && (
+            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+              <img
+                src={current.term.image}
+                alt="Afbeelding"
+                className="max-w-full max-h-80 object-contain"
+              />
+            </div>
+          )}
+          <McqQuestion
+            key={current.id}
+            question={current}
+            onAnswer={(answer, correct) => handleAnswer(correct, answer, "multiple-choice")}
+          />
+        </div>
       )}
     </div>
   );
