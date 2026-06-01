@@ -13,6 +13,36 @@ export async function generateMetadata({ params }: { params: { page: string } })
   };
 }
 
+function jsonToHtml(data: any, indent = 0): string {
+  if (typeof data === 'string') {
+    return data;
+  }
+  if (typeof data === 'number' || typeof data === 'boolean') {
+    return String(data);
+  }
+  if (data === null) {
+    return 'null';
+  }
+  if (Array.isArray(data)) {
+    if (data.length === 0) return '[]';
+    return data.map((item) => jsonToHtml(item, indent)).join('\n');
+  }
+  if (typeof data === 'object') {
+    const entries = Object.entries(data);
+    if (entries.length === 0) return '{}';
+    return entries
+      .map(([key, value]) => {
+        const valueStr = jsonToHtml(value, indent + 1);
+        if (typeof value === 'object' && value !== null) {
+          return `${'  '.repeat(indent)}${key}:\n${valueStr}`;
+        }
+        return `${'  '.repeat(indent)}${key}: ${valueStr}`;
+      })
+      .join('\n');
+  }
+  return String(data);
+}
+
 export default async function AIContentPage({ params }: { params: { page: string } }) {
   const { page } = params;
   
@@ -35,18 +65,32 @@ export default async function AIContentPage({ params }: { params: { page: string
   const fileContent = await fs.readFile(filePath, 'utf-8');
   const jsonData = JSON.parse(fileContent);
   const jsonString = JSON.stringify(jsonData, null, 2);
+  const htmlContent = jsonToHtml(jsonData);
   
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Content for AI Analysis</h1>
+      
+      {/* Visible HTML content for AI scrapers */}
       <div style={{ background: '#f5f5f5', padding: '20px', borderRadius: '8px', overflow: 'auto' }}>
         <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', margin: 0 }}>
-          {jsonString}
+          {htmlContent}
         </pre>
+      </div>
+      
+      {/* Also include raw JSON for completeness */}
+      <div style={{ marginTop: '20px' }}>
+        <h2>Raw JSON Format</h2>
+        <div style={{ background: '#f5f5f5', padding: '20px', borderRadius: '8px', overflow: 'auto' }}>
+          <pre style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word', margin: 0 }}>
+            {jsonString}
+          </pre>
+        </div>
       </div>
       
       <div style={{ marginTop: '20px' }}>
         <h2>Instructions for AI:</h2>
-        <p>You can analyze the JSON content above to provide:</p>
+        <p>You can analyze the content above to provide:</p>
         <ul>
           <li>Summaries of the content</li>
           <li>Explanations of concepts</li>
@@ -56,12 +100,7 @@ export default async function AIContentPage({ params }: { params: { page: string
         </ul>
       </div>
       
-      {/* Hidden div for AI scrapers that look for specific IDs */}
-      <div id="ai-content" style={{ display: 'none' }}>
-        {jsonString}
-      </div>
-      
-      {/* JSON-LD for structured data */}
+      {/* JSON-LD for structured data (supplemental) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
