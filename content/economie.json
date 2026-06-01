@@ -41,13 +41,7 @@
           "id": "blk-1-1-4",
           "type": "text",
           "content": "### Tekenstappen Qv-lijn\n\n**Stap 1: Bereken de prijs waarbij consumenten niks meer vragen**\nDit noemen we de maximale betalingsbereidheid. Dit is het punt waarbij de Qv lijn de verticale as snijdt. Hier is Qv gelijk aan 0. Stellen we in onze formule Qv gelijk aan 0 dan krijgen we het volgende: 0 = -2p +80. Deze formule oplossen leidt tot 2p = 80 en dan is de oplossing p = € 40.\n\n**Stap 2: Bereken de gevraagde hoeveelheid als het product gratis is.**\nDit is het punt waarbij de Qv lijn de horizontale as snijdt. Hier is p gelijk aan 0. Dan krijgen we de volgende oplossing voor Qv = -2 x 0 + 80 = 80.\n\n**Stap 3: Zet deze punten in het assenstelsel en verbind de punten in een rechte lijn.**\nJe ziet dat de Qv op de verticale as begint bij een prijs van € 40 en er niks wordt gevraagd. De lijn eindigt op de horizontale as bij een gevraagde hoeveelheid van 80 als het product gratis is. Tussen deze twee punten is een rechte lijn getekend."
-        }
-      ]
-    },
-    {
-      "id": "sec-1-1-q",
-      "title": "§1.1 Opdrachten",
-      "blocks": [
+        },
         {
           "id": "blk-1-1-q",
           "type": "questions",
@@ -131,7 +125,7 @@
         {
           "questionId": "q-1-1-2A",
           "number": "2A",
-          "answer": "Daalt. Omdat een peer goedkoper wordt, is het nu minder aantrekkelijker om een appel te kopen"
+          "answer": "Daalt. Omdat een peer goedkoper wordt, is het nu minder aantrekkelijk om een appel te kopen"
         },
         {
           "questionId": "q-1-1-2B",
@@ -213,13 +207,7 @@
           "id": "blk-1-2-6",
           "type": "text",
           "content": "### Tekenstappen Qa-lijn\n\n**Stap 1: Bereken de prijs waarbij de producenten pas beginnen met leveren**\nDit noemen we de minimale leveringsbereidheid. Dit is het punt waarbij de Qa lijn de verticale as snijdt. Hier is Qa gelijk aan 0. Stellen we in onze formule Qa gelijk aan 0 dan krijgen we het volgende: 0 = 2p – 16. Deze formule oplossen leidt tot -2p = -16 en dan is de oplossing p = € 8.\n\n**Stap 2: Bereken het marktevenwicht.**\nDit is het punt waarbij de Qa en de Qv lijn elkaar snijdt. Hierbij hoort een evenwichtsprijs (EP) en een evenwichtshoeveelheid (EH). Hierbij geldt de vergelijking: Qa = Qv. De oplossing is als volgt: 2p – 16 = -2p + 80. -> 4p = 96 -> p = 24. Als je de evenwichtsprijs invult in de Qv of Qa functie dan krijg je de evenwichtshoeveelheid. 2 x 24 – 16 = 32.\n\n**Stap 3: Zet deze punten in het assenstelsel en verbind de punten in een rechte lijn.**\nJe ziet dat de Qa op de verticale as begint bij een prijs van € 8 en het snijpunt tussen Qa en Qv ligt op een P van 24 en een Q van 32."
-        }
-      ]
-    },
-    {
-      "id": "sec-1-2-q",
-      "title": "§1.2 Opdrachten",
-      "blocks": [
+        },
         {
           "id": "blk-1-2-q",
           "type": "questions",
@@ -340,13 +328,7 @@
           "id": "blk-1-3-3",
           "type": "text",
           "content": "### Producentensurplus\n\nNaast het consumentensurplus kennen we ook het producentensurplus. Veel bedrijven zijn bereid om het product te leveren tegen een lagere prijs van de werkelijke prijs. Zij hebben dus een lagere minimale leveringsbereidheid. Het producenten surplus is het verschil tussen de werkelijke prijs en de minimale leveringsbereidheid.\n\nOm het producenten surplus uit te rekenen kan je de volgende formule gebruiken: (Werkelijke prijs – minimale leveringsbereidheid) x afzet x 0,5. Ook hier reken je een driehoek uit en dien je dus op het einde x 0,5 te doen.\n\nHet producenten surplus in dit voorbeeld is dus: (€ 24 - € 8) x 32 x 0,5 = € 256,-\n\nHet consumenten- en producenten surplus kan je ook in een grafiek arceren. Het consumentensurplus is de driehoek tussen de vraaglijn en het marktevenwicht. Het producentensurplus is de driehoek tussen de aanbodlijn en het marktevenwicht."
-        }
-      ]
-    },
-    {
-      "id": "sec-1-3-q",
-      "title": "§1.3 Opdrachten",
-      "blocks": [
+        },
         {
           "id": "blk-1-3-q",
           "type": "questions",
@@ -477,13 +459,7 @@
           "id": "blk-4-5",
           "type": "text",
           "content": "### Formules overzicht\n\nIn het onderstaande overzicht kun je nogmaals zien hoe je de verschillende kosten kunt uitrekenen:\nTO = p x q\nTK = GTK x q of TCK + TVK\nTW = TO – TK\nTCK = GCK x q\nTVK = GVK x q\nGCK = TCK / q\nGVK = TVK / q\nGTK = GCK + GVK of TK / q"
-        }
-      ]
-    },
-    {
-      "id": "sec-4-q",
-      "title": "§4 Opdrachten",
-      "blocks": [
+        },
         {
           "id": "blk-4-q",
           "type": "questions",
