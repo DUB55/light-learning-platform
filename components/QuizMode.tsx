@@ -27,6 +27,8 @@ export function QuizMode({ quiz }: QuizModeProps) {
   const [showHint, setShowHint] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   if (!quiz || !quiz.questions || quiz.questions.length === 0) {
     return (
@@ -40,23 +42,28 @@ export function QuizMode({ quiz }: QuizModeProps) {
   const isLastQuestion = currentQuestionIndex === quiz.questions.length - 1;
 
   const handleOptionSelect = (option: string) => {
+    if (showFeedback) return; // Prevent multiple selections
     setSelectedOption(option);
-  };
+    const correct = option === currentQuestion.answer;
+    setIsCorrect(correct);
+    setShowFeedback(true);
 
-  const handleNext = () => {
-    if (selectedOption) {
+    // Auto-continue after showing feedback
+    setTimeout(() => {
       const newAnswers = new Map(userAnswers);
-      newAnswers.set(currentQuestion.id, selectedOption);
+      newAnswers.set(currentQuestion.id, option);
       setUserAnswers(newAnswers);
       setSelectedOption(null);
       setShowHint(false);
+      setShowFeedback(false);
+      setIsCorrect(false);
 
       if (isLastQuestion) {
         setQuizCompleted(true);
       } else {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
       }
-    }
+    }, 1500); // Wait 1.5 seconds before continuing
   };
 
   const handleRestart = () => {
@@ -65,6 +72,8 @@ export function QuizMode({ quiz }: QuizModeProps) {
     setShowHint(false);
     setQuizCompleted(false);
     setSelectedOption(null);
+    setShowFeedback(false);
+    setIsCorrect(false);
   };
 
   const calculateScore = () => {
@@ -174,15 +183,27 @@ export function QuizMode({ quiz }: QuizModeProps) {
               const isSelected = selectedOption === option;
               const optionLetter = String.fromCharCode(65 + index); // A, B, C, D
 
+              let buttonClass = "w-full text-left p-4 rounded-lg border transition-colors ";
+              if (showFeedback) {
+                if (option === currentQuestion.answer) {
+                  buttonClass += "bg-green-500/20 border-green-500 text-green-700 dark:text-green-300";
+                } else if (isSelected && !isCorrect) {
+                  buttonClass += "bg-red-500/20 border-red-500 text-red-700 dark:text-red-300";
+                } else {
+                  buttonClass += "bg-background text-foreground border-border opacity-50";
+                }
+              } else {
+                buttonClass += isSelected
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background text-foreground border-border hover:bg-secondary/50";
+              }
+
               return (
                 <button
                   key={index}
                   onClick={() => handleOptionSelect(option)}
-                  className={`w-full text-left p-4 rounded-lg border transition-colors ${
-                    isSelected
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background text-foreground border-border hover:bg-secondary/50"
-                  }`}
+                  disabled={showFeedback}
+                  className={buttonClass}
                 >
                   <span className="font-medium">{optionLetter}.</span> {option}
                 </button>
@@ -212,14 +233,6 @@ export function QuizMode({ quiz }: QuizModeProps) {
           <p className="text-sm text-muted-foreground">
             Voortgang: {Math.round(((currentQuestionIndex + 1) / quiz.questions.length) * 100)}%
           </p>
-          <button
-            onClick={handleNext}
-            disabled={!selectedOption}
-            className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLastQuestion ? "Afronden" : "Volgende"}
-            <ChevronRight className="w-4 h-4" />
-          </button>
         </div>
       </div>
     </div>
