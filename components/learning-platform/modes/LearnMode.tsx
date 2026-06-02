@@ -90,9 +90,12 @@ export function LearnMode({ useImages = false }: LearnModeProps = {}) {
     term: Term,
     consecutive: number
   ): Question => {
+    // When using images, only use terms with images for distractors
+    const termsForDistractors = useImages ? filteredPlayableTerms : allTerms;
+    
     if (activity === "flashcard") return buildFlashcardQuestion(term);
     if (activity === "multiple-choice-only") {
-      const q = buildMcqQuestion(term, allTerms, settings);
+      const q = buildMcqQuestion(term, termsForDistractors, settings);
       // Override prompt to show image when using images
       if (useImages && term.image) {
         return {
@@ -115,7 +118,7 @@ export function LearnMode({ useImages = false }: LearnModeProps = {}) {
       }
       return q;
     }
-    const q = buildLearnQuestion(term, allTerms, settings, consecutive);
+    const q = buildLearnQuestion(term, termsForDistractors, settings, consecutive);
     // Override prompt to show image when using images
     if (useImages && term.image) {
       return {
@@ -217,7 +220,7 @@ export function LearnMode({ useImages = false }: LearnModeProps = {}) {
       {current.type === "flashcard" ? (
         <div className="space-y-5">
           {useImages && current.term.image && (
-            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+            <div key={current.term.id} className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
               <img
                 src={current.term.image}
                 alt="Afbeelding"
@@ -254,7 +257,7 @@ export function LearnMode({ useImages = false }: LearnModeProps = {}) {
       ) : current.type === "written" ? (
         <div className="space-y-5">
           {useImages && current.term.image && (
-            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+            <div key={current.term.id} className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
               <img
                 src={current.term.image}
                 alt="Afbeelding"
@@ -274,7 +277,7 @@ export function LearnMode({ useImages = false }: LearnModeProps = {}) {
       ) : (
         <div className="space-y-5">
           {useImages && current.term.image && (
-            <div className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
+            <div key={current.term.id} className="rounded-2xl border border-border bg-card p-4 flex items-center justify-center shadow-sm">
               <img
                 src={current.term.image}
                 alt="Afbeelding"

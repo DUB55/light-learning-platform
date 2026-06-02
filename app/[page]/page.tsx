@@ -14,6 +14,7 @@ import { Toetsweekplanning } from "@/components/Toetsweekplanning";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { SummaryMode } from "@/components/SummaryMode";
 import { QuizMode } from "@/components/QuizMode";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { useTranslation } from "@/lib/i18n";
 import { useBookmarks } from "@/hooks/useBookmarks";
 import { getSectionTitle } from "@/lib/section-title";
@@ -21,7 +22,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { ChevronRight } from "lucide-react";
 
-export type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz";
+export type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz" | "alles-leren-2-dagen" | "complete-oefentoets" | "alle-leerdoelen-opdrachten" | "vragenlijst";
 
 interface Question {
   id: string;
@@ -86,10 +87,15 @@ interface ContentData {
       image?: string;
     }>;
   };
+  modeContent?: Array<{
+    id: string;
+    title: string;
+    content: string;
+  }>;
 }
 
-const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting", "quiz"];
-const VISIBLE_MODES: ViewMode[] = ["simple", "study", "samenvatting", "quiz"];
+const SUPPORTED_MODES: ViewMode[] = ["book", "study", "simple", "samenvatting", "quiz", "alles-leren-2-dagen", "complete-oefentoets", "alle-leerdoelen-opdrachten", "vragenlijst"];
+const VISIBLE_MODES: ViewMode[] = ["simple", "study", "samenvatting", "quiz", "alles-leren-2-dagen", "complete-oefentoets", "alle-leerdoelen-opdrachten", "vragenlijst"];
 // How many sections to reveal per progressive step
 const CHUNK_SIZE = 3;
 
@@ -101,7 +107,11 @@ function normalizeAvailableModes(modes: any): ViewMode[] {
   return Array.from(new Set(normalized.length ? normalized : VISIBLE_MODES));
 }
 
-function hasStudyMaterial(sections: any[]): boolean {
+function hasStudyMaterial(sections: any[], data: any): boolean {
+  // Check for top-level learningSet
+  if (data?.learningSet?.terms?.length) {
+    return true;
+  }
   return sections.some((section) => {
     const hasSectionSets =
       section.learningSet?.terms?.length || section.learningSets?.some((set: any) => set.terms?.length);
@@ -618,11 +628,24 @@ export default function Page({ params }: { params: { page: string } }) {
                 <QuizMode quiz={data.quiz} />
               ) : viewMode === "samenvatting" ? (
                 <SummaryMode summary={data.summary} />
+              ) : data.modeContent && ["alles-leren-2-dagen", "complete-oefentoets", "alle-leerdoelen-opdrachten", "vragenlijst"].includes(viewMode) ? (
+                (() => {
+                  const modeData = data.modeContent?.find((m: any) => m.id === viewMode);
+                  if (!modeData) return null;
+                  return (
+                    <div className="prose prose-slate dark:prose-invert max-w-none">
+                      <h1 className="text-3xl font-bold mb-6">{modeData.title}</h1>
+                      <MarkdownRenderer className="text-foreground leading-relaxed">
+                        {modeData.content}
+                      </MarkdownRenderer>
+                    </div>
+                  );
+                })()
               ) : isTextbookContent ? (
                 <>
                   {data.sections.slice(0, visibleSections).map((section: any, index: number) => {
                     if (viewMode === "study") {
-                      if (!hasStudyMaterial(data.sections)) return null;
+                      if (!hasStudyMaterial(data.sections, data)) return null;
                       return index === 0 ? (
                         <LearningPlatform
                           key="study-learning-platform"
@@ -653,7 +676,7 @@ export default function Page({ params }: { params: { page: string } }) {
               ) : isParagraphContent ? (
                 data.sections.slice(0, visibleSections).map((section: any, index: number) => {
                   if (viewMode === "study") {
-                    if (!hasStudyMaterial(data.sections)) return null;
+                    if (!hasStudyMaterial(data.sections, data)) return null;
                     return index === 0 ? (
                       <LearningPlatform
                         key="study-learning-platform"

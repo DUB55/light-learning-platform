@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FileText, GraduationCap, BookOpen, Brain } from "lucide-react";
+import { FileText, GraduationCap, BookOpen, Brain, Clock, FileCheck, ListTodo, HelpCircle } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 import { useAnalytics } from "@/lib/analytics";
 
-type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz";
+type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz" | "alles-leren-2-dagen" | "complete-oefentoets" | "alle-leerdoelen-opdrachten" | "vragenlijst";
 
 interface ModeSwitcherProps {
   currentMode: ViewMode;
@@ -55,6 +55,30 @@ export function ModeSwitcher({ currentMode, availableModes, onModeChange }: Mode
       label: t('quiz_mode', 'Quiz'),
       icon: <Brain className="w-4 h-4" />,
       description: t('quiz_mode_description', 'Test je kennis'),
+    },
+    {
+      id: "alles-leren-2-dagen",
+      label: "Alles leren in 2 dagen",
+      icon: <Clock className="w-4 h-4" />,
+      description: "Intensief tweedaags stappenplan",
+    },
+    {
+      id: "complete-oefentoets",
+      label: "Complete Oefentoets",
+      icon: <FileCheck className="w-4 h-4" />,
+      description: "Professioneel proefwerk",
+    },
+    {
+      id: "alle-leerdoelen-opdrachten",
+      label: "Alle Leerdoelen Opdrachten",
+      icon: <ListTodo className="w-4 h-4" />,
+      description: "Leerdoelen en taken per paragraaf",
+    },
+    {
+      id: "vragenlijst",
+      label: "Vragenlijst",
+      icon: <HelpCircle className="w-4 h-4" />,
+      description: "Allesomvattende examenvragen",
     },
   ];
 

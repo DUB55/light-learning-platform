@@ -1,146 +1,17 @@
 {
-  "af9c7088-0524-44df-842e-6105bb4b46c9": {
-    "id": "af9c7088-0524-44df-842e-6105bb4b46c9",
+  "b67e7014-f012-455b-a703-dc7039c921e9": {
+    "id": "b67e7014-f012-455b-a703-dc7039c921e9",
     "userId": "ba9710ba-93c2-455b-8433-16935ac82404",
-    "startTime": 1779957749340,
-    "endTime": 1779959280810,
-    "duration": 31417,
+    "startTime": 1780380013720,
+    "endTime": null,
+    "duration": 0,
     "events": [
       {
-        "eventType": "session_end",
-        "timestamp": 1779957749340,
-        "data": {
-          "duration": 6477
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779957750715,
-        "data": {
-          "path": "/aardrijkskunde-h5",
-          "referrer": ""
-        }
-      },
-      {
-        "eventType": "session_start",
-        "timestamp": 1779957750750,
-        "data": {
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-          "language": "en",
-          "screenResolution": "1280x800"
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779957750751,
-        "data": {
-          "path": "/aardrijkskunde-h5",
-          "referrer": ""
-        }
-      },
-      {
-        "eventType": "session_end",
-        "timestamp": 1779958137710,
-        "data": {
-          "duration": 386960
-        }
-      },
-      {
-        "eventType": "session_start",
-        "timestamp": 1779958139525,
-        "data": {
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-          "language": "en",
-          "screenResolution": "1280x800"
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779958139550,
-        "data": {
-          "path": "/aardrijkskunde-h5",
-          "referrer": ""
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779959070107,
-        "data": {
-          "path": "/aardrijkskunde-h5",
-          "referrer": ""
-        }
-      },
-      {
-        "eventType": "session_start",
-        "timestamp": 1779959070129,
-        "data": {
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-          "language": "en",
-          "screenResolution": "1280x800"
-        }
-      },
-      {
-        "eventType": "session_end",
-        "timestamp": 1779959071291,
-        "data": {
-          "duration": 1162
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779959249367,
-        "data": {
-          "path": "/wiskunde-vergelijkingen-ongelijkheden",
-          "referrer": "http://localhost:3000/aardrijkskunde-h5"
-        }
-      },
-      {
-        "eventType": "session_start",
-        "timestamp": 1779959249393,
-        "data": {
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-          "language": "en",
-          "screenResolution": "1280x800"
-        }
-      },
-      {
-        "eventType": "page_view",
-        "timestamp": 1779959249394,
-        "data": {
-          "path": "/wiskunde-vergelijkingen-ongelijkheden",
-          "referrer": "http://localhost:3000/aardrijkskunde-h5"
-        }
-      },
-      {
-        "eventType": "session_end",
-        "timestamp": 1779959280810,
-        "data": {
-          "duration": 31417
-        }
-      },
-      {
-        "eventType": "session_start",
-        "timestamp": 1779959674792,
-        "data": {
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-          "language": "en",
-          "screenResolution": "1280x800"
-        }
-      },
-      {
         "eventType": "mode_switch",
-        "timestamp": 1779959688307,
+        "timestamp": 1780380013720,
         "data": {
           "from": "simple",
-          "to": "study"
-        }
-      },
-      {
-        "eventType": "mode_switch",
-        "timestamp": 1779959690415,
-        "data": {
-          "from": "study",
-          "to": "simple"
+          "to": "alles-leren-2-dagen"
         }
       }
     ]
