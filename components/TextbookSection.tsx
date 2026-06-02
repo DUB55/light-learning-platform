@@ -73,7 +73,7 @@ export interface ContentResource {
   description?: string;
 }
 
-export type ViewMode = "book" | "study" | "simple" | "advanced" | "samenvatting" | "quiz";
+export type ViewMode = "book" | "study" | "simple" | "samenvatting" | "quiz" | "alles-leren-2-dagen" | "complete-oefentoets" | "alle-leerdoelen-opdrachten" | "vragenlijst";
 
 interface TextbookSectionProps {
   section: TextbookSectionData;
@@ -737,13 +737,6 @@ export const TextbookSection = memo(function TextbookSection({
       {viewMode === "simple" && <SimpleMode section={section} />}
 
       {/* Study mode: hub is rendered once at page level via LearningPlatform */}
-
-      {/* Advanced mode: delegate to AdvancedLearningSystem via parent */}
-      {viewMode === "advanced" && (
-        <div className="text-sm text-muted-foreground italic p-4 border border-border rounded-md">
-          {t("advanced_mode_handled_by_parent", "Geavanceerde studiemodus wordt geladen…")}
-        </div>
-      )}
     </section>
   );
 });

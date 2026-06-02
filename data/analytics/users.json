@@ -11,8 +11,8 @@
     "id": "ba9710ba-93c2-455b-8433-16935ac82404",
     "name": "Anonymous",
     "firstSeen": 1779373856657,
-    "lastSeen": 1780380013720,
-    "sessionCount": 27,
+    "lastSeen": 1780389547745,
+    "sessionCount": 28,
     "totalDuration": 5794226
   },
   "47efc87b-1c32-4bc4-9ee2-0e68375c3467": {
@@ -54,5 +54,13 @@
     "lastSeen": 1779824293272,
     "sessionCount": 4,
     "totalDuration": 1317993
+  },
+  "a70699fb-1979-4e03-8506-cdc45c469744": {
+    "id": "a70699fb-1979-4e03-8506-cdc45c469744",
+    "name": "Anonymous",
+    "firstSeen": 1780389165177,
+    "lastSeen": 1780389663271,
+    "sessionCount": 4,
+    "totalDuration": 470981
   }
 }
