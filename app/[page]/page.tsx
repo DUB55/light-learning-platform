@@ -632,11 +632,14 @@ export default function Page({ params }: { params: { page: string } }) {
                 (() => {
                   const modeData = data.modeContent?.find((m: any) => m.id === viewMode);
                   if (!modeData) return null;
+                  // Ensure content is a string and replace any [object Object] with newlines
+                  let contentString = typeof modeData.content === 'string' ? modeData.content : String(modeData.content);
+                  contentString = contentString.replace(/\[object Object\]/g, '\n');
                   return (
                     <div className="prose prose-slate dark:prose-invert max-w-none">
                       <h1 className="text-3xl font-bold mb-6">{modeData.title}</h1>
                       <MarkdownRenderer className="text-foreground leading-relaxed">
-                        {modeData.content}
+                        {contentString}
                       </MarkdownRenderer>
                     </div>
                   );
